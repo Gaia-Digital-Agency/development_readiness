@@ -1,0 +1,21 @@
+{
+  "name": "development_readiness",
+  "version": "1.0.0",
+  "description": "Web development readiness monitor - audits websites for performance and errors",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "audit": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["lighthouse", "performance", "audit", "web", "crawler"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chrome-launcher": "^1.1.1",
+    "fs-extra": "^11.2.0",
+    "lighthouse": "^12.1.0",
+    "playwright": "^1.44.1"
+  }
+}

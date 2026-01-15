@@ -1,0 +1,109 @@
+# NODE.JS / NEXT.JS
+node_modules/
+error_log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+vendor
+
+# PYTHIN ENVIRONMENT FILES
+.env
+.coverage
+.next/
+venv/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+__pycache__/
+tmp/
+private/
+
+# MACHINE LEARNING / PYTORCH
+out-*/
+out*/
+*.pt
+*.pth
+*.ckpt
+.ipynb_checkpoints/
+wandb/
+runs/
+
+# GO
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# MAC OS
+Thumbs.db
+htmlcov/
+db.sqlite3
+instance/
+bin/
+.DS_Store?
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
+
+# LOGS
+logs
+*.log
+.idea/
+.vscode/
+
+# WORDPRESS
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/license.txt
+/readme.html
+/xmlrpc.php
+
+# Config (contains secrets)
+wp-config.php
+# Uploads (too large for git)
+/wp-content/uploads/
+# Cache and temp
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/backup*/
+# Keep themes and plugins
+!/wp-content/
+!/wp-content/themes/
+!/wp-content/plugins/
+
+# DRUPAL
+sites/default/files/
+sites/default/settings.php
+sites/default/settings.local.php
+
+# DATABASE DUMOS & DATA
+*.sql
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.db
+*.tar.gz
+
+# Sensitive credentials
+database/login.txt
+database/cPanel.txt
+
+# TERRAFOM
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.tfvars*
+*.tfvars.json
+
+# AI FOLDER & FILES
+.claude
+./claude
+/claude
