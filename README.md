@@ -1,68 +1,143 @@
 # Development Readiness Monitor
 
-This project is a Node.js application designed to monitor the development readiness of websites. It crawls a list of specified sites, performs a series of audits on each discovered page, and generates a comprehensive HTML report detailing performance, accessibility, and potential issues.
-
-The primary goal is to provide a clear overview of a site's health, from prototype to production, allowing teams to detect regressions and ensure a high-quality user experience.
+A Node.js application that automatically crawls websites and performs comprehensive performance and cross-browser compatibility audits. It generates detailed reports to help teams detect regressions and ensure high-quality user experiences.
 
 ## Core Features
 
-- **Recursive Crawler**: Automatically discovers and audits all internal links on a site.
-- **Performance Audits**: Leverages Google Lighthouse to measure key performance metrics (Lighthouse Score, LCP, CLS, INP).
-- **Cross-Browser Testing**: Captures console errors on both Chromium (Google Chrome) and WebKit (Safari).
-- **Unified Dashboard**: Displays all results in a single, easy-to-read HTML report (`reports/dashboard.html`).
+- **Recursive Crawler**: Automatically discovers and audits all internal links on a site (up to 20 pages per site).
+- **Performance Audits**: Leverages Google Lighthouse v12 to measure Core Web Vitals:
+  - **LCP** (Largest Contentful Paint) - Loading performance
+  - **CLS** (Cumulative Layout Shift) - Visual stability
+  - **INP** (Interaction to Next Paint) - Interactivity
+- **Cross-Browser Testing**: Captures console errors across three browser engines:
+  - Chromium (Google Chrome)
+  - WebKit (Safari)
+  - Firefox (Gecko)
+- **Multiple Report Formats**:
+  - `reports/dashboard.html` - Visual HTML dashboard
+  - `reports/report.md` - Markdown report
+  - `reports/report-data.json` - Raw JSON data
 
 ## Project Structure
 
 ```
 /
-├─── data/
-│    └─── sites.json        # Add the websites you want to audit here
-├─── reports/
-│    ├─── dashboard.html    # The generated HTML report
-│    └─── report-data.json  # Raw JSON output of the audit
-├─── .gitignore
-├─── index.js              # The main application script
-├─── package.json
-└─── package-lock.json
+├── data/
+│   └── sites.json          # Sites to audit (configure here)
+├── reports/
+│   ├── dashboard.html      # Visual HTML report
+│   ├── report.md           # Markdown report
+│   └── report-data.json    # Raw JSON output
+├── reference/
+│   └── app_enhancement.md  # Development notes
+├── .claude/
+│   └── settings.json       # Claude Code project settings
+├── index.js                # Main application script
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
-## How to Run
+## Quick Start
 
-1.  **Prerequisites**:
-    *   [Node.js](https://nodejs.org/) (v16 or later)
-    *   NPM (comes with Node.js)
+```bash
+# 1. Install dependencies
+npm install
 
-2.  **Configuration**:
-    *   Open the `data/sites.json` file.
-    *   Add the websites you want to audit, following the existing format:
-        ```json
-        [
-          {
-            "name": "My Example Site",
-            "url": "https://example.com"
-          },
-          {
-            "name": "Another Site",
-            "url": "https://another-site.com"
-          }
-        ]
-        ```
+# 2. Install Playwright browsers
+npx playwright install
 
-3.  **Installation**:
-    *   Navigate to the project directory in your terminal.
-    *   Run the following command to install the necessary dependencies:
-        ```bash
-        npm install
-        ```
+# 3. Run the audit
+npm run audit
+```
 
-4.  **Execution**:
-    *   Run the main script to start the audit process:
-        ```bash
-        node index.js
-        ```
-    *   The script will log its progress in the console. This may take several minutes depending on the number and size of the sites being audited.
+## Detailed Setup
 
-5.  **View the Report**:
-    *   Once the script finishes, open the generated report file: `reports/dashboard.html`.
-    *   You can open this file directly in your web browser to view the results.
+### Prerequisites
 
+- [Node.js](https://nodejs.org/) v16 or later
+- NPM (comes with Node.js)
+- Google Chrome (for Lighthouse audits)
+
+### Configuration
+
+Edit `data/sites.json` to add the websites you want to audit:
+
+```json
+[
+  {
+    "name": "My Example Site",
+    "url": "https://example.com"
+  },
+  {
+    "name": "Another Site",
+    "url": "https://another-site.com"
+  }
+]
+```
+
+### Installation
+
+```bash
+# Install Node.js dependencies
+npm install
+
+# Install Playwright browser engines (Chromium, WebKit, Firefox)
+npx playwright install
+```
+
+### Running the Audit
+
+```bash
+# Using npm scripts
+npm run audit
+# or
+npm start
+
+# Or directly with Node
+node index.js
+```
+
+The script will:
+1. Read sites from `data/sites.json`
+2. Crawl each site (up to 20 pages)
+3. Run Lighthouse performance audits
+4. Capture console errors in Chrome, Safari, and Firefox
+5. Generate reports in the `reports/` directory
+
+### Viewing Reports
+
+Open `reports/dashboard.html` in your web browser to view the visual dashboard with:
+- Overall site performance summaries
+- Per-page performance scores and Core Web Vitals
+- Console error counts by browser
+
+## Configuration Options
+
+The following constants can be adjusted in `index.js`:
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `MAX_PAGES_PER_SITE` | 20 | Maximum pages to crawl per site |
+| `PAGE_TIMEOUT` | 30000 | Page load timeout in milliseconds |
+
+## Technical Stack
+
+- **Lighthouse v12** - Performance auditing
+- **Playwright** - Cross-browser automation
+- **chrome-launcher** - Chrome instance management
+- **fs-extra** - File system utilities
+
+## Troubleshooting
+
+### Firefox browser not found
+
+If you see an error about Firefox executable not found:
+
+```bash
+npx playwright install firefox
+```
+
+### Lighthouse race conditions
+
+The app runs site audits sequentially to avoid Lighthouse timing conflicts. This is expected behavior.

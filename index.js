@@ -1,4 +1,4 @@
-const { chromium, webkit } = require('playwright');
+const { chromium, webkit, firefox } = require('playwright');
 const lighthouse = require('lighthouse/core/index.cjs');
 const chromeLauncher = require('chrome-launcher');
 const fs = require('fs-extra');
@@ -53,6 +53,7 @@ async function crawlAndAuditSite(site) {
     // Launch Playwright browsers for console error capture
     const chromiumBrowser = await chromium.launch({ headless: true });
     const webkitBrowser = await webkit.launch({ headless: true });
+    const firefoxBrowser = await firefox.launch({ headless: true });
 
     console.log(`\n📊 Starting audit for: ${site.name} (${site.url})`);
 
@@ -74,9 +75,10 @@ async function crawlAndAuditSite(site) {
             });
 
             // Run Playwright audit for console errors and links
-            const [chromiumData, webkitData] = await Promise.all([
+            const [chromiumData, webkitData, firefoxData] = await Promise.all([
                 runPageAudit(chromiumBrowser, currentUrl),
                 runPageAudit(webkitBrowser, currentUrl),
+                runPageAudit(firefoxBrowser, currentUrl),
             ]);
 
             results.pages.push({
@@ -87,6 +89,7 @@ async function crawlAndAuditSite(site) {
                 inp: lhr.audits['interaction-to-next-paint']?.displayValue || 'N/A',
                 chromeErrors: chromiumData.consoleErrors,
                 safariErrors: webkitData.consoleErrors,
+                firefoxErrors: firefoxData.consoleErrors,
             });
 
             // Add new, unvisited links to the queue (skip hash-only links and anchors)
@@ -114,8 +117,9 @@ async function crawlAndAuditSite(site) {
             results.pages.push({
                 url: currentUrl,
                 error: error.message,
-                chromeErrors: [], // ensure these fields exist even on error
-                safariErrors: []  // ensure these fields exist even on error
+                chromeErrors: [],  // ensure these fields exist even on error
+                safariErrors: [],  // ensure these fields exist even on error
+                firefoxErrors: [], // ensure these fields exist even on error
             });
         }
     }
@@ -124,6 +128,7 @@ async function crawlAndAuditSite(site) {
     try {
         await chromiumBrowser.close();
         await webkitBrowser.close();
+        await firefoxBrowser.close();
         await chrome.kill();
     } catch (cleanupError) {
         console.error('Warning: Error during browser cleanup:', cleanupError.message);
@@ -138,7 +143,7 @@ function generateHtmlReport(data) {
     const totalPages = data.reduce((acc, site) => acc + site.pages.length, 0);
     const totalErrors = data.reduce((acc, site) =>
         acc + site.pages.reduce((pAcc, p) =>
-            pAcc + (p.chromeErrors?.length || 0) + (p.safariErrors?.length || 0), 0), 0);
+            pAcc + (p.chromeErrors?.length || 0) + (p.safariErrors?.length || 0) + (p.firefoxErrors?.length || 0), 0), 0);
 
     let html = `
     <!DOCTYPE html>
@@ -198,6 +203,7 @@ function generateHtmlReport(data) {
                 <th>INP</th>
                 <th>Chrome Errors</th>
                 <th>Safari Errors</th>
+                <th>Firefox Errors</th>
             </tr>`;
         site.pages.forEach(page => {
             const perfScore = page.performance || 0;
@@ -208,11 +214,12 @@ function generateHtmlReport(data) {
                 <td>${page.lcp || 'N/A'}</td>
                 <td>${page.cls || 'N/A'}</td>
                 <td>${page.inp || 'N/A'}</td>
-                <td class="${page.chromeErrors.length > 0 ? 'errors' : 'no-errors'}">${page.chromeErrors.length}</td>
-                <td class="${page.safariErrors.length > 0 ? 'errors' : 'no-errors'}">${page.safariErrors.length}</td>
+                <td class="${(page.chromeErrors?.length || 0) > 0 ? 'errors' : 'no-errors'}">${page.chromeErrors?.length || 0}</td>
+                <td class="${(page.safariErrors?.length || 0) > 0 ? 'errors' : 'no-errors'}">${page.safariErrors?.length || 0}</td>
+                <td class="${(page.firefoxErrors?.length || 0) > 0 ? 'errors' : 'no-errors'}">${page.firefoxErrors?.length || 0}</td>
             </tr>`;
              if (page.error) {
-                html += `<tr><td colspan="7" class="errors"><strong>Error:</strong> ${page.error}</td></tr>`;
+                html += `<tr><td colspan="8" class="errors"><strong>Error:</strong> ${page.error}</td></tr>`;
             }
         });
         html += `</table>`;
@@ -231,7 +238,7 @@ function generateMarkdownReport(data) {
     const totalPages = data.reduce((acc, site) => acc + site.pages.length, 0);
     const totalErrors = data.reduce((acc, site) =>
         acc + site.pages.reduce((pAcc, p) =>
-            pAcc + (p.chromeErrors?.length || 0) + (p.safariErrors?.length || 0), 0), 0);
+            pAcc + (p.chromeErrors?.length || 0) + (p.safariErrors?.length || 0) + (p.firefoxErrors?.length || 0), 0), 0);
 
     let md = `# Development Readiness Report
 
@@ -266,7 +273,7 @@ function generateMarkdownReport(data) {
     data.forEach(site => {
         const avgPerf = site.pages.reduce((acc, p) => acc + (p.performance || 0), 0) / site.pages.length;
         const siteErrors = site.pages.reduce((acc, p) =>
-            acc + (p.chromeErrors?.length || 0) + (p.safariErrors?.length || 0), 0);
+            acc + (p.chromeErrors?.length || 0) + (p.safariErrors?.length || 0) + (p.firefoxErrors?.length || 0), 0);
 
         md += `\n### ${site.siteName}
 
@@ -275,23 +282,23 @@ function generateMarkdownReport(data) {
 - **Average Performance:** ${avgPerf.toFixed(2)}
 - **Total Console Errors:** ${siteErrors}
 
-| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors |
-|-----|------|-----|-----|-----|---------------|---------------|
+| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors | Firefox Errors |
+|-----|------|-----|-----|-----|---------------|---------------|----------------|
 `;
 
         site.pages.forEach(page => {
             const perfScore = page.performance || 0;
             const urlShort = page.url.replace(site.baseUrl, '/') || '/';
             if (page.error) {
-                md += `| ${urlShort} | Error | - | - | - | - | - |\n`;
+                md += `| ${urlShort} | Error | - | - | - | - | - | - |\n`;
             } else {
-                md += `| ${urlShort} | ${perfScore.toFixed(0)} | ${page.lcp || 'N/A'} | ${page.cls || 'N/A'} | ${page.inp || 'N/A'} | ${page.chromeErrors.length} | ${page.safariErrors.length} |\n`;
+                md += `| ${urlShort} | ${perfScore.toFixed(0)} | ${page.lcp || 'N/A'} | ${page.cls || 'N/A'} | ${page.inp || 'N/A'} | ${page.chromeErrors.length} | ${page.safariErrors.length} | ${page.firefoxErrors.length} |\n`;
             }
         });
 
         // List errors if any
         const pagesWithErrors = site.pages.filter(p =>
-            (p.chromeErrors?.length > 0) || (p.safariErrors?.length > 0));
+            (p.chromeErrors?.length > 0) || (p.safariErrors?.length > 0) || (p.firefoxErrors?.length > 0));
 
         if (pagesWithErrors.length > 0) {
             md += `\n**Console Errors Found:**\n\n`;
@@ -306,6 +313,12 @@ function generateMarkdownReport(data) {
                 if (page.safariErrors?.length > 0) {
                     md += `- **${urlShort}** (Safari):\n`;
                     page.safariErrors.forEach(err => {
+                        md += `  - \`${err.substring(0, 100)}${err.length > 100 ? '...' : ''}\`\n`;
+                    });
+                }
+                if (page.firefoxErrors?.length > 0) {
+                    md += `- **${urlShort}** (Firefox):\n`;
+                    page.firefoxErrors.forEach(err => {
                         md += `  - \`${err.substring(0, 100)}${err.length > 100 ? '...' : ''}\`\n`;
                     });
                 }
