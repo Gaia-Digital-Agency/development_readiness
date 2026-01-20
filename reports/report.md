@@ -1,6 +1,6 @@
 # Development Readiness Report
 
-**Generated:** 1/15/2026, 8:55:12 PM
+**Generated:** 1/15/2026, 10:37:05 PM
 
 ---
 
@@ -10,7 +10,7 @@
 |--------|-------|
 | Sites Audited | 8 |
 | Pages Scanned | 96 |
-| Console Errors | 18 |
+| Console Errors | 77 |
 
 ---
 
@@ -18,14 +18,14 @@
 
 | Site Name | Avg Performance | Status |
 |-----------|-----------------|--------|
-| Uluwatu School | 73.73 | Needs Work |
-| 7Origin | 63.80 | Needs Work |
-| Hideaway Villas | 75.75 | Needs Work |
-| YPI | 77.85 | Needs Work |
-| Unique | 64.22 | Needs Work |
-| The Pala | 64.00 | Needs Work |
-| PACA | 90.29 | Good |
-| BRCS | 87.13 | Needs Work |
+| Uluwatu School | 73.45 | Needs Work |
+| 7Origin | 62.65 | Needs Work |
+| Hideaway Villas | 75.40 | Needs Work |
+| YPI | 78.75 | Needs Work |
+| Unique | 72.22 | Needs Work |
+| The Pala | 60.00 | Needs Work |
+| PACA | 91.71 | Good |
+| BRCS | 91.38 | Good |
 
 ---
 
@@ -35,22 +35,22 @@
 
 - **Base URL:** https://darkviolet-mink-263216.hostingersite.com/
 - **Pages Audited:** 11
-- **Average Performance:** 73.73
-- **Total Console Errors:** 12
+- **Average Performance:** 73.45
+- **Total Console Errors:** 11
 
-| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors |
-|-----|------|-----|-----|-----|---------------|---------------|
-| / | 66 | 5.8 s | 0 | N/A | 0 | 1 |
-| /about-us/ | 66 | 8.7 s | 0 | N/A | 0 | 1 |
-| /program/ | 78 | 4.3 s | 0 | N/A | 0 | 1 |
-| /admissions/ | 67 | 6.4 s | 0 | N/A | 0 | 1 |
-| /contact/ | 70 | 6.2 s | 0 | N/A | 0 | 2 |
-| /partners | 82 | 3.6 s | 0 | N/A | 0 | 1 |
-| /privacy-policy-and-term-conditions | 80 | 3.8 s | 0 | N/A | 0 | 1 |
-| /privacy-policy-and-term-conditions/ | 79 | 4.2 s | 0 | N/A | 0 | 1 |
-| /about-us | 65 | 9.0 s | 0 | N/A | 0 | 1 |
-| /partners/ | 79 | 4.2 s | 0 | N/A | 0 | 1 |
-| /tuition-and-fees/ | 79 | 4.2 s | 0 | N/A | 0 | 1 |
+| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors | Firefox Errors |
+|-----|------|-----|-----|-----|---------------|---------------|----------------|
+| / | 59 | 22.6 s | 0 | N/A | 0 | 1 | 0 |
+| /about-us/ | 66 | 10.9 s | 0 | N/A | 0 | 1 | 0 |
+| /program/ | 92 | 2.8 s | 0 | N/A | 0 | 1 | 0 |
+| /admissions/ | 76 | 5.5 s | 0 | N/A | 0 | 1 | 0 |
+| /contact/ | 77 | 5.2 s | 0 | N/A | 0 | 2 | 0 |
+| /partners | Error | - | - | - | - | - | - |
+| /privacy-policy-and-term-conditions | 93 | 2.6 s | 0 | N/A | 0 | 1 | 0 |
+| /privacy-policy-and-term-conditions/ | 93 | 2.6 s | 0 | N/A | 0 | 1 | 0 |
+| /about-us | 66 | 11.1 s | 0 | N/A | 0 | 1 | 0 |
+| /partners/ | 93 | 2.8 s | 0 | N/A | 0 | 1 | 0 |
+| /tuition-and-fees/ | 93 | 2.6 s | 0 | N/A | 0 | 1 | 0 |
 
 **Console Errors Found:**
 
@@ -64,8 +64,6 @@
   - `Failed to load resource: the server responded with a status of 404 ()`
 - **/contact/** (Safari):
   - `Swiper library tidak ditemukan. Pastikan Anda telah menyertakan file Swiper JS.`
-  - `Failed to load resource: the server responded with a status of 404 ()`
-- **/partners** (Safari):
   - `Failed to load resource: the server responded with a status of 404 ()`
 - **/privacy-policy-and-term-conditions** (Safari):
   - `Failed to load resource: the server responded with a status of 404 ()`
@@ -82,31 +80,31 @@
 
 - **Base URL:** https://aquamarine-panther-399421.hostingersite.com/en/
 - **Pages Audited:** 20
-- **Average Performance:** 63.80
+- **Average Performance:** 62.65
 - **Total Console Errors:** 2
 
-| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors |
-|-----|------|-----|-----|-----|---------------|---------------|
-| / | 76 | 4.0 s | 0.009 | N/A | 0 | 0 |
-| https://aquamarine-panther-399421.hostingersite.com/mantra-of-kahwa/ | 58 | 9.8 s | 0 | N/A | 0 | 0 |
-| https://aquamarine-panther-399421.hostingersite.com/house-of-cula/ | 58 | 9.8 s | 0 | N/A | 0 | 0 |
-| https://aquamarine-panther-399421.hostingersite.com/legacy-of-java/ | 58 | 10.3 s | 0 | N/A | 0 | 0 |
-| https://aquamarine-panther-399421.hostingersite.com/aroma-of-heaven/ | 57 | 11.0 s | 0 | N/A | 0 | 0 |
-| /mantra-of-kahwa/ | 57 | 10.6 s | 0 | N/A | 0 | 0 |
-| https://aquamarine-panther-399421.hostingersite.com/home/ | 62 | 6.5 s | 0.011 | N/A | 0 | 0 |
-| https://aquamarine-panther-399421.hostingersite.com/home | 64 | 6.2 s | 0 | N/A | 0 | 0 |
-| https://aquamarine-panther-399421.hostingersite.com/screening/ | 59 | 8.0 s | 0 | N/A | 1 | 1 |
-| https://aquamarine-panther-399421.hostingersite.com/shop/ | 64 | 6.2 s | 0.012 | N/A | 0 | 0 |
-| /product/mantra-of-kahwa-t-shirt/ | 63 | 6.6 s | 0 | N/A | 0 | 0 |
-| /product/mantra-of-kahwa-poster/ | 63 | 6.6 s | 0 | N/A | 0 | 0 |
-| /product/mantra-of-kahwa-post-card/ | 63 | 6.2 s | 0 | N/A | 0 | 0 |
-| /product/mantra-of-kahwa-magnets/ | 78 | 3.9 s | 0 | N/A | 0 | 0 |
-| /house-of-cula/ | 62 | 8.4 s | 0.005 | N/A | 0 | 0 |
-| https://aquamarine-panther-399421.hostingersite.com/upcoming/ | 66 | 7.0 s | 0.014 | N/A | 0 | 0 |
-| /product/house-of-cula-t-shirt/ | 62 | 6.8 s | 0 | N/A | 0 | 0 |
-| /product/house-of-cula-poster/ | 76 | 4.0 s | 0 | N/A | 0 | 0 |
-| /product/house-of-cula-post-card/ | 62 | 6.5 s | 0 | N/A | 0 | 0 |
-| /product/house-of-cula-magnets/ | 68 | 5.1 s | 0 | N/A | 0 | 0 |
+| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors | Firefox Errors |
+|-----|------|-----|-----|-----|---------------|---------------|----------------|
+| / | 61 | 7.9 s | 0 | N/A | 0 | 0 | 0 |
+| https://aquamarine-panther-399421.hostingersite.com/mantra-of-kahwa/ | 58 | 11.1 s | 0 | N/A | 0 | 0 | 0 |
+| https://aquamarine-panther-399421.hostingersite.com/house-of-cula/ | 58 | 10.0 s | 0 | N/A | 0 | 0 | 0 |
+| https://aquamarine-panther-399421.hostingersite.com/legacy-of-java/ | 58 | 10.6 s | 0 | N/A | 0 | 0 | 0 |
+| https://aquamarine-panther-399421.hostingersite.com/aroma-of-heaven/ | 58 | 11.4 s | 0 | N/A | 0 | 0 | 0 |
+| /mantra-of-kahwa/ | 58 | 11.1 s | 0 | N/A | 0 | 0 | 0 |
+| https://aquamarine-panther-399421.hostingersite.com/home/ | 64 | 7.5 s | 0 | N/A | 0 | 0 | 0 |
+| https://aquamarine-panther-399421.hostingersite.com/home | 62 | 7.4 s | 0 | N/A | 0 | 0 | 0 |
+| https://aquamarine-panther-399421.hostingersite.com/screening/ | 59 | 7.8 s | 0 | N/A | 1 | 1 | 0 |
+| https://aquamarine-panther-399421.hostingersite.com/shop/ | 62 | 7.4 s | 0 | N/A | 0 | 0 | 0 |
+| /product/mantra-of-kahwa-t-shirt/ | 61 | 7.4 s | 0 | N/A | 0 | 0 | 0 |
+| /product/mantra-of-kahwa-poster/ | 60 | 7.4 s | 0 | N/A | 0 | 0 | 0 |
+| /product/mantra-of-kahwa-post-card/ | 84 | 3.4 s | 0 | N/A | 0 | 0 | 0 |
+| /product/mantra-of-kahwa-magnets/ | 63 | 7.5 s | 0 | N/A | 0 | 0 | 0 |
+| /house-of-cula/ | 58 | 10.1 s | 0 | N/A | 0 | 0 | 0 |
+| https://aquamarine-panther-399421.hostingersite.com/upcoming/ | 61 | 7.6 s | 0 | N/A | 0 | 0 | 0 |
+| /product/house-of-cula-t-shirt/ | 84 | 3.4 s | 0 | N/A | 0 | 0 | 0 |
+| /product/house-of-cula-poster/ | 62 | 7.4 s | 0.005 | N/A | 0 | 0 | 0 |
+| /product/house-of-cula-post-card/ | 61 | 7.4 s | 0 | N/A | 0 | 0 | 0 |
+| /product/house-of-cula-magnets/ | 61 | 7.4 s | 0 | N/A | 0 | 0 | 0 |
 
 **Console Errors Found:**
 
@@ -119,87 +117,133 @@
 
 - **Base URL:** https://lightgray-turkey-171655.hostingersite.com/
 - **Pages Audited:** 20
-- **Average Performance:** 75.75
-- **Total Console Errors:** 1
+- **Average Performance:** 75.40
+- **Total Console Errors:** 43
 
-| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors |
-|-----|------|-----|-----|-----|---------------|---------------|
-| / | 75 | 4.3 s | 0 | N/A | 0 | 0 |
-| /about/ | 77 | 4.4 s | 0 | N/A | 0 | 0 |
-| /our-villas/ | 65 | 11.3 s | 0 | N/A | 0 | 0 |
-| /our-villas/villa-tau/ | 60 | 8.3 s | 0 | N/A | 0 | 0 |
-| /our-villas/villa-cocoa/ | 61 | 7.7 s | 0 | N/A | 0 | 1 |
-| /our-villas/villa-sagitta/ | 61 | 7.6 s | 0 | N/A | 0 | 0 |
-| /calendars/ | 66 | 6.3 s | 0.02 | N/A | 0 | 0 |
-| /wellness-center/ | 71 | 5.6 s | 0 | N/A | 0 | 0 |
-| /villa-tau-gallery/ | 86 | 3.2 s | 0 | N/A | 0 | 0 |
-| /villa-sagitta-gallery/ | 85 | 3.3 s | 0 | N/A | 0 | 0 |
-| /villa-cocoa-maya-gallery/ | 85 | 3.3 s | 0 | N/A | 0 | 0 |
-| /category/blog/ | 87 | 3.2 s | 0 | N/A | 0 | 0 |
-| /contact/ | 68 | 6.8 s | 0 | N/A | 0 | 0 |
-| /book | 75 | 3.6 s | 0 | N/A | 0 | 0 |
-| /book/ | 88 | 2.1 s | 0 | N/A | 0 | 0 |
-| /how-to-cook-balinese-nasi-goreng-in-under-15-minutes/ | 76 | 4.4 s | 0 | N/A | 0 | 0 |
-| /why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/ | 85 | 3.4 s | 0 | N/A | 0 | 0 |
-| /3-really-good-reasons-to-pack-light-for-bali/ | 87 | 3.2 s | 0 | N/A | 0 | 0 |
-| /our-10-favourite-things-to-do-in-ubud/ | 76 | 4.3 s | 0 | N/A | 0 | 0 |
-| /12-things-you-need-to-know-about-driving-in-bali/ | 81 | 4.6 s | 0.041 | N/A | 0 | 0 |
+| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors | Firefox Errors |
+|-----|------|-----|-----|-----|---------------|---------------|----------------|
+| / | 79 | 4.3 s | 0 | N/A | 0 | 0 | 0 |
+| /about/ | 68 | 6.5 s | 0 | N/A | 0 | 0 | 0 |
+| /our-villas/ | 63 | 11.0 s | 0 | N/A | 0 | 0 | 0 |
+| /our-villas/villa-tau/ | 63 | 8.2 s | 0 | N/A | 0 | 0 | 8 |
+| /our-villas/villa-cocoa/ | 58 | 11.7 s | 0 | N/A | 0 | 0 | 8 |
+| /our-villas/villa-sagitta/ | 60 | 8.5 s | 0 | N/A | 0 | 0 | 8 |
+| /calendars/ | 83 | 4.5 s | 0.03 | N/A | 0 | 0 | 10 |
+| /wellness-center/ | 71 | 5.5 s | 0 | N/A | 0 | 0 | 0 |
+| /villa-tau-gallery/ | 88 | 3.2 s | 0 | N/A | 0 | 0 | 0 |
+| /villa-sagitta-gallery/ | 89 | 3.0 s | 0 | N/A | 0 | 0 | 0 |
+| /villa-cocoa-maya-gallery/ | 90 | 3.0 s | 0 | N/A | 0 | 0 | 0 |
+| /category/blog/ | 84 | 3.7 s | 0 | N/A | 0 | 0 | 0 |
+| /contact/ | 66 | 8.5 s | 0 | N/A | 0 | 0 | 0 |
+| /book | 80 | 3.2 s | 0 | N/A | 0 | 0 | 4 |
+| /book/ | 72 | 4.4 s | 0 | N/A | 0 | 0 | 4 |
+| /how-to-cook-balinese-nasi-goreng-in-under-15-minutes/ | 58 | 9.2 s | 0 | N/A | 0 | 0 | 1 |
+| /why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/ | 88 | 3.3 s | 0 | N/A | 0 | 0 | 0 |
+| /3-really-good-reasons-to-pack-light-for-bali/ | 88 | 3.2 s | 0 | N/A | 0 | 0 | 0 |
+| /our-10-favourite-things-to-do-in-ubud/ | 81 | 4.1 s | 0 | N/A | 0 | 0 | 0 |
+| /12-things-you-need-to-know-about-driving-in-bali/ | 79 | 4.4 s | 0 | N/A | 0 | 0 | 0 |
 
 **Console Errors Found:**
 
-- **/our-villas/villa-cocoa/** (Safari):
-  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-[2m  - navigating to "https://lig...`
+- **/our-villas/villa-tau/** (Firefox):
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+- **/our-villas/villa-cocoa/** (Firefox):
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+- **/our-villas/villa-sagitta/** (Firefox):
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+- **/calendars/** (Firefox):
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+- **/book** (Firefox):
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+- **/book/** (Firefox):
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+- **/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/** (Firefox):
+  - `[JavaScript Error: "Cookie “__Secure-YEC” has been rejected because it is in a cross-site context an...`
 
 ### YPI
 
 - **Base URL:** https://mintcream-flamingo-191587.hostingersite.com/
 - **Pages Audited:** 20
-- **Average Performance:** 77.85
+- **Average Performance:** 78.75
 - **Total Console Errors:** 0
 
-| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors |
-|-----|------|-----|-----|-----|---------------|---------------|
-| / | 90 | 2.5 s | 0.035 | N/A | 0 | 0 |
-| /destination/bali/ | 75 | 5.0 s | 0 | N/A | 0 | 0 |
-| /destination/java/ | 78 | 4.5 s | 0 | N/A | 0 | 0 |
-| /destination/lombok/ | 76 | 4.7 s | 0 | N/A | 0 | 0 |
-| /service/ | 82 | 3.7 s | 0 | N/A | 0 | 0 |
-| /about/ | 0 | N/A | 0 | N/A | 0 | 0 |
-| /contact-us-student/ | 77 | 4.6 s | 0 | N/A | 0 | 0 |
-| /contact-us-for-companies/ | 87 | 3.2 s | 0.112 | N/A | 0 | 0 |
-| /nl/ | 80 | 3.6 s | 0 | N/A | 0 | 0 |
-| /apply/ | 92 | 2.9 s | 0.001 | N/A | 0 | 0 |
-| /location/bali/ | 83 | 3.6 s | 0 | N/A | 0 | 0 |
-| /destination/java | 78 | 4.5 s | 0 | N/A | 0 | 0 |
-| /destination/lombok | 86 | 3.8 s | 0.001 | N/A | 0 | 0 |
-| /blog/ | 84 | 3.6 s | 0 | N/A | 0 | 0 |
-| /terms-condition/ | 83 | 3.7 s | 0 | N/A | 0 | 0 |
-| /privacy-policy/ | 84 | 3.6 s | 0 | N/A | 0 | 0 |
-| /faq | 85 | 3.5 s | 0 | N/A | 0 | 0 |
-| /nl/destination/bali/ | 78 | 4.2 s | 0 | N/A | 0 | 0 |
-| /nl/destination/java/ | 77 | 4.5 s | 0 | N/A | 0 | 0 |
-| /location/java/ | 82 | 3.8 s | 0 | N/A | 0 | 0 |
+| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors | Firefox Errors |
+|-----|------|-----|-----|-----|---------------|---------------|----------------|
+| / | 90 | 2.4 s | 0.043 | N/A | 0 | 0 | 0 |
+| /destination/bali/ | 75 | 4.8 s | 0 | N/A | 0 | 0 | 0 |
+| /destination/java/ | 78 | 4.3 s | 0 | N/A | 0 | 0 | 0 |
+| /destination/lombok/ | 77 | 4.5 s | 0 | N/A | 0 | 0 | 0 |
+| /service/ | 84 | 3.4 s | 0 | N/A | 0 | 0 | 0 |
+| /about/ | 60 | 35.7 s | 0 | N/A | 0 | 0 | 0 |
+| /contact-us-student/ | 74 | 4.8 s | 0 | N/A | 0 | 0 | 0 |
+| /contact-us-for-companies/ | 75 | 4.6 s | 0 | N/A | 0 | 0 | 0 |
+| /nl/ | 74 | 4.9 s | 0 | N/A | 0 | 0 | 0 |
+| /apply/ | 76 | 4.3 s | 0 | N/A | 0 | 0 | 0 |
+| /location/bali/ | 82 | 3.7 s | 0 | N/A | 0 | 0 | 0 |
+| /destination/java | 78 | 4.3 s | 0 | N/A | 0 | 0 | 0 |
+| /destination/lombok | 76 | 4.6 s | 0 | N/A | 0 | 0 | 0 |
+| /blog/ | 84 | 3.7 s | 0 | N/A | 0 | 0 | 0 |
+| /terms-condition/ | 87 | 3.3 s | 0 | N/A | 0 | 0 | 0 |
+| /privacy-policy/ | 85 | 3.3 s | 0 | N/A | 0 | 0 | 0 |
+| /faq | 84 | 3.5 s | 0 | N/A | 0 | 0 | 0 |
+| /nl/destination/bali/ | 76 | 4.6 s | 0 | N/A | 0 | 0 | 0 |
+| /nl/destination/java/ | 78 | 4.2 s | 0 | N/A | 0 | 0 | 0 |
+| /location/java/ | 82 | 3.7 s | 0 | N/A | 0 | 0 | 0 |
 
 ### Unique
 
 - **Base URL:** https://lightcyan-horse-210187.hostingersite.com/
 - **Pages Audited:** 9
-- **Average Performance:** 64.22
-- **Total Console Errors:** 2
+- **Average Performance:** 72.22
+- **Total Console Errors:** 3
 
-| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors |
-|-----|------|-----|-----|-----|---------------|---------------|
-| / | 63 | 5.8 s | 0 | N/A | 0 | 0 |
-| /program/ | 69 | 5.5 s | 0 | N/A | 0 | 0 |
-| /accomodation/ | 69 | 5.1 s | 0 | N/A | 0 | 0 |
-| /pricing/ | 74 | 4.4 s | 0 | N/A | 1 | 1 |
-| /about/ | 65 | 6.9 s | 0 | N/A | 0 | 0 |
-| /faq/ | 79 | 4.3 s | 0.001 | N/A | 0 | 0 |
-| /enquiry/ | 42 | 5.2 s | 0.629 | N/A | 0 | 0 |
-| /accomodation/maya-garden-manor-mgm1/ | 69 | 5.6 s | 0.008 | N/A | 0 | 0 |
-| /enquiry | 48 | 5.6 s | 0.631 | N/A | 0 | 0 |
+| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors | Firefox Errors |
+|-----|------|-----|-----|-----|---------------|---------------|----------------|
+| / | 70 | 5.4 s | 0 | N/A | 0 | 0 | 0 |
+| /program/ | 72 | 5.4 s | 0 | N/A | 0 | 0 | 0 |
+| /accomodation/ | 73 | 4.9 s | 0 | N/A | 0 | 0 | 0 |
+| /pricing/ | 73 | 5.7 s | 0 | N/A | 1 | 1 | 1 |
+| /about/ | 68 | 6.5 s | 0 | N/A | 0 | 0 | 0 |
+| /faq/ | 79 | 4.3 s | 0 | N/A | 0 | 0 | 0 |
+| /enquiry/ | 72 | 5.4 s | 0 | N/A | 0 | 0 | 0 |
+| /accomodation/maya-garden-manor-mgm1/ | 71 | 5.5 s | 0 | N/A | 0 | 0 | 0 |
+| /enquiry | 72 | 5.6 s | 0 | N/A | 0 | 0 | 0 |
 
 **Console Errors Found:**
 
@@ -207,21 +251,27 @@ Call log:
   - `Failed to load resource: the server responded with a status of 404 ()`
 - **/pricing/** (Safari):
   - `Failed to load resource: the server responded with a status of 404 ()`
+- **/pricing/** (Firefox):
+  - `[JavaScript Error: "downloadable font: download failed (font-family: "Futura" style:normal weight:30...`
 
 ### The Pala
 
 - **Base URL:** https://midnightblue-mallard-922123.hostingersite.com/
 - **Pages Audited:** 1
-- **Average Performance:** 64.00
-- **Total Console Errors:** 1
+- **Average Performance:** 60.00
+- **Total Console Errors:** 2
 
-| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors |
-|-----|------|-----|-----|-----|---------------|---------------|
-| / | 64 | 8.8 s | 0 | N/A | 1 | 0 |
+| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors | Firefox Errors |
+|-----|------|-----|-----|-----|---------------|---------------|----------------|
+| / | 60 | 8.0 s | 0 | N/A | 1 | 0 | 1 |
 
 **Console Errors Found:**
 
 - **/** (Chrome):
+  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "https://mid...`
+- **/** (Firefox):
   - `Navigation failed: page.goto: Timeout 30000ms exceeded.
 Call log:
 [2m  - navigating to "https://mid...`
@@ -230,36 +280,71 @@ Call log:
 
 - **Base URL:** https://greenyellow-goshawk-435428.hostingersite.com/fr/
 - **Pages Audited:** 7
-- **Average Performance:** 90.29
+- **Average Performance:** 91.71
 - **Total Console Errors:** 0
 
-| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors |
-|-----|------|-----|-----|-----|---------------|---------------|
-| / | 100 | 1.0 s | 0 | N/A | 0 | 0 |
-| /climatisation/ | 73 | 13.4 s | 0 | N/A | 0 | 0 |
-| /pompe-a-chaleur/ | 87 | 3.8 s | 0 | N/A | 0 | 0 |
-| /plomberie/ | 74 | 12.9 s | 0 | N/A | 0 | 0 |
-| https://greenyellow-goshawk-435428.hostingersite.com/ | 100 | 1.3 s | 0 | N/A | 0 | 0 |
-| /mentions-legales/ | 100 | 1.0 s | 0 | N/A | 0 | 0 |
-| /politique-de-confidentialite/ | 98 | 1.1 s | 0 | N/A | 0 | 0 |
+| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors | Firefox Errors |
+|-----|------|-----|-----|-----|---------------|---------------|----------------|
+| / | 49 | 22.2 s | 0 | N/A | 0 | 0 | 0 |
+| /climatisation/ | 94 | 3.0 s | 0 | N/A | 0 | 0 | 0 |
+| /pompe-a-chaleur/ | 100 | 1.5 s | 0 | N/A | 0 | 0 | 0 |
+| /plomberie/ | 99 | 2.0 s | 0 | N/A | 0 | 0 | 0 |
+| https://greenyellow-goshawk-435428.hostingersite.com/ | 100 | 1.6 s | 0 | N/A | 0 | 0 | 0 |
+| /mentions-legales/ | 100 | 0.9 s | 0 | N/A | 0 | 0 | 0 |
+| /politique-de-confidentialite/ | 100 | 0.9 s | 0 | N/A | 0 | 0 | 0 |
 
 ### BRCS
 
 - **Base URL:** https://bisque-hummingbird-438495.hostingersite.com/
 - **Pages Audited:** 8
-- **Average Performance:** 87.13
-- **Total Console Errors:** 0
+- **Average Performance:** 91.38
+- **Total Console Errors:** 16
 
-| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors |
-|-----|------|-----|-----|-----|---------------|---------------|
-| / | 78 | 4.1 s | 0.005 | N/A | 0 | 0 |
-| /events/balinale/ | 96 | 2.3 s | 0.004 | N/A | 0 | 0 |
-| /events/sanur-village-festival/ | 90 | 2.9 s | 0.004 | N/A | 0 | 0 |
-| /events/ubud-food-festival/ | 83 | 3.7 s | 0 | N/A | 0 | 0 |
-| /events/nusa-dua-festival/ | 83 | 3.7 s | 0 | N/A | 0 | 0 |
-| /stories/chef-interviews/ | 83 | 3.6 s | 0 | N/A | 0 | 0 |
-| /stories/inside-balis-growing-fine-dining-scene/ | 92 | 2.9 s | 0.011 | N/A | 0 | 0 |
-| /stories/top-10-new-restaurants-in-bali-2025/ | 92 | 2.8 s | 0.011 | N/A | 0 | 0 |
+| URL | Perf | LCP | CLS | INP | Chrome Errors | Safari Errors | Firefox Errors |
+|-----|------|-----|-----|-----|---------------|---------------|----------------|
+| / | 78 | 5.5 s | 0.005 | N/A | 1 | 1 | 0 |
+| /events/balinale/ | 87 | 3.4 s | 0 | N/A | 1 | 1 | 0 |
+| /events/sanur-village-festival/ | 98 | 2.0 s | 0.004 | N/A | 1 | 1 | 0 |
+| /events/ubud-food-festival/ | 98 | 2.0 s | 0.004 | N/A | 1 | 1 | 0 |
+| /events/nusa-dua-festival/ | 98 | 2.0 s | 0.004 | N/A | 1 | 1 | 0 |
+| /stories/chef-interviews/ | 87 | 3.4 s | 0 | N/A | 1 | 1 | 0 |
+| /stories/inside-balis-growing-fine-dining-scene/ | 98 | 2.0 s | 0.019 | N/A | 1 | 1 | 0 |
+| /stories/top-10-new-restaurants-in-bali-2025/ | 87 | 3.3 s | 0 | N/A | 1 | 1 | 0 |
+
+**Console Errors Found:**
+
+- **/** (Chrome):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/** (Safari):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/events/balinale/** (Chrome):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/events/balinale/** (Safari):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/events/sanur-village-festival/** (Chrome):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/events/sanur-village-festival/** (Safari):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/events/ubud-food-festival/** (Chrome):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/events/ubud-food-festival/** (Safari):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/events/nusa-dua-festival/** (Chrome):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/events/nusa-dua-festival/** (Safari):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/stories/chef-interviews/** (Chrome):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/stories/chef-interviews/** (Safari):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/stories/inside-balis-growing-fine-dining-scene/** (Chrome):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/stories/inside-balis-growing-fine-dining-scene/** (Safari):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/stories/top-10-new-restaurants-in-bali-2025/** (Chrome):
+  - `Failed to load resource: the server responded with a status of 400 ()`
+- **/stories/top-10-new-restaurants-in-bali-2025/** (Safari):
+  - `Failed to load resource: the server responded with a status of 400 ()`
 
 ---
 
