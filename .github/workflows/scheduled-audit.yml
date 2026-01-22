@@ -1,10 +1,8 @@
 name: Scheduled Website Audit
 
 on:
-  # Schedule: 9 PM GMT+8 (1 PM UTC) daily
   schedule:
     - cron: '0 13 * * *'
-  # Allow manual trigger
   workflow_dispatch:
     inputs:
       single_site:
@@ -18,7 +16,7 @@ on:
 
 env:
   NODE_VERSION: '20'
-  DISCUSSION_NUMBER: 4
+  DISCUSSION_NUMBER: '4'
 
 jobs:
   audit:
@@ -43,10 +41,9 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium webkit firefox
 
-      - name: Clean old history files (keep only latest)
+      - name: Clean old history files
         run: |
           if [ -d "data/history" ]; then
-            # Keep only the most recent file, delete others
             cd data/history
             ls -t | tail -n +2 | xargs -r rm -f
             cd ../..
@@ -67,72 +64,48 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_OUTPUT
 
-      - name: Update Discussion #4 with latest report
+      - name: Update Discussion with latest report
         uses: actions/github-script@v7
+        env:
+          REPORT_DATE: ${{ steps.date.outputs.date }}
         with:
           script: |
             const fs = require('fs');
-
-            // Read the report content
             const reportContent = fs.readFileSync('reports/report.md', 'utf8');
+            const reportDate = process.env.REPORT_DATE;
+            const discussionNumber = parseInt(process.env.DISCUSSION_NUMBER || '4');
 
-            // Get the discussion
-            const query = `
-              query($owner: String!, $repo: String!, $number: Int!) {
-                repository(owner: $owner, name: $repo) {
-                  discussion(number: $number) {
-                    id
-                    body
-                  }
-                }
+            const query = `query($owner: String!, $repo: String!, $number: Int!) {
+              repository(owner: $owner, name: $repo) {
+                discussion(number: $number) { id body }
               }
-            `;
-
-            const variables = {
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              number: ${{ env.DISCUSSION_NUMBER }}
-            };
+            }`;
 
             try {
-              const result = await github.graphql(query, variables);
-              const discussionId = result.repository.discussion.id;
-
-              // Update the discussion body with the new report
-              const updateMutation = `
-                mutation($discussionId: ID!, $body: String!) {
-                  updateDiscussion(input: {discussionId: $discussionId, body: $body}) {
-                    discussion {
-                      id
-                      updatedAt
-                    }
-                  }
-                }
-              `;
-
-              const newBody = `# Daily QA Site Report
-
-**Last Updated:** ${{ steps.date.outputs.date }}
-
----
-
-${reportContent}
-
----
-*This report is automatically updated daily at 9 PM GMT+8*`;
-
-              await github.graphql(updateMutation, {
-                discussionId: discussionId,
-                body: newBody
+              const result = await github.graphql(query, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                number: discussionNumber
               });
 
-              console.log('Discussion #${{ env.DISCUSSION_NUMBER }} updated successfully');
+              const discussionId = result.repository.discussion.id;
+              const header = '# Daily QA Site Report\n\n';
+              const updated = '**Last Updated:** ' + reportDate + '\n\n---\n\n';
+              const footer = '\n\n---\n*This report is automatically updated daily at 9 PM GMT+8*';
+              const newBody = header + updated + reportContent + footer;
+
+              await github.graphql(`mutation($id: ID!, $body: String!) {
+                updateDiscussion(input: {discussionId: $id, body: $body}) {
+                  discussion { id }
+                }
+              }`, { id: discussionId, body: newBody });
+
+              console.log('Discussion updated successfully');
             } catch (error) {
               console.error('Failed to update discussion:', error.message);
-              // If discussion doesn't exist, log the error but don't fail
             }
 
-      - name: Upload reports as artifacts (latest only)
+      - name: Upload reports as artifacts
         uses: actions/upload-artifact@v4
         with:
           name: audit-report-latest
@@ -143,20 +116,14 @@ ${reportContent}
           retention-days: 7
           overwrite: true
 
-      - name: Commit updated reports to repository
+      - name: Commit updated reports
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-
-          # Clean old history, keep only latest
           if [ -d "data/history" ]; then
-            cd data/history
-            ls -t | tail -n +2 | xargs -r rm -f
-            cd ../..
+            cd data/history && ls -t | tail -n +2 | xargs -r rm -f && cd ../..
           fi
-
-          git add reports/
-          git add data/history/ || true
+          git add reports/ data/history/ || true
           git diff --staged --quiet || git commit -m "Daily audit report - ${{ steps.date.outputs.date }}"
           git push || echo "No changes to push"
 
@@ -169,10 +136,12 @@ ${reportContent}
         uses: actions/github-script@v7
         with:
           script: |
+            const title = 'Scheduled Audit Failed - ' + new Date().toISOString().split('T')[0];
+            const body = 'The scheduled website audit workflow failed.\n\nWorkflow run: ' + context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId;
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `Scheduled Audit Failed - ${new Date().toISOString().split('T')[0]}`,
-              body: `The scheduled website audit workflow failed.\n\nWorkflow run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              title: title,
+              body: body,
               labels: ['bug', 'automated']
-            })
+            });
