@@ -1,0 +1,178 @@
+name: Scheduled Website Audit
+
+on:
+  # Schedule: 9 PM GMT+8 (1 PM UTC) daily
+  schedule:
+    - cron: '0 13 * * *'
+  # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      single_site:
+        description: 'Single site URL to audit (optional)'
+        required: false
+        type: string
+      site_name:
+        description: 'Name for the single site (optional)'
+        required: false
+        type: string
+
+env:
+  NODE_VERSION: '20'
+  DISCUSSION_NUMBER: 4
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      discussions: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium webkit firefox
+
+      - name: Clean old history files (keep only latest)
+        run: |
+          if [ -d "data/history" ]; then
+            # Keep only the most recent file, delete others
+            cd data/history
+            ls -t | tail -n +2 | xargs -r rm -f
+            cd ../..
+          fi
+
+      - name: Run audit (all sites)
+        if: ${{ github.event.inputs.single_site == '' }}
+        run: node index.js --max-pages 5
+        continue-on-error: true
+
+      - name: Run audit (single site)
+        if: ${{ github.event.inputs.single_site != '' }}
+        run: |
+          node index.js --site "${{ github.event.inputs.single_site }}" --name "${{ github.event.inputs.site_name || 'Manual Audit' }}" --max-pages 5
+        continue-on-error: true
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_OUTPUT
+
+      - name: Update Discussion #4 with latest report
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Read the report content
+            const reportContent = fs.readFileSync('reports/report.md', 'utf8');
+
+            // Get the discussion
+            const query = `
+              query($owner: String!, $repo: String!, $number: Int!) {
+                repository(owner: $owner, name: $repo) {
+                  discussion(number: $number) {
+                    id
+                    body
+                  }
+                }
+              }
+            `;
+
+            const variables = {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              number: ${{ env.DISCUSSION_NUMBER }}
+            };
+
+            try {
+              const result = await github.graphql(query, variables);
+              const discussionId = result.repository.discussion.id;
+
+              // Update the discussion body with the new report
+              const updateMutation = `
+                mutation($discussionId: ID!, $body: String!) {
+                  updateDiscussion(input: {discussionId: $discussionId, body: $body}) {
+                    discussion {
+                      id
+                      updatedAt
+                    }
+                  }
+                }
+              `;
+
+              const newBody = `# Daily QA Site Report
+
+**Last Updated:** ${{ steps.date.outputs.date }}
+
+---
+
+${reportContent}
+
+---
+*This report is automatically updated daily at 9 PM GMT+8*`;
+
+              await github.graphql(updateMutation, {
+                discussionId: discussionId,
+                body: newBody
+              });
+
+              console.log('Discussion #${{ env.DISCUSSION_NUMBER }} updated successfully');
+            } catch (error) {
+              console.error('Failed to update discussion:', error.message);
+              // If discussion doesn't exist, log the error but don't fail
+            }
+
+      - name: Upload reports as artifacts (latest only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-report-latest
+          path: |
+            reports/report.md
+            reports/dashboard.html
+            reports/report-data.json
+          retention-days: 7
+          overwrite: true
+
+      - name: Commit updated reports to repository
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Clean old history, keep only latest
+          if [ -d "data/history" ]; then
+            cd data/history
+            ls -t | tail -n +2 | xargs -r rm -f
+            cd ../..
+          fi
+
+          git add reports/
+          git add data/history/ || true
+          git diff --staged --quiet || git commit -m "Daily audit report - ${{ steps.date.outputs.date }}"
+          git push || echo "No changes to push"
+
+  notify-on-failure:
+    needs: audit
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Create issue on failure
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Scheduled Audit Failed - ${new Date().toISOString().split('T')[0]}`,
+              body: `The scheduled website audit workflow failed.\n\nWorkflow run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              labels: ['bug', 'automated']
+            })

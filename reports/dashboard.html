@@ -4,1078 +4,395 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Development Readiness Report</title>
+        <title>Development Readiness Report v2.0</title>
         <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 20px; background-color: #f4f4f9; color: #333; }
-            h1, h2 { color: #444; }
+            * { box-sizing: border-box; }
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f9; color: #333; }
+            .container { max-width: 1400px; margin: 0 auto; }
+            h1, h2, h3 { color: #444; }
             .header-info { color: #666; font-size: 14px; margin-bottom: 20px; }
-            .stats { display: flex; gap: 20px; margin-bottom: 20px; }
-            .stat-card { background: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            .stats { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 30px; }
+            .stat-card { background: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); min-width: 150px; }
             .stat-card h3 { margin: 0; font-size: 24px; }
-            .stat-card p { margin: 5px 0 0; color: #666; }
-            table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
-            th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
-            th { background-color: #007bff; color: white; }
-            tr:nth-child(even) { background-color: #f2f2f2; }
-            .site-summary { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            .stat-card p { margin: 5px 0 0; color: #666; font-size: 12px; }
+            .tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+            .tab { padding: 10px 20px; background: #e0e0e0; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; }
+            .tab.active { background: #007bff; color: white; }
+            .tab-content { display: none; }
+            .tab-content.active { display: block; }
+            table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
+            th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+            th { background-color: #007bff; color: white; position: sticky; top: 0; }
+            tr:nth-child(even) { background-color: #f9f9f9; }
+            .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
             .errors { color: #d9534f; }
             .no-errors { color: #5cb85c; }
             .perf-good { color: #5cb85c; font-weight: bold; }
             .perf-ok { color: #f0ad4e; font-weight: bold; }
             .perf-bad { color: #d9534f; font-weight: bold; }
-            a { color: #007bff; }
+            .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+            .badge-success { background: #d4edda; color: #155724; }
+            .badge-warning { background: #fff3cd; color: #856404; }
+            .badge-danger { background: #f8d7da; color: #721c24; }
+            .badge-info { background: #d1ecf1; color: #0c5460; }
+            a { color: #007bff; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+            .collapsible { cursor: pointer; padding: 10px; background: #f5f5f5; border: none; width: 100%; text-align: left; font-size: 14px; border-radius: 5px; margin-bottom: 5px; }
+            .collapsible:hover { background: #e0e0e0; }
+            .collapsible-content { display: none; padding: 10px; background: #fafafa; border-radius: 0 0 5px 5px; margin-bottom: 10px; }
+            .check-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #eee; }
+            .check-icon { font-size: 16px; }
+            .scroll-table { overflow-x: auto; }
         </style>
     </head>
     <body>
-        <h1>Development Readiness Report</h1>
-        <p class="header-info">Generated: 1/15/2026, 10:37:05 PM</p>
-        <div class="stats">
-            <div class="stat-card"><h3>8</h3><p>Sites Audited</p></div>
-            <div class="stat-card"><h3>96</h3><p>Pages Scanned</p></div>
-            <div class="stat-card"><h3 class="errors">77</h3><p>Console Errors</p></div>
-        </div><h2>Overall Site Summary</h2><div class="site-summary"><table>
-        <tr><th>Site Name</th><th>Average Performance</th></tr><tr><td>Uluwatu School</td><td class="perf-ok">73.45</td></tr><tr><td>7Origin</td><td class="perf-ok">62.65</td></tr><tr><td>Hideaway Villas</td><td class="perf-ok">75.40</td></tr><tr><td>YPI</td><td class="perf-ok">78.75</td></tr><tr><td>Unique</td><td class="perf-ok">72.22</td></tr><tr><td>The Pala</td><td class="perf-ok">60.00</td></tr><tr><td>PACA</td><td class="perf-good">91.71</td></tr><tr><td>BRCS</td><td class="perf-good">91.38</td></tr></table></div><h2>Uluwatu School</h2><table>
+        <div class="container">
+            <h1>🔍 Development Readiness Report v2.0</h1>
+            <p class="header-info">Generated: 1/22/2026, 7:21:39 PM</p>
+
+            <div class="stats">
+                <div class="stat-card"><h3>1</h3><p>Sites Audited</p></div>
+                <div class="stat-card"><h3>20</h3><p>Pages Scanned</p></div>
+                <div class="stat-card"><h3 class="errors">1</h3><p>Console Errors</p></div>
+            </div><div class="tabs"><button class="tab active" onclick="showTab('site-0')">MOTA</button></div><div id="site-0" class="tab-content active"><div class="grid-2"><div class="card">
+            <h3>📈 Performance Overview</h3>
+            <div class="check-item">
+                <span>Desktop Avg:</span>
+                <span class="perf-ok">67</span>
+            </div>
+            <div class="check-item">
+                <span>Mobile Avg:</span>
+                <span class="perf-ok">64</span>
+            </div>
+        </div><div class="card">
+            <h3>🔒 Security Headers</h3>
+            <div class="check-item">
+                <span>Score:</span>
+                <span class="perf-bad">14%</span>
+            </div>
+            <div class="check-item">
+                <span>Missing:</span>
+                <span>strict-transport-security, x-content-type-options, x-frame-options, x-xss-protection, referrer-policy, permissions-policy</span>
+            </div>
+        </div><div class="card">
+            <h3>🔗 URL Canonicalization</h3>
+            <div class="check-item">
+                <span class="check-icon">✅</span>
+                <span>HTTP → HTTPS Redirect</span>
+            </div>
+            <div class="check-item">
+                <span class="check-icon">✅</span>
+                <span>WWW Consistency</span>
+            </div>
+        </div><div class="card">
+            <h3>⚡ HTTP/3 Support</h3>
+            <div class="check-item">
+                <span class="check-icon">✅</span>
+                <span>QUIC/HTTP3 Supported</span>
+            </div>
+            <small>Alt-Svc: h3=":443"; ma=86400...</small>
+        </div><div class="card">
+            <h3>📊 Google Services</h3>
+            <div class="check-item">
+                <span class="check-icon">❌</span>
+                <span>Google Analytics </span>
+            </div>
+            <div class="check-item">
+                <span class="check-icon">❌</span>
+                <span>Tag Manager </span>
+            </div>
+            <div class="check-item">
+                <span class="check-icon">❌</span>
+                <span>reCAPTCHA </span>
+            </div>
+        </div><div class="card">
+            <h3>📝 CMS Detection</h3>
+            
+                <div class="check-item">
+                    <span class="badge badge-info">WordPress 6.8.3</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">⚠️</span>
+                    <span>Login URL Exposed</span>
+                </div>
+            
+        </div><div class="card">
+            <h3>🔗 Broken Links</h3>
+            <div class="check-item">
+                <span>Checked:</span>
+                <span>49 links</span>
+            </div>
+            <div class="check-item">
+                <span>Broken:</span>
+                <span class="no-errors">0</span>
+            </div>
+        </div></div><div class="card">
+            <h3>📄 Page Details</h3>
+            <div class="scroll-table">
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Desktop Perf</th>
+                    <th>Mobile Perf</th>
+                    <th>Accessibility</th>
+                    <th>SEO</th>
+                    <th>Best Practices</th>
+                    <th>LCP</th>
+                    <th>CLS</th>
+                    <th>Errors</th>
+                    <th>Failed Requests</th>
+                </tr>
             <tr>
-                <th>URL</th>
-                <th>Performance</th>
-                <th>LCP</th>
-                <th>CLS</th>
-                <th>INP</th>
-                <th>Chrome Errors</th>
-                <th>Safari Errors</th>
-                <th>Firefox Errors</th>
-            </tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/" target="_blank">https://darkviolet-mink-263216.hostingersite.com/</a></td>
-                <td class="perf-ok">59.00</td>
-                <td>22.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
+                <td><a href="https://www.motagarage.com/" target="_blank">/</a></td>
+                <td class="perf-ok">83</td>
+                <td class="perf-ok">59</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>1.9 s</td>
+                <td>0.003</td>
                 <td class="errors">1</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/about-us/" target="_blank">https://darkviolet-mink-263216.hostingersite.com/about-us/</a></td>
-                <td class="perf-ok">66.00</td>
-                <td>10.9 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/program/" target="_blank">https://darkviolet-mink-263216.hostingersite.com/program/</a></td>
-                <td class="perf-good">92.00</td>
-                <td>2.8 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/admissions/" target="_blank">https://darkviolet-mink-263216.hostingersite.com/admissions/</a></td>
-                <td class="perf-ok">76.00</td>
-                <td>5.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/contact/" target="_blank">https://darkviolet-mink-263216.hostingersite.com/contact/</a></td>
-                <td class="perf-ok">77.00</td>
-                <td>5.2 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="errors">2</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/partners" target="_blank">https://darkviolet-mink-263216.hostingersite.com/partners</a></td>
-                <td class="perf-bad">Error</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr><tr><td colspan="8" class="errors"><strong>Error:</strong> page.$$eval: Execution context was destroyed, most likely because of a navigation</td></tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/privacy-policy-and-term-conditions" target="_blank">https://darkviolet-mink-263216.hostingersite.com/privacy-policy-and-term-conditions</a></td>
-                <td class="perf-good">93.00</td>
-                <td>2.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/privacy-policy-and-term-conditions/" target="_blank">https://darkviolet-mink-263216.hostingersite.com/privacy-policy-and-term-conditions/</a></td>
-                <td class="perf-good">93.00</td>
-                <td>2.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/about-us" target="_blank">https://darkviolet-mink-263216.hostingersite.com/about-us</a></td>
-                <td class="perf-ok">66.00</td>
-                <td>11.1 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/partners/" target="_blank">https://darkviolet-mink-263216.hostingersite.com/partners/</a></td>
-                <td class="perf-good">93.00</td>
-                <td>2.8 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://darkviolet-mink-263216.hostingersite.com/tuition-and-fees/" target="_blank">https://darkviolet-mink-263216.hostingersite.com/tuition-and-fees/</a></td>
-                <td class="perf-good">93.00</td>
-                <td>2.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-            </tr></table><h2>7Origin</h2><table>
-            <tr>
-                <th>URL</th>
-                <th>Performance</th>
-                <th>LCP</th>
-                <th>CLS</th>
-                <th>INP</th>
-                <th>Chrome Errors</th>
-                <th>Safari Errors</th>
-                <th>Firefox Errors</th>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/</a></td>
-                <td class="perf-ok">61.00</td>
-                <td>7.9 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
+                <td><a href="https://www.motagarage.com/customs/" target="_blank">/customs/</a></td>
+                <td class="perf-good">97</td>
+                <td class="perf-ok">60</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>1.2 s</td>
+                <td>0.003</td>
                 <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/mantra-of-kahwa/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/mantra-of-kahwa/</a></td>
-                <td class="perf-ok">58.00</td>
-                <td>11.1 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/house-of-cula/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/house-of-cula/</a></td>
-                <td class="perf-ok">58.00</td>
-                <td>10.0 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/legacy-of-java/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/legacy-of-java/</a></td>
-                <td class="perf-ok">58.00</td>
-                <td>10.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/aroma-of-heaven/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/aroma-of-heaven/</a></td>
-                <td class="perf-ok">58.00</td>
-                <td>11.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/mantra-of-kahwa/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/mantra-of-kahwa/</a></td>
-                <td class="perf-ok">58.00</td>
-                <td>11.1 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/home/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/home/</a></td>
-                <td class="perf-ok">64.00</td>
-                <td>7.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/home" target="_blank">https://aquamarine-panther-399421.hostingersite.com/home</a></td>
-                <td class="perf-ok">62.00</td>
-                <td>7.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/screening/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/screening/</a></td>
-                <td class="perf-ok">59.00</td>
-                <td>7.8 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/shop/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/shop/</a></td>
-                <td class="perf-ok">62.00</td>
-                <td>7.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/product/mantra-of-kahwa-t-shirt/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/product/mantra-of-kahwa-t-shirt/</a></td>
-                <td class="perf-ok">61.00</td>
-                <td>7.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/product/mantra-of-kahwa-poster/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/product/mantra-of-kahwa-poster/</a></td>
-                <td class="perf-ok">60.00</td>
-                <td>7.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/product/mantra-of-kahwa-post-card/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/product/mantra-of-kahwa-post-card/</a></td>
-                <td class="perf-ok">84.00</td>
-                <td>3.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/product/mantra-of-kahwa-magnets/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/product/mantra-of-kahwa-magnets/</a></td>
-                <td class="perf-ok">63.00</td>
-                <td>7.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/house-of-cula/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/house-of-cula/</a></td>
-                <td class="perf-ok">58.00</td>
-                <td>10.1 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/upcoming/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/upcoming/</a></td>
-                <td class="perf-ok">61.00</td>
-                <td>7.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/product/house-of-cula-t-shirt/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/product/house-of-cula-t-shirt/</a></td>
-                <td class="perf-ok">84.00</td>
-                <td>3.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/product/house-of-cula-poster/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/product/house-of-cula-poster/</a></td>
-                <td class="perf-ok">62.00</td>
-                <td>7.4 s</td>
-                <td>0.005</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/product/house-of-cula-post-card/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/product/house-of-cula-post-card/</a></td>
-                <td class="perf-ok">61.00</td>
-                <td>7.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://aquamarine-panther-399421.hostingersite.com/en/product/house-of-cula-magnets/" target="_blank">https://aquamarine-panther-399421.hostingersite.com/en/product/house-of-cula-magnets/</a></td>
-                <td class="perf-ok">61.00</td>
-                <td>7.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr></table><h2>Hideaway Villas</h2><table>
-            <tr>
-                <th>URL</th>
-                <th>Performance</th>
-                <th>LCP</th>
-                <th>CLS</th>
-                <th>INP</th>
-                <th>Chrome Errors</th>
-                <th>Safari Errors</th>
-                <th>Firefox Errors</th>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/</a></td>
-                <td class="perf-ok">79.00</td>
+                <td><a href="https://www.motagarage.com/customs/mota-unika/" target="_blank">/customs/mota-unika/</a></td>
+                <td class="perf-ok">59</td>
+                <td class="perf-ok">71</td>
+                <td class="perf-good">96</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
                 <td>4.3 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/about/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/about/</a></td>
-                <td class="perf-ok">68.00</td>
-                <td>6.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
+                <td>0.002</td>
                 <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/our-villas/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/our-villas/</a></td>
-                <td class="perf-ok">63.00</td>
-                <td>11.0 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/our-villas/villa-tau/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/our-villas/villa-tau/</a></td>
-                <td class="perf-ok">63.00</td>
-                <td>8.2 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="errors">8</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/our-villas/villa-cocoa/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/our-villas/villa-cocoa/</a></td>
-                <td class="perf-ok">58.00</td>
-                <td>11.7 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="errors">8</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/our-villas/villa-sagitta/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/our-villas/villa-sagitta/</a></td>
-                <td class="perf-ok">60.00</td>
-                <td>8.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="errors">8</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/calendars/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/calendars/</a></td>
-                <td class="perf-ok">83.00</td>
-                <td>4.5 s</td>
-                <td>0.03</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="errors">10</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/wellness-center/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/wellness-center/</a></td>
-                <td class="perf-ok">71.00</td>
-                <td>5.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/villa-tau-gallery/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/villa-tau-gallery/</a></td>
-                <td class="perf-ok">88.00</td>
-                <td>3.2 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/villa-sagitta-gallery/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/villa-sagitta-gallery/</a></td>
-                <td class="perf-ok">89.00</td>
-                <td>3.0 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/villa-cocoa-maya-gallery/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/villa-cocoa-maya-gallery/</a></td>
-                <td class="perf-good">90.00</td>
-                <td>3.0 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/category/blog/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/category/blog/</a></td>
-                <td class="perf-ok">84.00</td>
-                <td>3.7 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/contact/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/contact/</a></td>
-                <td class="perf-ok">66.00</td>
-                <td>8.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/book" target="_blank">https://lightgray-turkey-171655.hostingersite.com/book</a></td>
-                <td class="perf-ok">80.00</td>
-                <td>3.2 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="errors">4</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/book/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/book/</a></td>
-                <td class="perf-ok">72.00</td>
-                <td>4.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="errors">4</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/</a></td>
-                <td class="perf-ok">58.00</td>
-                <td>9.2 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/</a></td>
-                <td class="perf-ok">88.00</td>
-                <td>3.3 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/3-really-good-reasons-to-pack-light-for-bali/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/3-really-good-reasons-to-pack-light-for-bali/</a></td>
-                <td class="perf-ok">88.00</td>
-                <td>3.2 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/our-10-favourite-things-to-do-in-ubud/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/our-10-favourite-things-to-do-in-ubud/</a></td>
-                <td class="perf-ok">81.00</td>
-                <td>4.1 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightgray-turkey-171655.hostingersite.com/12-things-you-need-to-know-about-driving-in-bali/" target="_blank">https://lightgray-turkey-171655.hostingersite.com/12-things-you-need-to-know-about-driving-in-bali/</a></td>
-                <td class="perf-ok">79.00</td>
-                <td>4.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr></table><h2>YPI</h2><table>
-            <tr>
-                <th>URL</th>
-                <th>Performance</th>
-                <th>LCP</th>
-                <th>CLS</th>
-                <th>INP</th>
-                <th>Chrome Errors</th>
-                <th>Safari Errors</th>
-                <th>Firefox Errors</th>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/</a></td>
-                <td class="perf-good">90.00</td>
-                <td>2.4 s</td>
-                <td>0.043</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/destination/bali/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/destination/bali/</a></td>
-                <td class="perf-ok">75.00</td>
-                <td>4.8 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/destination/java/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/destination/java/</a></td>
-                <td class="perf-ok">78.00</td>
-                <td>4.3 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/destination/lombok/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/destination/lombok/</a></td>
-                <td class="perf-ok">77.00</td>
-                <td>4.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/service/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/service/</a></td>
-                <td class="perf-ok">84.00</td>
-                <td>3.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/about/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/about/</a></td>
-                <td class="perf-ok">60.00</td>
-                <td>35.7 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/contact-us-student/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/contact-us-student/</a></td>
-                <td class="perf-ok">74.00</td>
-                <td>4.8 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/contact-us-for-companies/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/contact-us-for-companies/</a></td>
-                <td class="perf-ok">75.00</td>
-                <td>4.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/nl/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/nl/</a></td>
-                <td class="perf-ok">74.00</td>
-                <td>4.9 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/apply/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/apply/</a></td>
-                <td class="perf-ok">76.00</td>
-                <td>4.3 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/location/bali/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/location/bali/</a></td>
-                <td class="perf-ok">82.00</td>
-                <td>3.7 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/destination/java" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/destination/java</a></td>
-                <td class="perf-ok">78.00</td>
-                <td>4.3 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/destination/lombok" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/destination/lombok</a></td>
-                <td class="perf-ok">76.00</td>
-                <td>4.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/blog/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/blog/</a></td>
-                <td class="perf-ok">84.00</td>
-                <td>3.7 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/terms-condition/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/terms-condition/</a></td>
-                <td class="perf-ok">87.00</td>
-                <td>3.3 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/privacy-policy/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/privacy-policy/</a></td>
-                <td class="perf-ok">85.00</td>
-                <td>3.3 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/faq" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/faq</a></td>
-                <td class="perf-ok">84.00</td>
+                <td><a href="https://www.motagarage.com/customs/mota-ikona/" target="_blank">/customs/mota-ikona/</a></td>
+                <td class="perf-ok">63</td>
+                <td class="perf-ok">62</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
                 <td>3.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/nl/destination/bali/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/nl/destination/bali/</a></td>
-                <td class="perf-ok">76.00</td>
-                <td>4.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
+                <td>0.002</td>
                 <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/nl/destination/java/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/nl/destination/java/</a></td>
-                <td class="perf-ok">78.00</td>
-                <td>4.2 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://mintcream-flamingo-191587.hostingersite.com/location/java/" target="_blank">https://mintcream-flamingo-191587.hostingersite.com/location/java/</a></td>
-                <td class="perf-ok">82.00</td>
-                <td>3.7 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr></table><h2>Unique</h2><table>
-            <tr>
-                <th>URL</th>
-                <th>Performance</th>
-                <th>LCP</th>
-                <th>CLS</th>
-                <th>INP</th>
-                <th>Chrome Errors</th>
-                <th>Safari Errors</th>
-                <th>Firefox Errors</th>
-            </tr>
-            <tr>
-                <td><a href="https://lightcyan-horse-210187.hostingersite.com/" target="_blank">https://lightcyan-horse-210187.hostingersite.com/</a></td>
-                <td class="perf-ok">70.00</td>
-                <td>5.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
+                <td><a href="https://www.motagarage.com/customs/mota-klassika/" target="_blank">/customs/mota-klassika/</a></td>
+                <td class="perf-ok">57</td>
+                <td class="perf-ok">60</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>5.2 s</td>
+                <td>0.002</td>
                 <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://lightcyan-horse-210187.hostingersite.com/program/" target="_blank">https://lightcyan-horse-210187.hostingersite.com/program/</a></td>
-                <td class="perf-ok">72.00</td>
-                <td>5.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightcyan-horse-210187.hostingersite.com/accomodation/" target="_blank">https://lightcyan-horse-210187.hostingersite.com/accomodation/</a></td>
-                <td class="perf-ok">73.00</td>
-                <td>4.9 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
+                <td><a href="https://www.motagarage.com/customs/mota-terra/" target="_blank">/customs/mota-terra/</a></td>
+                <td class="perf-ok">83</td>
+                <td class="perf-ok">65</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>1.9 s</td>
+                <td>0.004</td>
                 <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://lightcyan-horse-210187.hostingersite.com/pricing/" target="_blank">https://lightcyan-horse-210187.hostingersite.com/pricing/</a></td>
-                <td class="perf-ok">73.00</td>
-                <td>5.7 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightcyan-horse-210187.hostingersite.com/about/" target="_blank">https://lightcyan-horse-210187.hostingersite.com/about/</a></td>
-                <td class="perf-ok">68.00</td>
-                <td>6.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightcyan-horse-210187.hostingersite.com/faq/" target="_blank">https://lightcyan-horse-210187.hostingersite.com/faq/</a></td>
-                <td class="perf-ok">79.00</td>
-                <td>4.3 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightcyan-horse-210187.hostingersite.com/enquiry/" target="_blank">https://lightcyan-horse-210187.hostingersite.com/enquiry/</a></td>
-                <td class="perf-ok">72.00</td>
-                <td>5.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightcyan-horse-210187.hostingersite.com/accomodation/maya-garden-manor-mgm1/" target="_blank">https://lightcyan-horse-210187.hostingersite.com/accomodation/maya-garden-manor-mgm1/</a></td>
-                <td class="perf-ok">71.00</td>
-                <td>5.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://lightcyan-horse-210187.hostingersite.com/enquiry" target="_blank">https://lightcyan-horse-210187.hostingersite.com/enquiry</a></td>
-                <td class="perf-ok">72.00</td>
-                <td>5.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr></table><h2>The Pala</h2><table>
-            <tr>
-                <th>URL</th>
-                <th>Performance</th>
-                <th>LCP</th>
-                <th>CLS</th>
-                <th>INP</th>
-                <th>Chrome Errors</th>
-                <th>Safari Errors</th>
-                <th>Firefox Errors</th>
-            </tr>
-            <tr>
-                <td><a href="https://midnightblue-mallard-922123.hostingersite.com/" target="_blank">https://midnightblue-mallard-922123.hostingersite.com/</a></td>
-                <td class="perf-ok">60.00</td>
-                <td>8.0 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="no-errors">0</td>
-                <td class="errors">1</td>
-            </tr></table><h2>PACA</h2><table>
-            <tr>
-                <th>URL</th>
-                <th>Performance</th>
-                <th>LCP</th>
-                <th>CLS</th>
-                <th>INP</th>
-                <th>Chrome Errors</th>
-                <th>Safari Errors</th>
-                <th>Firefox Errors</th>
-            </tr>
-            <tr>
-                <td><a href="https://greenyellow-goshawk-435428.hostingersite.com/fr/" target="_blank">https://greenyellow-goshawk-435428.hostingersite.com/fr/</a></td>
-                <td class="perf-bad">49.00</td>
-                <td>22.2 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://greenyellow-goshawk-435428.hostingersite.com/fr/climatisation/" target="_blank">https://greenyellow-goshawk-435428.hostingersite.com/fr/climatisation/</a></td>
-                <td class="perf-good">94.00</td>
+                <td><a href="https://www.motagarage.com/customs/mota-pista/" target="_blank">/customs/mota-pista/</a></td>
+                <td class="perf-ok">67</td>
+                <td class="perf-ok">67</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
                 <td>3.0 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://greenyellow-goshawk-435428.hostingersite.com/fr/pompe-a-chaleur/" target="_blank">https://greenyellow-goshawk-435428.hostingersite.com/fr/pompe-a-chaleur/</a></td>
-                <td class="perf-good">100.00</td>
-                <td>1.5 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
+                <td>0.002</td>
                 <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://greenyellow-goshawk-435428.hostingersite.com/fr/plomberie/" target="_blank">https://greenyellow-goshawk-435428.hostingersite.com/fr/plomberie/</a></td>
-                <td class="perf-good">99.00</td>
-                <td>2.0 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="https://greenyellow-goshawk-435428.hostingersite.com/" target="_blank">https://greenyellow-goshawk-435428.hostingersite.com/</a></td>
-                <td class="perf-good">100.00</td>
-                <td>1.6 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
+                <td><a href="https://www.motagarage.com/customs/mota-elleta/" target="_blank">/customs/mota-elleta/</a></td>
+                <td class="perf-ok">61</td>
+                <td class="perf-ok">66</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>3.9 s</td>
+                <td>0.001</td>
                 <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://greenyellow-goshawk-435428.hostingersite.com/fr/mentions-legales/" target="_blank">https://greenyellow-goshawk-435428.hostingersite.com/fr/mentions-legales/</a></td>
-                <td class="perf-good">100.00</td>
-                <td>0.9 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="no-errors">0</td>
+                <td><a href="https://www.motagarage.com/garage/" target="_blank">/garage/</a></td>
+                <td class="perf-ok">57</td>
+                <td class="perf-ok">59</td>
+                <td class="perf-good">99</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>5.4 s</td>
+                <td>0.001</td>
                 <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://greenyellow-goshawk-435428.hostingersite.com/fr/politique-de-confidentialite/" target="_blank">https://greenyellow-goshawk-435428.hostingersite.com/fr/politique-de-confidentialite/</a></td>
-                <td class="perf-good">100.00</td>
-                <td>0.9 s</td>
-                <td>0</td>
-                <td>N/A</td>
+                <td><a href="https://www.motagarage.com/garage/cafe/" target="_blank">/garage/cafe/</a></td>
+                <td class="perf-ok">59</td>
+                <td class="perf-ok">58</td>
+                <td class="perf-good">98</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>4.7 s</td>
+                <td>0.022</td>
                 <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-                <td class="no-errors">0</td>
-            </tr></table><h2>BRCS</h2><table>
-            <tr>
-                <th>URL</th>
-                <th>Performance</th>
-                <th>LCP</th>
-                <th>CLS</th>
-                <th>INP</th>
-                <th>Chrome Errors</th>
-                <th>Safari Errors</th>
-                <th>Firefox Errors</th>
-            </tr>
-            <tr>
-                <td><a href="https://bisque-hummingbird-438495.hostingersite.com/" target="_blank">https://bisque-hummingbird-438495.hostingersite.com/</a></td>
-                <td class="perf-ok">78.00</td>
-                <td>5.5 s</td>
-                <td>0.005</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://bisque-hummingbird-438495.hostingersite.com/events/balinale/" target="_blank">https://bisque-hummingbird-438495.hostingersite.com/events/balinale/</a></td>
-                <td class="perf-ok">87.00</td>
-                <td>3.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
+                <td><a href="https://www.motagarage.com/garage/mota-spa/" target="_blank">/garage/mota-spa/</a></td>
+                <td class="perf-ok">62</td>
+                <td class="perf-ok">63</td>
+                <td class="perf-good">99</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>3.7 s</td>
+                <td>0.001</td>
+                <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://bisque-hummingbird-438495.hostingersite.com/events/sanur-village-festival/" target="_blank">https://bisque-hummingbird-438495.hostingersite.com/events/sanur-village-festival/</a></td>
-                <td class="perf-good">98.00</td>
-                <td>2.0 s</td>
+                <td><a href="https://www.motagarage.com/garage/maintenance/" target="_blank">/garage/maintenance/</a></td>
+                <td class="perf-ok">63</td>
+                <td class="perf-ok">64</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>3.5 s</td>
+                <td>0.002</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.motagarage.com/garage/storage/" target="_blank">/garage/storage/</a></td>
+                <td class="perf-ok">60</td>
+                <td class="perf-ok">65</td>
+                <td class="perf-good">99</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>4.2 s</td>
                 <td>0.004</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
+                <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://bisque-hummingbird-438495.hostingersite.com/events/ubud-food-festival/" target="_blank">https://bisque-hummingbird-438495.hostingersite.com/events/ubud-food-festival/</a></td>
-                <td class="perf-good">98.00</td>
-                <td>2.0 s</td>
-                <td>0.004</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
+                <td><a href="https://www.motagarage.com/garage/tours/" target="_blank">/garage/tours/</a></td>
+                <td class="perf-ok">57</td>
+                <td class="perf-ok">63</td>
+                <td class="perf-good">99</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>5.4 s</td>
+                <td>0.002</td>
+                <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://bisque-hummingbird-438495.hostingersite.com/events/nusa-dua-festival/" target="_blank">https://bisque-hummingbird-438495.hostingersite.com/events/nusa-dua-festival/</a></td>
-                <td class="perf-good">98.00</td>
-                <td>2.0 s</td>
-                <td>0.004</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
+                <td><a href="https://www.motagarage.com/garage/rental/" target="_blank">/garage/rental/</a></td>
+                <td class="perf-ok">61</td>
+                <td class="perf-ok">65</td>
+                <td class="perf-good">99</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>3.9 s</td>
+                <td>0.001</td>
+                <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://bisque-hummingbird-438495.hostingersite.com/stories/chef-interviews/" target="_blank">https://bisque-hummingbird-438495.hostingersite.com/stories/chef-interviews/</a></td>
-                <td class="perf-ok">87.00</td>
-                <td>3.4 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
+                <td><a href="https://www.motagarage.com/garage/workshop/" target="_blank">/garage/workshop/</a></td>
+                <td class="perf-ok">55</td>
+                <td class="perf-ok">66</td>
+                <td class="perf-good">99</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>7.6 s</td>
+                <td>0.001</td>
+                <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://bisque-hummingbird-438495.hostingersite.com/stories/inside-balis-growing-fine-dining-scene/" target="_blank">https://bisque-hummingbird-438495.hostingersite.com/stories/inside-balis-growing-fine-dining-scene/</a></td>
-                <td class="perf-good">98.00</td>
-                <td>2.0 s</td>
-                <td>0.019</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
+                <td><a href="https://www.motagarage.com/garage/custom-paint/" target="_blank">/garage/custom-paint/</a></td>
+                <td class="perf-ok">70</td>
+                <td class="perf-ok">63</td>
+                <td class="perf-good">99</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>2.7 s</td>
+                <td>0.002</td>
+                <td class="no-errors">0</td>
                 <td class="no-errors">0</td>
             </tr>
             <tr>
-                <td><a href="https://bisque-hummingbird-438495.hostingersite.com/stories/top-10-new-restaurants-in-bali-2025/" target="_blank">https://bisque-hummingbird-438495.hostingersite.com/stories/top-10-new-restaurants-in-bali-2025/</a></td>
-                <td class="perf-ok">87.00</td>
-                <td>3.3 s</td>
-                <td>0</td>
-                <td>N/A</td>
-                <td class="errors">1</td>
-                <td class="errors">1</td>
+                <td><a href="https://www.motagarage.com/events/" target="_blank">/events/</a></td>
+                <td class="perf-ok">78</td>
+                <td class="perf-ok">60</td>
+                <td class="perf-good">98</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>2.1 s</td>
+                <td>0.001</td>
                 <td class="no-errors">0</td>
-            </tr></table>
-        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 12px;">
-            <p>Generated by Development Readiness Monitor | Powered by Lighthouse & Playwright</p>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.motagarage.com/contact/" target="_blank">/contact/</a></td>
+                <td class="perf-ok">68</td>
+                <td class="perf-ok">72</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>2.9 s</td>
+                <td>0.009</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.motagarage.com/shop/" target="_blank">/shop/</a></td>
+                <td class="perf-ok">72</td>
+                <td class="perf-ok">65</td>
+                <td class="perf-good">98</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>2.7 s</td>
+                <td>0.001</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr></table></div></div></div>
+        </div>
+        <script>
+            function showTab(tabId) {
+                document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+                document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+                document.getElementById(tabId).classList.add('active');
+                event.target.classList.add('active');
+            }
+        </script>
+        <footer style="margin-top: 40px; padding: 20px; text-align: center; color: #666; font-size: 12px;">
+            Generated by Development Readiness Monitor v2.0 | Powered by Lighthouse & Playwright
         </footer>
     </body></html>
