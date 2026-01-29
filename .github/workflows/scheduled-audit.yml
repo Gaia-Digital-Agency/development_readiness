@@ -75,15 +75,16 @@ jobs:
             const reportDate = process.env.REPORT_DATE;
             const discussionNumber = parseInt(process.env.DISCUSSION_NUMBER);
 
-            // Step 1: Get the discussion ID and existing comments
-            const fetchQuery = `query($owner: String!, $repo: String!, $number: Int!) {
+            const query = `query($owner: String!, $repo: String!, $number: Int!) {
               repository(owner: $owner, name: $repo) {
                 discussion(number: $number) {
                   id
                   comments(first: 100) {
                     nodes {
                       id
-                      author { login }
+                      author {
+                        login
+                      }
                     }
                   }
                 }
@@ -91,43 +92,49 @@ jobs:
             }`;
 
             try {
-              const result = await github.graphql(fetchQuery, {
+              const result = await github.graphql(query, {
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                number: discussionNumber
+                number: discussionNumber,
               });
 
               const discussionId = result.repository.discussion.id;
-              const existingComments = result.repository.discussion.comments.nodes;
+              const comments = result.repository.discussion.comments.nodes;
+              const botComment = comments.find(comment => comment.author.login === 'github-actions[bot]');
 
-              // Step 2: Delete previous bot comments
-              const botComments = existingComments.filter(
-                c => c.author && (c.author.login === 'github-actions[bot]' || c.author.login === 'github-actions')
-              );
+              const body = '## Audit Report - ' + reportDate + '\n\n' + reportContent;
 
-              for (const comment of botComments) {
-                try {
-                  await github.graphql(`mutation($id: ID!) {
-                    deleteDiscussionComment(input: {id: $id}) {
-                      comment { id }
+              if (botComment) {
+                // Update existing comment
+                await github.graphql(`
+                  mutation($commentId: ID!, $body: String!) {
+                    updateDiscussionComment(input: {commentId: $commentId, body: $body}) {
+                      comment {
+                        id
+                      }
                     }
-                  }`, { id: comment.id });
-                  console.log('Deleted old comment: ' + comment.id);
-                } catch (delErr) {
-                  console.log('Could not delete comment: ' + delErr.message);
-                }
+                  }
+                `, {
+                  commentId: botComment.id,
+                  body: body,
+                });
+                console.log('Updated existing comment in Discussion #' + discussionNumber);
+              } else {
+                // Create new comment
+                await github.graphql(`
+                  mutation($discussionId: ID!, $body: String!) {
+                    addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
+                      comment {
+                        id
+                      }
+                    }
+                  }
+                `, {
+                  discussionId: discussionId,
+                  body: body,
+                });
+                console.log('Created new comment in Discussion #' + discussionNumber);
               }
-
-              // Step 3: Post new comment with latest report
-              const commentBody = '## Audit Report - ' + reportDate + '\n\n' + reportContent + '\n\n---\n*Auto-generated daily at 9 PM GMT+8*';
-
-              await github.graphql(`mutation($discussionId: ID!, $body: String!) {
-                addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
-                  comment { id }
-                }
-              }`, { discussionId: discussionId, body: commentBody });
-
-              console.log('New report comment posted to Discussion #' + discussionNumber);
             } catch (error) {
               core.warning('Failed to post to discussion: ' + error.message);
               console.error('Full error:', error);
