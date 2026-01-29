@@ -347,37 +347,36 @@ async function detectGoogleServices(page) {
 // ============================================================================
 // WORDPRESS/CMS DETECTION
 // ============================================================================
-async function detectWordPress(page, baseUrl) {
+async function detectWordPress(page, baseUrl, response) {
+    const wappalyzer = require('simple-wappalyzer');
     const results = {
         isWordPress: false,
         version: null,
         loginUrlProtected: null,
         detectionMethods: [],
+        cms: null,
     };
 
     try {
-        const pageContent = await page.content();
+        const html = await page.content();
+        const headers = response.headers();
+        const statusCode = response.status();
+        const url = page.url();
 
-        // Check for WordPress indicators
-        const wpIndicators = [
-            { pattern: /wp-content/i, method: 'wp-content path' },
-            { pattern: /wp-includes/i, method: 'wp-includes path' },
-            { pattern: /<meta name="generator" content="WordPress[^"]*"/i, method: 'generator meta tag' },
-            { pattern: /\/wp-json\//i, method: 'REST API endpoint' },
-        ];
+        const wappalyzerResult = await wappalyzer({ url, html, statusCode, headers });
 
-        for (const indicator of wpIndicators) {
-            if (indicator.pattern.test(pageContent)) {
-                results.isWordPress = true;
-                results.detectionMethods.push(indicator.method);
-            }
+        const wordpress = wappalyzerResult.applications.find(app => app.name === 'WordPress');
+        if (wordpress) {
+            results.isWordPress = true;
+            results.version = wordpress.version;
+            results.detectionMethods.push('wappalyzer');
         }
 
-        // Try to get version from generator meta tag
-        const versionMatch = pageContent.match(/<meta name="generator" content="WordPress ([0-9.]+)"/i);
-        if (versionMatch) {
-            results.version = versionMatch[1];
+        const cms = wappalyzerResult.applications.find(app => app.categories.some(cat => Object.values(cat).includes('CMS')));
+        if(cms) {
+            results.cms = cms.name;
         }
+
 
         // Check if WordPress login URL is accessible
         if (results.isWordPress) {
@@ -397,21 +396,6 @@ async function detectWordPress(page, baseUrl) {
                 } catch (e) {
                     // Login URL check failed
                 }
-            }
-        }
-
-        // Check for other CMS
-        if (!results.isWordPress) {
-            if (pageContent.includes('Drupal') || pageContent.includes('/sites/default/')) {
-                results.cms = 'Drupal';
-            } else if (pageContent.includes('Joomla') || pageContent.includes('/components/com_')) {
-                results.cms = 'Joomla';
-            } else if (pageContent.includes('Shopify') || pageContent.includes('cdn.shopify.com')) {
-                results.cms = 'Shopify';
-            } else if (pageContent.includes('wix.com') || pageContent.includes('static.wixstatic.com')) {
-                results.cms = 'Wix';
-            } else if (pageContent.includes('squarespace.com')) {
-                results.cms = 'Squarespace';
             }
         }
     } catch (error) {
@@ -691,11 +675,11 @@ async function crawlAndAuditSite(site, config = DEFAULT_CONFIG) {
             if (results.pages.length === 0) {
                 const detectPage = await chromiumBrowser.newPage();
                 try {
-                    await detectPage.goto(currentUrl, { waitUntil: 'networkidle', timeout: config.pageTimeout });
+                    const response = await detectPage.goto(currentUrl, { waitUntil: 'networkidle', timeout: config.pageTimeout });
                     console.log(`  🔍 Detecting Google services...`);
                     results.siteLevel.googleServices = await detectGoogleServices(detectPage);
                     console.log(`  📝 Detecting CMS/WordPress...`);
-                    results.siteLevel.wordpress = await detectWordPress(detectPage, site.url);
+                    results.siteLevel.wordpress = await detectWordPress(detectPage, site.url, response);
                 } catch (e) {
                     console.error(`  Error detecting services: ${e.message}`);
                 } finally {

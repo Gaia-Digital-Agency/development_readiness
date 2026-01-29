@@ -94,7 +94,7 @@ jobs:
             try {
               const result = await github.graphql(query, {
                 owner: context.repo.owner,
-                repo: context.repo.repo,
+                repo: ".github",
                 number: discussionNumber,
               });
 
