@@ -1,6 +1,6 @@
 # Development Readiness Report v2.0
 
-**Generated:** 2/1/2026, 7:55:56 AM
+**Generated:** 2/1/2026, 2:05:53 PM
 
 ---
 
@@ -10,7 +10,7 @@
 |--------|-------|
 | Sites Audited | 2 |
 | Pages Scanned | 21 |
-| Console Errors | 85 |
+| Console Errors | 72 |
 
 ---
 
@@ -18,8 +18,8 @@
 
 | Site | Desktop Perf | Mobile Perf | Security | SEO | Accessibility |
 |------|-------------|-------------|----------|-----|---------------|
-| Live | 69 | 38 | 14% | 82 | 84 |
-| Staging | 67 | 50 | 57% | 100 | 100 |
+| Live | 81 | 46 | 14% | 91 | 94 |
+| Staging | 73 | 50 | 57% | 100 | 100 |
 
 ---
 
@@ -62,26 +62,26 @@
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. | LCP | CLS | Errors |
 |-----|---------|--------|------|-----|----------|-----|-----|--------|
-| / | 87 | 43 | 96 | 92 | 56 | 1.1 s | 0 | 3 |
-| /en/reservation/ | 44 | 12 | 89 | 85 | 74 | 4.3 s | 0.401 | 3 |
-| /en/ | 92 | 47 | 100 | 92 | 56 | 1.3 s | 0.001 | 4 |
-| /en/bali-villa/ | 72 | 31 | 98 | 92 | 56 | 3.6 s | 0 | 3 |
-| /en/room/pool-suite/ | 76 | 50 | 92 | 92 | 56 | 3.2 s | 0 | 7 |
-| /en/room/terrace-villas/ | 78 | 47 | 92 | 92 | 56 | 2.7 s | 0.002 | 6 |
-| /en/room/deluxe-terrace-villa/ | 78 | 46 | 92 | 92 | 56 | 2.7 s | 0.001 | 6 |
-| /en/premium-club-pool/ | 44 | 46 | 94 | 85 | 56 | 4.8 s | 1.737 | 2 |
-| /en/room/elephant-villa/ | 78 | 46 | 92 | 92 | 56 | 2.8 s | 0.001 | 6 |
-| /en/room/vice-regal-villa/ | 73 | 45 | 92 | 92 | 56 | 3.8 s | 0.004 | 7 |
-| /en/room/viceroy-bali/ | 73 | 38 | 92 | 92 | 56 | 3.4 s | 0.001 | 6 |
-| /en/hotel-offers/ | 95 | 58 | 100 | 92 | 56 | 1.2 s | 0.001 | 3 |
-| /en/packages/ | 83 | 62 | 96 | 92 | 56 | 2.3 s | 0.001 | 4 |
-| /en/bali-restaurants/ | 82 | 50 | 90 | 92 | 56 | 2.9 s | 0.001 | 3 |
-| /en/wellness-experiences/ | 83 | 50 | 98 | 92 | 56 | 2.5 s | 0.002 | 3 |
-| /en/bali-activities/ | 83 | 49 | 89 | 92 | 56 | 2.6 s | 0 | 3 |
-| /en/bali-destinations/ | 80 | 46 | 89 | 92 | 56 | 2.8 s | 0 | 3 |
-| /en/gallery/ | 80 | 0 | 94 | 92 | 56 | 3.1 s | 0 | 3 |
-| /en/blog/ | 0 | 0 | 0 | 0 | 0 | N/A | N/A | 3 |
-| /en/about/ | 0 | 0 | 0 | 0 | 0 | N/A | N/A | 3 |
+| / | 81 | 44 | 96 | 92 | 56 | 1.1 s | 0 | 4 |
+| /en/reservation/ | 46 | 20 | 89 | 85 | 74 | 4.2 s | 0.401 | 3 |
+| /en/ | 90 | 47 | 100 | 92 | 56 | 1.3 s | 0.001 | 3 |
+| /en/bali-villa/ | 76 | 36 | 98 | 92 | 56 | 4.0 s | 0.001 | 3 |
+| /en/room/pool-suite/ | 90 | 48 | 92 | 92 | 56 | 1.4 s | 0.001 | 3 |
+| /en/room/terrace-villas/ | 80 | 50 | 92 | 92 | 56 | 2.6 s | 0.002 | 4 |
+| /en/room/deluxe-terrace-villa/ | 73 | 47 | 92 | 92 | 56 | 3.5 s | 0.001 | 3 |
+| /en/premium-club-pool/ | 71 | 47 | 94 | 85 | 56 | 3.6 s | 0.139 | 2 |
+| /en/room/elephant-villa/ | 83 | 49 | 92 | 92 | 56 | 2.2 s | 0.001 | 5 |
+| /en/room/vice-regal-villa/ | 84 | 45 | 92 | 92 | 56 | 2.0 s | 0.004 | 3 |
+| /en/room/viceroy-bali/ | 88 | 46 | 92 | 92 | 56 | 1.6 s | 0.001 | 5 |
+| /en/hotel-offers/ | 96 | 58 | 100 | 92 | 56 | 1.2 s | 0.001 | 3 |
+| /en/packages/ | 92 | 63 | 96 | 92 | 56 | 1.7 s | 0.001 | 4 |
+| /en/bali-restaurants/ | 82 | 49 | 90 | 92 | 56 | 2.9 s | 0.001 | 3 |
+| /en/wellness-experiences/ | 77 | 51 | 98 | 92 | 56 | 2.6 s | 0.002 | 3 |
+| /en/bali-activities/ | 81 | 42 | 89 | 92 | 56 | 2.7 s | 0 | 3 |
+| /en/bali-destinations/ | 80 | 44 | 89 | 92 | 56 | 2.8 s | 0 | 4 |
+| /en/gallery/ | 74 | 47 | 94 | 92 | 56 | 3.2 s | 0 | 3 |
+| /en/blog/ | 80 | 44 | 100 | 92 | 56 | 3.1 s | 0.001 | 4 |
+| /en/about/ | 87 | 46 | 100 | 92 | 56 | 1.7 s | 0.001 | 3 |
 
 #### Console Errors
 
@@ -166,7 +166,7 @@ Call log:
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. | LCP | CLS | Errors |
 |-----|---------|--------|------|-----|----------|-----|-----|--------|
-| / | 67 | 50 | 100 | 100 | 54 | 3.5 s | 0.001 | 4 |
+| / | 73 | 50 | 100 | 100 | 54 | 2.6 s | 0.001 | 4 |
 
 #### Console Errors
 
