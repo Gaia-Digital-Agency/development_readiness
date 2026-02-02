@@ -363,39 +363,111 @@ async function detectWordPress(page, baseUrl, response) {
         const statusCode = response.status();
         const url = page.url();
 
-        const wappalyzerResult = await wappalyzer({ url, html, statusCode, headers });
+        // Try Wappalyzer first
+        try {
+            const wappalyzerResult = await wappalyzer({ url, html, statusCode, headers });
 
-        const wordpress = wappalyzerResult.applications.find(app => app.name === 'WordPress');
-        if (wordpress) {
-            results.isWordPress = true;
-            results.version = wordpress.version;
-            results.detectionMethods.push('wappalyzer');
+            const wordpress = wappalyzerResult.applications.find(app => app.name === 'WordPress');
+            if (wordpress) {
+                results.isWordPress = true;
+                results.version = wordpress.version;
+                results.detectionMethods.push('wappalyzer');
+            }
+
+            const cms = wappalyzerResult.applications.find(app => app.categories.some(cat => Object.values(cat).includes('CMS')));
+            if (cms) {
+                results.cms = cms.name;
+            }
+        } catch (wapErr) {
+            console.log(`  ⚠️ Wappalyzer detection failed: ${wapErr.message}`);
         }
 
-        const cms = wappalyzerResult.applications.find(app => app.categories.some(cat => Object.values(cat).includes('CMS')));
-        if(cms) {
-            results.cms = cms.name;
+        // Manual WordPress detection fallbacks (run even if Wappalyzer found it, to get version)
+
+        // 1. Check for wp-content or wp-includes in HTML
+        if (html.includes('/wp-content/') || html.includes('/wp-includes/')) {
+            if (!results.isWordPress) {
+                results.isWordPress = true;
+                results.detectionMethods.push('wp-content-path');
+            }
+            if (!results.cms) results.cms = 'WordPress';
         }
 
+        // 2. Check meta generator tag for WordPress and version
+        const generatorMatch = html.match(/<meta[^>]*name=["']generator["'][^>]*content=["']WordPress\s*([\d.]*)?["']/i);
+        if (generatorMatch) {
+            if (!results.isWordPress) {
+                results.isWordPress = true;
+                results.detectionMethods.push('meta-generator');
+            }
+            if (generatorMatch[1] && !results.version) {
+                results.version = generatorMatch[1];
+            }
+            if (!results.cms) results.cms = 'WordPress';
+        }
 
-        // Check if WordPress login URL is accessible
-        if (results.isWordPress) {
-            const loginUrls = ['/wp-login.php', '/wp-admin/'];
-            for (const loginPath of loginUrls) {
-                try {
-                    const loginUrl = new URL(loginPath, baseUrl).href;
-                    const response = await fetch(loginUrl, { redirect: 'manual' });
+        // 3. Check for wp-json REST API link
+        if (html.includes('/wp-json/') || html.includes('wp-json')) {
+            if (!results.isWordPress) {
+                results.isWordPress = true;
+                results.detectionMethods.push('wp-json-api');
+            }
+            if (!results.cms) results.cms = 'WordPress';
+        }
 
-                    if (response.status === 200) {
-                        results.loginUrlProtected = false;
-                    } else if (response.status === 403 || response.status === 404 ||
-                        (response.status >= 300 && response.status < 400)) {
-                        results.loginUrlProtected = true;
-                    }
-                    break;
-                } catch (e) {
-                    // Login URL check failed
+        // 4. Check for common WordPress scripts
+        const wpScripts = ['wp-embed.min.js', 'wp-emoji-release.min.js', 'jquery.min.js?ver='];
+        for (const script of wpScripts) {
+            if (html.includes(script)) {
+                if (!results.isWordPress) {
+                    results.isWordPress = true;
+                    results.detectionMethods.push('wp-scripts');
                 }
+                if (!results.cms) results.cms = 'WordPress';
+                break;
+            }
+        }
+
+        // 5. Check response headers for WordPress indicators
+        const xPoweredBy = headers['x-powered-by'] || '';
+        const link = headers['link'] || '';
+        if (xPoweredBy.toLowerCase().includes('wordpress') || link.includes('wp-json')) {
+            if (!results.isWordPress) {
+                results.isWordPress = true;
+                results.detectionMethods.push('response-headers');
+            }
+            if (!results.cms) results.cms = 'WordPress';
+        }
+
+        // 6. Check for WordPress login/admin URLs accessibility (also serves as detection)
+        const loginUrls = ['/wp-login.php', '/wp-admin/'];
+        for (const loginPath of loginUrls) {
+            try {
+                const loginUrl = new URL(loginPath, baseUrl).href;
+                const loginResponse = await fetch(loginUrl, { redirect: 'manual' });
+
+                // If we get any response (not a network error), WordPress likely exists
+                if (loginResponse.status === 200) {
+                    if (!results.isWordPress) {
+                        results.isWordPress = true;
+                        results.detectionMethods.push('login-url-check');
+                    }
+                    results.loginUrlProtected = false;
+                    if (!results.cms) results.cms = 'WordPress';
+                } else if (loginResponse.status === 403 ||
+                    (loginResponse.status >= 300 && loginResponse.status < 400)) {
+                    // Redirect or forbidden usually means WP is there but protected
+                    if (!results.isWordPress) {
+                        results.isWordPress = true;
+                        results.detectionMethods.push('login-url-check');
+                    }
+                    results.loginUrlProtected = true;
+                    if (!results.cms) results.cms = 'WordPress';
+                }
+                // Only break if we found something definitive
+                if (results.loginUrlProtected !== null) break;
+            } catch (e) {
+                // Login URL check failed - network error, continue
             }
         }
     } catch (error) {
@@ -499,17 +571,31 @@ async function runPageAudit(browser, url) {
         }
     });
 
+    let navigationError = null;
     try {
-        await page.goto(url, { waitUntil: 'networkidle', timeout: DEFAULT_CONFIG.pageTimeout });
+        // Use domcontentloaded for faster response, then wait a bit for JS to render
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: DEFAULT_CONFIG.pageTimeout });
+        // Give JS time to render content after DOM is ready
+        await page.waitForTimeout(2000);
     } catch (error) {
         console.error(`Error navigating to ${url}: ${error.message}`);
-        await page.close();
-        return { consoleErrors: [`Navigation failed: ${error.message}`], discoveredLinks: [], networkData };
+        navigationError = error.message;
+        // Don't return early - try to extract links from whatever loaded
     }
 
-    const links = await page.$$eval('a[href]', (anchors) =>
-        anchors.map((anchor) => anchor.href)
-    );
+    // Try to extract links even if navigation had issues
+    let links = [];
+    try {
+        links = await page.$$eval('a[href]', (anchors) =>
+            anchors.map((anchor) => anchor.href)
+        );
+    } catch (e) {
+        console.error(`Error extracting links from ${url}: ${e.message}`);
+    }
+
+    if (navigationError) {
+        consoleErrors.push(`Navigation failed: ${navigationError}`);
+    }
 
     await page.close();
     return { consoleErrors, discoveredLinks: links, networkData };
@@ -674,17 +760,35 @@ async function crawlAndAuditSite(site, config = DEFAULT_CONFIG) {
             // Detect Google services and WordPress on first page only
             if (results.pages.length === 0) {
                 const detectPage = await chromiumBrowser.newPage();
+                let detectResponse = null;
                 try {
-                    const response = await detectPage.goto(currentUrl, { waitUntil: 'networkidle', timeout: config.pageTimeout });
+                    // Use domcontentloaded instead of networkidle for faster detection on slow sites
+                    detectResponse = await detectPage.goto(currentUrl, { waitUntil: 'domcontentloaded', timeout: config.pageTimeout });
+                } catch (e) {
+                    console.log(`  ⚠️ Detection page load incomplete: ${e.message}`);
+                    // Still try to detect with whatever content loaded
+                }
+
+                try {
                     console.log(`  🔍 Detecting Google services...`);
                     results.siteLevel.googleServices = await detectGoogleServices(detectPage);
-                    console.log(`  📝 Detecting CMS/WordPress...`);
-                    results.siteLevel.wordpress = await detectWordPress(detectPage, site.url, response);
                 } catch (e) {
-                    console.error(`  Error detecting services: ${e.message}`);
-                } finally {
-                    await detectPage.close();
+                    console.error(`  Error detecting Google services: ${e.message}`);
                 }
+
+                try {
+                    console.log(`  📝 Detecting CMS/WordPress...`);
+                    // Create a mock response if navigation failed but page has content
+                    const mockResponse = detectResponse || {
+                        headers: () => ({}),
+                        status: () => 200,
+                    };
+                    results.siteLevel.wordpress = await detectWordPress(detectPage, site.url, mockResponse);
+                } catch (e) {
+                    console.error(`  Error detecting CMS: ${e.message}`);
+                }
+
+                await detectPage.close();
             }
 
             results.pages.push({

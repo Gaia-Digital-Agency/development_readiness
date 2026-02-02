@@ -1,0 +1,87 @@
+[
+  {
+    "siteName": "Manual Audit",
+    "baseUrl": "https://balihideawayvillas.com/",
+    "auditTimestamp": "2026-01-29T08:39:23.001Z",
+    "pages": [
+      {
+        "url": "https://balihideawayvillas.com/",
+        "desktop": {
+          "performance": 72,
+          "accessibility": 96,
+          "bestPractices": 100,
+          "seo": 92,
+          "lcp": "2.5 s",
+          "cls": "0",
+          "inp": "N/A",
+          "fcp": "1.6 s",
+          "tbt": "0 ms",
+          "speedIndex": "5.3 s"
+        },
+        "mobile": {
+          "performance": 79,
+          "accessibility": 93,
+          "bestPractices": 100,
+          "seo": 92,
+          "lcp": "3.6 s",
+          "cls": "0",
+          "inp": "N/A",
+          "fcp": "2.2 s",
+          "tbt": "30 ms",
+          "speedIndex": "9.9 s"
+        },
+        "chromeErrors": [
+          "Navigation failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://balihideawayvillas.com/\", waiting until \"networkidle\"\n"
+        ],
+        "safariErrors": [],
+        "firefoxErrors": [],
+        "networkAnalysis": {
+          "failedRequests": [],
+          "slowAssets": [
+            {
+              "url": "https://balihideawayvillas.com/wp-content/uploads/2025/12/5hiking-01-1024x1024.png",
+              "duration": 3674
+            }
+          ],
+          "totalRequests": 45
+        }
+      }
+    ],
+    "siteLevel": {
+      "securityHeaders": {
+        "url": "https://balihideawayvillas.com/",
+        "headers": {
+          "content-security-policy": "upgrade-insecure-requests"
+        },
+        "missing": [
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-frame-options",
+          "x-xss-protection",
+          "referrer-policy",
+          "permissions-policy"
+        ],
+        "score": 14
+      },
+      "canonicalization": {
+        "httpsRedirect": true,
+        "wwwConsistency": true,
+        "canonicalUrl": "https://balihideawayvillas.com/",
+        "issues": []
+      },
+      "http3Support": {
+        "supportsHttp3": true,
+        "altSvc": "h3=\":443\"; ma=86400",
+        "protocol": null
+      },
+      "googleServices": null,
+      "wordpress": null,
+      "brokenLinks": {
+        "total": 0,
+        "checked": 0,
+        "broken": [],
+        "working": 0
+      }
+    }
+  }
+]

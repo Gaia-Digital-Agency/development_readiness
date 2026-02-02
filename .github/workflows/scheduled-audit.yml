@@ -69,6 +69,7 @@ jobs:
           REPORT_DATE: ${{ steps.date.outputs.date }}
           DISCUSSION_NUMBER: '4'
         with:
+          github-token: ${{ secrets.REPORT_TOKEN }}
           script: |
             const fs = require('fs');
             const reportContent = fs.readFileSync('reports/report.md', 'utf8');
