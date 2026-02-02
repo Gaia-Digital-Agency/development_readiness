@@ -1,6 +1,6 @@
 # Development Readiness Report v2.0
 
-**Generated:** 2/2/2026, 7:35:43 AM
+**Generated:** 2/2/2026, 8:06:34 AM
 
 ---
 
@@ -10,7 +10,7 @@
 |--------|-------|
 | Sites Audited | 1 |
 | Pages Scanned | 20 |
-| Console Errors | 986 |
+| Console Errors | 164 |
 
 ---
 
@@ -18,7 +18,7 @@
 
 | Site | Desktop Perf | Mobile Perf | Security | SEO | Accessibility |
 |------|-------------|-------------|----------|-----|---------------|
-| Staging | 98 | 98 | 86% | 100 | 96 |
+| Staging | 91 | 77 | 86% | 100 | 95 |
 
 ---
 
@@ -62,109 +62,211 @@
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. | LCP | CLS | Errors |
 |-----|---------|--------|------|-----|----------|-----|-----|--------|
-| / | 89 | 97 | 96 | 100 | 75 | 1.5 s | 0.008 | 39 |
-| /en/ | 100 | 99 | 96 | 100 | 75 | 0.6 s | 0.008 | 37 |
-| /en/bali-villa/ | 100 | 99 | 98 | 100 | 75 | 0.6 s | 0.008 | 49 |
-| /en/room/pool-suite/ | 100 | 99 | 94 | 100 | 75 | 0.6 s | 0.007 | 48 |
-| /en/room/terrace-villas/ | 100 | 99 | 94 | 100 | 75 | 0.7 s | 0.007 | 48 |
-| /en/room/deluxe-terrace-villa/ | 100 | 99 | 94 | 100 | 75 | 0.7 s | 0.007 | 49 |
-| /en/premium-club-pool/ | 100 | 97 | 89 | 100 | 75 | 0.6 s | 0.008 | 49 |
-| /en/room/elephant-villa/ | 100 | 99 | 94 | 100 | 75 | 0.6 s | 0.007 | 48 |
-| /en/room/vice-regal-villa/ | 100 | 99 | 94 | 100 | 75 | 0.6 s | 0.017 | 49 |
-| /en/room/viceroy-bali/ | 100 | 99 | 94 | 100 | 75 | 0.7 s | 0.007 | 48 |
-| /en/hotel-offers/ | 99 | 99 | 100 | 100 | 75 | 0.9 s | 0.008 | 38 |
-| /en/packages/ | 100 | 99 | 96 | 100 | 75 | 0.8 s | 0.008 | 38 |
-| /en/bali-restaurants/ | 100 | 99 | 96 | 100 | 75 | 0.7 s | 0.008 | 52 |
-| /en/wellness-experiences/ | 100 | 96 | 98 | 100 | 71 | 0.6 s | 0.008 | 36 |
-| /en/bali-activities/ | 98 | 99 | 94 | 100 | 75 | 0.6 s | 0.093 | 90 |
-| /en/bali-destinations/ | 100 | 98 | 94 | 100 | 75 | 0.7 s | 0.008 | 32 |
-| /en/gallery/ | 93 | 98 | 94 | 100 | 75 | 0.7 s | 0.167 | 65 |
-| /en/blog/ | 80 | 99 | 100 | 100 | 75 | 0.6 s | 0.455 | 61 |
-| /en/about/ | 99 | 96 | 100 | 100 | 75 | 0.9 s | 0.008 | 44 |
-| /en/facilities/ | 100 | 99 | 96 | 100 | 75 | 0.6 s | 0.008 | 66 |
+| / | 88 | 86 | 96 | 100 | 71 | 1.6 s | 0 | 6 |
+| /en/ | 98 | 84 | 96 | 100 | 71 | 0.9 s | 0 | 6 |
+| /en/bali-villa/ | 97 | 71 | 98 | 100 | 75 | 1.3 s | 0.001 | 6 |
+| /en/room/pool-suite/ | 89 | 74 | 94 | 100 | 71 | 2.2 s | 0 | 10 |
+| /en/room/terrace-villas/ | 96 | 75 | 94 | 100 | 71 | 1.3 s | 0 | 10 |
+| /en/room/deluxe-terrace-villa/ | 85 | 73 | 94 | 100 | 71 | 2.6 s | 0 | 10 |
+| /en/premium-club-pool/ | 58 | 69 | 85 | 100 | 75 | 2.9 s | 1.403 | 10 |
+| /en/room/elephant-villa/ | 95 | 73 | 94 | 100 | 71 | 1.5 s | 0 | 10 |
+| /en/room/vice-regal-villa/ | 84 | 73 | 94 | 100 | 71 | 2.8 s | 0 | 10 |
+| /en/room/viceroy-bali/ | 84 | 73 | 94 | 100 | 71 | 2.8 s | 0 | 10 |
+| /en/hotel-offers/ | 98 | 83 | 100 | 100 | 75 | 1.0 s | 0 | 6 |
+| /en/packages/ | 98 | 80 | 96 | 100 | 75 | 1.0 s | 0 | 6 |
+| /en/bali-restaurants/ | 84 | 71 | 96 | 100 | 75 | 2.8 s | 0.001 | 8 |
+| /en/wellness-experiences/ | 94 | 80 | 98 | 100 | 71 | 1.6 s | 0 | 12 |
+| /en/bali-activities/ | 98 | 84 | 94 | 100 | 75 | 1.1 s | 0 | 8 |
+| /en/bali-destinations/ | 100 | 89 | 94 | 100 | 75 | 0.6 s | 0 | 8 |
+| /en/gallery/ | 95 | 75 | 94 | 100 | 75 | 1.5 s | 0 | 8 |
+| /en/blog/ | 95 | 86 | 100 | 100 | 75 | 1.5 s | 0 | 6 |
+| /en/about/ | 97 | 75 | 100 | 100 | 75 | 1.1 s | 0.001 | 6 |
+| /en/facilities/ | 96 | 71 | 96 | 100 | 75 | 1.3 s | 0.001 | 8 |
+
+#### Network Issues
+
+**/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/bali-villa/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/room/pool-suite/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/s...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/fo...
+**/en/room/terrace-villas/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/s...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/fo...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/room/deluxe-terrace-villa/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/s...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/fo...
+**/en/premium-club-pool/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/p...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/p...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/room/elephant-villa/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/s...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/fo...
+**/en/room/vice-regal-villa/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/s...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/fo...
+**/en/room/viceroy-bali/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/s...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/font-awesome/4.7.0/css/fo...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/hotel-offers/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/packages/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+**/en/bali-restaurants/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/OwlCarousel2/2.3.4/assets...
+**/en/wellness-experiences/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/bali-activities/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/uploads/2022/01/bali-activities-top-header.jpg)...
+**/en/bali-destinations/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/uploads/2020/09/bali-activities-banner.jpg)...
+**/en/gallery/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/npm/@fancyapps/ui/dist/fancybox.css...
+**/en/blog/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/about/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+**/en/facilities/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/jqueryui/1.12.1/themes/ba...
+- 404: http://34.142.200.251/wp-content/cache/min/1/wp-content/themes/viceroybali-git/d...
+- 404: http://34.142.200.251/wp-content/cache/min/1/ajax/libs/OwlCarousel2/2.3.4/assets...
 
 #### Console Errors
 
 **/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/bali-villa/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/room/pool-suite/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/room/terrace-villas/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/room/deluxe-terrace-villa/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/premium-club-pool/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/room/elephant-villa/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/room/vice-regal-villa/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/room/viceroy-bali/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/hotel-offers/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/packages/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/bali-restaurants/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/wellness-experiences/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Loading media from  'https://www.viceroybali.com/wp-content/uploads/2023/11/viceroy-wellness.mp4' vi...`
+- `Loading media from  'https://www.viceroybali.com/wp-content/uploads/2023/11/Akoya-.mp4' violates the...`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/bali-activities/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/bali-destinations/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/gallery/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/blog/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/about/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 **/en/facilities/** (Chrome):
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
-- `Failed to load resource: net::ERR_CONNECTION_REFUSED`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 
 ---
 
