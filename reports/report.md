@@ -1,6 +1,6 @@
 # Development Readiness Report v2.0
 
-**Generated:** 2/2/2026, 3:31:15 AM
+**Generated:** 2/2/2026, 6:06:33 AM
 
 ---
 
@@ -9,8 +9,8 @@
 | Metric | Value |
 |--------|-------|
 | Sites Audited | 2 |
-| Pages Scanned | 21 |
-| Console Errors | 83 |
+| Pages Scanned | 40 |
+| Console Errors | 81 |
 
 ---
 
@@ -18,8 +18,8 @@
 
 | Site | Desktop Perf | Mobile Perf | Security | SEO | Accessibility |
 |------|-------------|-------------|----------|-----|---------------|
-| Live | 78 | 45 | 14% | 91 | 94 |
-| Staging | 80 | 75 | 43% | 100 | 96 |
+| Live | 82 | 46 | 14% | 91 | 94 |
+| Staging | 89 | 69 | 43% | 100 | 96 |
 
 ---
 
@@ -48,7 +48,8 @@
 - **reCAPTCHA:** ❌ Not detected
 
 ##### CMS Detection
-- No CMS detected
+- **WordPress:** ✅ Detected (v6.9)
+- **Login Protected:** ✅ Yes
 
 ##### Broken Links
 - **Checked:** 48 links
@@ -62,38 +63,35 @@
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. | LCP | CLS | Errors |
 |-----|---------|--------|------|-----|----------|-----|-----|--------|
-| / | 85 | 45 | 96 | 92 | 56 | 1.1 s | 0 | 3 |
-| /en/reservation/ | 37 | 19 | 89 | 85 | 74 | 4.3 s | 0.401 | 3 |
-| /en/ | 91 | 47 | 100 | 92 | 56 | 1.4 s | 0.001 | 3 |
-| /en/bali-villa/ | 72 | 26 | 98 | 92 | 56 | 5.0 s | 0.001 | 5 |
-| /en/room/pool-suite/ | 86 | 45 | 92 | 92 | 56 | 1.9 s | 0.001 | 7 |
-| /en/room/terrace-villas/ | 81 | 48 | 92 | 92 | 56 | 2.4 s | 0.002 | 6 |
-| /en/room/deluxe-terrace-villa/ | 80 | 41 | 92 | 92 | 56 | 2.2 s | 0.001 | 3 |
-| /en/premium-club-pool/ | 50 | 49 | 94 | 85 | 56 | 3.5 s | 1.008 | 3 |
-| /en/room/elephant-villa/ | 81 | 43 | 92 | 92 | 56 | 2.1 s | 0.001 | 7 |
-| /en/room/vice-regal-villa/ | 76 | 41 | 92 | 92 | 56 | 3.2 s | 0.004 | 3 |
-| /en/room/viceroy-bali/ | 80 | 39 | 92 | 92 | 56 | 2.3 s | 0.001 | 7 |
-| /en/hotel-offers/ | 94 | 59 | 100 | 92 | 56 | 1.4 s | 0.001 | 4 |
-| /en/packages/ | 83 | 55 | 96 | 92 | 56 | 2.8 s | 0.001 | 3 |
-| /en/bali-restaurants/ | 83 | 53 | 90 | 92 | 56 | 2.7 s | 0.001 | 4 |
-| /en/wellness-experiences/ | 82 | 52 | 98 | 92 | 56 | 2.6 s | 0.002 | 4 |
-| /en/bali-activities/ | 81 | 46 | 89 | 92 | 56 | 2.5 s | 0 | 3 |
-| /en/bali-destinations/ | 79 | 48 | 89 | 92 | 56 | 2.5 s | 0 | 4 |
-| /en/gallery/ | 81 | 49 | 94 | 92 | 56 | 2.9 s | 0 | 3 |
-| /en/blog/ | 73 | 44 | 100 | 92 | 56 | 3.6 s | 0.001 | 4 |
-| /en/about/ | 83 | 51 | 100 | 92 | 56 | 1.7 s | 0.001 | 3 |
-
-#### Network Issues
-
+| / | 84 | 42 | 96 | 92 | 56 | 1.1 s | 0 | 3 |
+| /en/reservation/ | 44 | 19 | 89 | 85 | 74 | 4.2 s | 0.401 | 12 |
+| /en/ | 92 | 50 | 100 | 92 | 56 | 1.4 s | 0.001 | 3 |
+| /en/bali-villa/ | 76 | 37 | 98 | 92 | 56 | 4.0 s | 0.001 | 3 |
+| /en/room/pool-suite/ | 88 | 46 | 92 | 92 | 56 | 1.8 s | 0.001 | 5 |
+| /en/room/terrace-villas/ | 82 | 46 | 92 | 92 | 56 | 2.6 s | 0.002 | 4 |
+| /en/room/deluxe-terrace-villa/ | 80 | 54 | 92 | 92 | 56 | 2.4 s | 0.001 | 4 |
+| /en/premium-club-pool/ | 76 | 46 | 94 | 85 | 56 | 3.5 s | 0.012 | 3 |
+| /en/room/elephant-villa/ | 85 | 47 | 92 | 92 | 56 | 2.2 s | 0.001 | 4 |
+| /en/room/vice-regal-villa/ | 83 | 46 | 92 | 92 | 56 | 2.2 s | 0.004 | 5 |
+| /en/room/viceroy-bali/ | 83 | 46 | 92 | 92 | 56 | 2.2 s | 0.001 | 4 |
+| /en/hotel-offers/ | 93 | 56 | 100 | 92 | 56 | 1.5 s | 0.005 | 3 |
+| /en/packages/ | 90 | 58 | 96 | 92 | 56 | 1.8 s | 0 | 4 |
+| /en/bali-restaurants/ | 81 | 49 | 90 | 92 | 56 | 2.9 s | 0 | 4 |
+| /en/wellness-experiences/ | 91 | 53 | 98 | 92 | 56 | 1.7 s | 0.002 | 3 |
+| /en/bali-activities/ | 80 | 45 | 89 | 92 | 56 | 2.8 s | 0 | 3 |
+| /en/bali-destinations/ | 84 | 46 | 89 | 92 | 56 | 2.6 s | 0 | 2 |
+| /en/gallery/ | 81 | 48 | 94 | 92 | 56 | 3.0 s | 0 | 3 |
+| /en/blog/ | 80 | 44 | 100 | 92 | 56 | 3.1 s | 0.001 | 3 |
+| /en/about/ | 93 | 50 | 100 | 92 | 56 | 1.5 s | 0.001 | 2 |
 
 #### Console Errors
 
 **/** (Chrome):
 - `Failed to load resource: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH`
 **/en/reservation/** (Chrome):
-- `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "https://www.vic...`
+- `Failed to load resource: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH`
+- `Access to XMLHttpRequest at 'https://hotels.cloudbeds.com/booking/property_info' from origin 'https:...`
+- `Error loading initial data: K`
 **/en/** (Chrome):
 - `Failed to load resource: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH`
 **/en/bali-villa/** (Chrome):
@@ -119,9 +117,7 @@ Call log:
 **/en/bali-restaurants/** (Chrome):
 - `Failed to load resource: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH`
 **/en/wellness-experiences/** (Chrome):
-- `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "https://www.vic...`
+- `Failed to load resource: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH`
 **/en/bali-activities/** (Chrome):
 - `Failed to load resource: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH`
 **/en/bali-destinations/** (Chrome):
@@ -131,9 +127,7 @@ Call log:
 **/en/blog/** (Chrome):
 - `Failed to load resource: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH`
 **/en/about/** (Chrome):
-- `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "https://www.vic...`
+- `Failed to load resource: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH`
 
 ### Staging
 
@@ -158,25 +152,55 @@ Call log:
 - **reCAPTCHA:** ❌ Not detected
 
 ##### CMS Detection
-- No CMS detected
+- **WordPress:** ✅ Detected (v6.9)
+- **Login Protected:** ✅ Yes
 
 ##### Broken Links
-- **Checked:** 0 links
-- **Broken:** 0
+- **Checked:** 48 links
+- **Broken:** 2
 
+**Broken URLs:**
+- https://travellermade.com/hotel-partners-asia-pacific/viceroy-bali-bali-indonesia/ (fetch failed)
+- https://www.americanexpress.com/en-us/travel/discover/property/Indonesia/Ubud/Viceroy-Bali (503)
 
 #### Page Results
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. | LCP | CLS | Errors |
 |-----|---------|--------|------|-----|----------|-----|-----|--------|
-| / | 80 | 75 | 96 | 100 | 79 | 1.9 s | 0.001 | 1 |
+| / | 83 | 76 | 96 | 100 | 79 | 1.7 s | 0.001 | 0 |
+| /en/ | 94 | 73 | 96 | 100 | 79 | 1.1 s | 0.001 | 0 |
+| /en/bali-villa/ | 94 | 66 | 98 | 100 | 79 | 1.4 s | 0.001 | 0 |
+| /en/room/pool-suite/ | 93 | 67 | 94 | 100 | 79 | 1.4 s | 0 | 0 |
+| /en/room/terrace-villas/ | 93 | 67 | 94 | 100 | 79 | 1.5 s | 0 | 0 |
+| /en/room/deluxe-terrace-villa/ | 83 | 66 | 94 | 100 | 79 | 2.7 s | 0 | 0 |
+| /en/premium-club-pool/ | 84 | 65 | 94 | 100 | 79 | 2.4 s | 0.059 | 0 |
+| /en/room/elephant-villa/ | 86 | 67 | 94 | 100 | 79 | 2.2 s | 0 | 0 |
+| /en/room/vice-regal-villa/ | 86 | 66 | 94 | 100 | 79 | 2.3 s | 0 | 0 |
+| /en/room/viceroy-bali/ | 87 | 66 | 94 | 100 | 79 | 2.1 s | 0 | 0 |
+| /en/hotel-offers/ | 96 | 68 | 100 | 100 | 79 | 1.1 s | 0.005 | 0 |
+| /en/packages/ | 96 | 72 | 96 | 100 | 79 | 1.1 s | 0.002 | 0 |
+| /en/bali-restaurants/ | 91 | 66 | 96 | 100 | 79 | 1.8 s | 0.001 | 0 |
+| /en/wellness-experiences/ | 95 | 69 | 98 | 100 | 79 | 1.2 s | 0.003 | 0 |
+| /en/bali-activities/ | 76 | 77 | 94 | 100 | 75 | 1.1 s | 0.437 | 2 |
+| /en/bali-destinations/ | 76 | 80 | 94 | 100 | 75 | 1.1 s | 0.43 | 2 |
+| /en/gallery/ | 92 | 70 | 94 | 100 | 79 | 1.6 s | 0 | 0 |
+| /en/blog/ | 93 | 72 | 100 | 100 | 79 | 1.5 s | 0.006 | 0 |
+| /en/about/ | 95 | 68 | 100 | 100 | 79 | 1.1 s | 0.001 | 0 |
+| /en/facilities/ | 79 | 66 | 96 | 100 | 79 | 2.8 s | 0.001 | 0 |
+
+#### Network Issues
+
+**/en/bali-activities/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/uploads/2022/01/bali-activities-top-header.jpg)...
+**/en/bali-destinations/** - Failed Requests:
+- 404: http://34.142.200.251/wp-content/uploads/2020/09/bali-activities-banner.jpg)...
 
 #### Console Errors
 
-**/** (Chrome):
-- `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://34.142.2...`
+**/en/bali-activities/** (Chrome):
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
+**/en/bali-destinations/** (Chrome):
+- `Failed to load resource: the server responded with a status of 404 (Not Found)`
 
 ---
 
