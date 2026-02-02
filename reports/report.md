@@ -1,6 +1,6 @@
 # Development Readiness Report v2.0
 
-**Generated:** 2/1/2026, 2:05:53 PM
+**Generated:** 2/2/2026, 3:31:15 AM
 
 ---
 
@@ -10,7 +10,7 @@
 |--------|-------|
 | Sites Audited | 2 |
 | Pages Scanned | 21 |
-| Console Errors | 72 |
+| Console Errors | 83 |
 
 ---
 
@@ -18,8 +18,8 @@
 
 | Site | Desktop Perf | Mobile Perf | Security | SEO | Accessibility |
 |------|-------------|-------------|----------|-----|---------------|
-| Live | 81 | 46 | 14% | 91 | 94 |
-| Staging | 73 | 50 | 57% | 100 | 100 |
+| Live | 78 | 45 | 14% | 91 | 94 |
+| Staging | 80 | 75 | 43% | 100 | 96 |
 
 ---
 
@@ -62,26 +62,29 @@
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. | LCP | CLS | Errors |
 |-----|---------|--------|------|-----|----------|-----|-----|--------|
-| / | 81 | 44 | 96 | 92 | 56 | 1.1 s | 0 | 4 |
-| /en/reservation/ | 46 | 20 | 89 | 85 | 74 | 4.2 s | 0.401 | 3 |
-| /en/ | 90 | 47 | 100 | 92 | 56 | 1.3 s | 0.001 | 3 |
-| /en/bali-villa/ | 76 | 36 | 98 | 92 | 56 | 4.0 s | 0.001 | 3 |
-| /en/room/pool-suite/ | 90 | 48 | 92 | 92 | 56 | 1.4 s | 0.001 | 3 |
-| /en/room/terrace-villas/ | 80 | 50 | 92 | 92 | 56 | 2.6 s | 0.002 | 4 |
-| /en/room/deluxe-terrace-villa/ | 73 | 47 | 92 | 92 | 56 | 3.5 s | 0.001 | 3 |
-| /en/premium-club-pool/ | 71 | 47 | 94 | 85 | 56 | 3.6 s | 0.139 | 2 |
-| /en/room/elephant-villa/ | 83 | 49 | 92 | 92 | 56 | 2.2 s | 0.001 | 5 |
-| /en/room/vice-regal-villa/ | 84 | 45 | 92 | 92 | 56 | 2.0 s | 0.004 | 3 |
-| /en/room/viceroy-bali/ | 88 | 46 | 92 | 92 | 56 | 1.6 s | 0.001 | 5 |
-| /en/hotel-offers/ | 96 | 58 | 100 | 92 | 56 | 1.2 s | 0.001 | 3 |
-| /en/packages/ | 92 | 63 | 96 | 92 | 56 | 1.7 s | 0.001 | 4 |
-| /en/bali-restaurants/ | 82 | 49 | 90 | 92 | 56 | 2.9 s | 0.001 | 3 |
-| /en/wellness-experiences/ | 77 | 51 | 98 | 92 | 56 | 2.6 s | 0.002 | 3 |
-| /en/bali-activities/ | 81 | 42 | 89 | 92 | 56 | 2.7 s | 0 | 3 |
-| /en/bali-destinations/ | 80 | 44 | 89 | 92 | 56 | 2.8 s | 0 | 4 |
-| /en/gallery/ | 74 | 47 | 94 | 92 | 56 | 3.2 s | 0 | 3 |
-| /en/blog/ | 80 | 44 | 100 | 92 | 56 | 3.1 s | 0.001 | 4 |
-| /en/about/ | 87 | 46 | 100 | 92 | 56 | 1.7 s | 0.001 | 3 |
+| / | 85 | 45 | 96 | 92 | 56 | 1.1 s | 0 | 3 |
+| /en/reservation/ | 37 | 19 | 89 | 85 | 74 | 4.3 s | 0.401 | 3 |
+| /en/ | 91 | 47 | 100 | 92 | 56 | 1.4 s | 0.001 | 3 |
+| /en/bali-villa/ | 72 | 26 | 98 | 92 | 56 | 5.0 s | 0.001 | 5 |
+| /en/room/pool-suite/ | 86 | 45 | 92 | 92 | 56 | 1.9 s | 0.001 | 7 |
+| /en/room/terrace-villas/ | 81 | 48 | 92 | 92 | 56 | 2.4 s | 0.002 | 6 |
+| /en/room/deluxe-terrace-villa/ | 80 | 41 | 92 | 92 | 56 | 2.2 s | 0.001 | 3 |
+| /en/premium-club-pool/ | 50 | 49 | 94 | 85 | 56 | 3.5 s | 1.008 | 3 |
+| /en/room/elephant-villa/ | 81 | 43 | 92 | 92 | 56 | 2.1 s | 0.001 | 7 |
+| /en/room/vice-regal-villa/ | 76 | 41 | 92 | 92 | 56 | 3.2 s | 0.004 | 3 |
+| /en/room/viceroy-bali/ | 80 | 39 | 92 | 92 | 56 | 2.3 s | 0.001 | 7 |
+| /en/hotel-offers/ | 94 | 59 | 100 | 92 | 56 | 1.4 s | 0.001 | 4 |
+| /en/packages/ | 83 | 55 | 96 | 92 | 56 | 2.8 s | 0.001 | 3 |
+| /en/bali-restaurants/ | 83 | 53 | 90 | 92 | 56 | 2.7 s | 0.001 | 4 |
+| /en/wellness-experiences/ | 82 | 52 | 98 | 92 | 56 | 2.6 s | 0.002 | 4 |
+| /en/bali-activities/ | 81 | 46 | 89 | 92 | 56 | 2.5 s | 0 | 3 |
+| /en/bali-destinations/ | 79 | 48 | 89 | 92 | 56 | 2.5 s | 0 | 4 |
+| /en/gallery/ | 81 | 49 | 94 | 92 | 56 | 2.9 s | 0 | 3 |
+| /en/blog/ | 73 | 44 | 100 | 92 | 56 | 3.6 s | 0.001 | 4 |
+| /en/about/ | 83 | 51 | 100 | 92 | 56 | 1.7 s | 0.001 | 3 |
+
+#### Network Issues
+
 
 #### Console Errors
 
@@ -139,8 +142,8 @@ Call log:
 #### Site-Level Checks
 
 ##### Security Headers
-- **Score:** 57%
-- **Missing Headers:** content-security-policy, strict-transport-security, referrer-policy
+- **Score:** 43%
+- **Missing Headers:** content-security-policy, strict-transport-security, referrer-policy, permissions-policy
 
 ##### URL Canonicalization
 - **HTTPS Redirect:** ❌ No
@@ -166,7 +169,7 @@ Call log:
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. | LCP | CLS | Errors |
 |-----|---------|--------|------|-----|----------|-----|-----|--------|
-| / | 73 | 50 | 100 | 100 | 54 | 2.6 s | 0.001 | 4 |
+| / | 80 | 75 | 96 | 100 | 79 | 1.9 s | 0.001 | 1 |
 
 #### Console Errors
 
