@@ -1,6 +1,6 @@
 # Development Readiness Report v2.0
 
-**Generated:** 2/3/2026, 7:04:07 AM
+**Generated:** 2/3/2026, 12:39:45 PM
 
 ---
 
@@ -9,8 +9,8 @@
 | Metric | Value |
 |--------|-------|
 | Sites Audited | 1 |
-| Pages Scanned | 1 |
-| Console Errors | 2 |
+| Pages Scanned | 20 |
+| Console Errors | 72 |
 
 ---
 
@@ -18,7 +18,7 @@
 
 | Site | Desktop Perf | Mobile Perf | Security | SEO | Accessibility |
 |------|-------------|-------------|----------|-----|---------------|
-| Manual Audit | 0 | 0 | 43% | 0 | 0 |
+| Manual Audit | 88 | 80 | 14% | 99 | 94 |
 
 ---
 
@@ -31,12 +31,12 @@
 #### Site-Level Checks
 
 ##### Security Headers
-- **Score:** 43%
-- **Missing Headers:** strict-transport-security, x-content-type-options, x-frame-options, x-xss-protection
+- **Score:** 14%
+- **Missing Headers:** strict-transport-security, x-content-type-options, x-frame-options, x-xss-protection, referrer-policy, permissions-policy
 
 ##### URL Canonicalization
-- **HTTPS Redirect:** ❌ No
-- **WWW Consistency:** ⚠️ Check manually
+- **HTTPS Redirect:** ✅ Yes
+- **WWW Consistency:** ✅ Yes
 
 ##### HTTP/3 Support
 - **QUIC/HTTP3:** ✅ Supported
@@ -47,11 +47,11 @@
 - **reCAPTCHA:** ❌ Not detected
 
 ##### CMS Detection
-- **WordPress:** ✅ Detected 
-- **Login Protected:** ✅ Yes
+- **WordPress:** ✅ Detected (v6.9)
+- **Login Protected:** ⚠️ No
 
 ##### Broken Links
-- **Checked:** 0 links
+- **Checked:** 48 links
 - **Broken:** 0
 
 
@@ -59,17 +59,38 @@
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. | LCP | CLS | Errors |
 |-----|---------|--------|------|-----|----------|-----|-----|--------|
-| / | 0 | 0 | 0 | 0 | 0 | N/A | N/A | 2 |
+| / | 77 | 84 | 96 | 100 | 96 | 2.3 s | 0 | 5 |
+| /about/ | 93 | 96 | 95 | 100 | 100 | 0.5 s | 0.002 | 0 |
+| /our-villas/ | 89 | 75 | 90 | 92 | 78 | 1.2 s | 0 | 0 |
+| /our-villas/villa-tau/ | 91 | 85 | 92 | 100 | 100 | 1.0 s | 0 | 16 |
+| /our-villas/villa-cocoa/ | 92 | 83 | 92 | 100 | 100 | 0.9 s | 0 | 16 |
+| /our-villas/villa-sagitta/ | 93 | 88 | 92 | 100 | 100 | 1.0 s | 0 | 8 |
+| /calendars/ | 89 | 71 | 96 | 100 | 100 | 1.6 s | 0.029 | 12 |
+| /wellness-center/ | 93 | 98 | 95 | 100 | 100 | 0.5 s | 0.002 | 0 |
+| /villa-tau-gallery/ | 69 | 60 | 97 | 100 | 100 | 0.8 s | 0.689 | 0 |
+| /villa-sagitta-gallery/ | 72 | 62 | 97 | 100 | 100 | 0.7 s | 0.476 | 0 |
+| /villa-cocoa-maya-gallery/ | 72 | 61 | 97 | 100 | 100 | 0.8 s | 0.476 | 0 |
+| /category/blog/ | 97 | 94 | 94 | 92 | 100 | 0.8 s | 0.017 | 0 |
+| /contact/ | 78 | 93 | 88 | 100 | 78 | 2.0 s | 0.002 | 0 |
+| /book | 84 | 72 | 95 | 100 | 100 | 1.9 s | 0.002 | 8 |
+| /book/ | 91 | 72 | 95 | 100 | 100 | 1.8 s | 0.002 | 4 |
+| /how-to-cook-balinese-nasi-goreng-in-under-15-minutes/ | 84 | 55 | 96 | 100 | 96 | 1.7 s | 0.07 | 3 |
+| /why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/ | 98 | 98 | 96 | 100 | 100 | 0.4 s | 0 | 0 |
+| /3-really-good-reasons-to-pack-light-for-bali/ | 98 | 98 | 96 | 100 | 100 | 0.5 s | 0 | 0 |
+| /our-10-favourite-things-to-do-in-ubud/ | 97 | 79 | 92 | 92 | 100 | 0.8 s | 0 | 0 |
+| /12-things-you-need-to-know-about-driving-in-bali/ | 97 | 82 | 94 | 100 | 100 | 0.7 s | 0 | 0 |
 
 #### Network Issues
 
 **/** - Failed Requests:
-- 403: https://balihideawayvillas.com/...
+- 404: https://balihideawayvillas.com/wp-content/uploads/uag-plugin/assets/1000/uag-css...
+- 404: https://balihideawayvillas.com/wp-content/uploads/uag-plugin/assets/1000/uag-js-...
 
 #### Console Errors
 
 **/** (Chrome):
-- `Failed to load resource: the server responded with a status of 403 ()`
+- `Failed to load resource: the server responded with a status of 404 ()`
+- `Failed to load resource: the server responded with a status of 404 ()`
 
 ---
 

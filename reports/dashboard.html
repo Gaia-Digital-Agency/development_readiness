@@ -49,40 +49,40 @@
     <body>
         <div class="container">
             <h1>🔍 Development Readiness Report v2.0</h1>
-            <p class="header-info">Generated: 2/3/2026, 7:04:07 AM</p>
+            <p class="header-info">Generated: 2/3/2026, 12:39:45 PM</p>
 
             <div class="stats">
                 <div class="stat-card"><h3>1</h3><p>Sites Audited</p></div>
-                <div class="stat-card"><h3>1</h3><p>Pages Scanned</p></div>
-                <div class="stat-card"><h3 class="errors">2</h3><p>Console Errors</p></div>
+                <div class="stat-card"><h3>20</h3><p>Pages Scanned</p></div>
+                <div class="stat-card"><h3 class="errors">72</h3><p>Console Errors</p></div>
             </div><div class="tabs"><button class="tab active" onclick="showTab('site-0')">Manual Audit</button></div><div id="site-0" class="tab-content active"><div class="grid-2"><div class="card">
             <h3>📈 Performance Overview</h3>
             <div class="check-item">
                 <span>Desktop Avg:</span>
-                <span class="perf-bad">0</span>
+                <span class="perf-ok">88</span>
             </div>
             <div class="check-item">
                 <span>Mobile Avg:</span>
-                <span class="perf-bad">0</span>
+                <span class="perf-ok">80</span>
             </div>
         </div><div class="card">
             <h3>🔒 Security Headers</h3>
             <div class="check-item">
                 <span>Score:</span>
-                <span class="perf-bad">43%</span>
+                <span class="perf-bad">14%</span>
             </div>
             <div class="check-item">
                 <span>Missing:</span>
-                <span>strict-transport-security, x-content-type-options, x-frame-options, x-xss-protection</span>
+                <span>strict-transport-security, x-content-type-options, x-frame-options, x-xss-protection, referrer-policy, permissions-policy</span>
             </div>
         </div><div class="card">
             <h3>🔗 URL Canonicalization</h3>
             <div class="check-item">
-                <span class="check-icon">❌</span>
+                <span class="check-icon">✅</span>
                 <span>HTTP → HTTPS Redirect</span>
             </div>
             <div class="check-item">
-                <span class="check-icon">⚠️</span>
+                <span class="check-icon">✅</span>
                 <span>WWW Consistency</span>
             </div>
         </div><div class="card">
@@ -110,18 +110,18 @@
             <h3>📝 CMS Detection</h3>
             
                 <div class="check-item">
-                    <span class="badge badge-info">WordPress </span>
+                    <span class="badge badge-info">WordPress 6.9</span>
                 </div>
                 <div class="check-item">
-                    <span class="check-icon">✅</span>
-                    <span>Login URL Protected</span>
+                    <span class="check-icon">⚠️</span>
+                    <span>Login URL Exposed</span>
                 </div>
             
         </div><div class="card">
             <h3>🔗 Broken Links</h3>
             <div class="check-item">
                 <span>Checked:</span>
-                <span>0 links</span>
+                <span>48 links</span>
             </div>
             <div class="check-item">
                 <span>Broken:</span>
@@ -145,15 +145,243 @@
                 </tr>
             <tr>
                 <td><a href="https://balihideawayvillas.com/" target="_blank">/</a></td>
-                <td class="perf-bad">0</td>
-                <td class="perf-bad">0</td>
-                <td class="perf-bad">0</td>
-                <td class="perf-bad">0</td>
-                <td class="perf-bad">0</td>
-                <td>N/A</td>
-                <td>N/A</td>
+                <td class="perf-ok">77</td>
+                <td class="perf-ok">84</td>
+                <td class="perf-good">96</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>2.3 s</td>
+                <td>0</td>
+                <td class="errors">5</td>
                 <td class="errors">2</td>
-                <td class="errors">1</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/about/" target="_blank">/about/</a></td>
+                <td class="perf-good">93</td>
+                <td class="perf-good">96</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>0.5 s</td>
+                <td>0.002</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/our-villas/" target="_blank">/our-villas/</a></td>
+                <td class="perf-ok">89</td>
+                <td class="perf-ok">75</td>
+                <td class="perf-good">90</td>
+                <td class="perf-good">92</td>
+                <td class="perf-ok">78</td>
+                <td>1.2 s</td>
+                <td>0</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/our-villas/villa-tau/" target="_blank">/our-villas/villa-tau/</a></td>
+                <td class="perf-good">91</td>
+                <td class="perf-ok">85</td>
+                <td class="perf-good">92</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>1.0 s</td>
+                <td>0</td>
+                <td class="errors">16</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/our-villas/villa-cocoa/" target="_blank">/our-villas/villa-cocoa/</a></td>
+                <td class="perf-good">92</td>
+                <td class="perf-ok">83</td>
+                <td class="perf-good">92</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>0.9 s</td>
+                <td>0</td>
+                <td class="errors">16</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/our-villas/villa-sagitta/" target="_blank">/our-villas/villa-sagitta/</a></td>
+                <td class="perf-good">93</td>
+                <td class="perf-ok">88</td>
+                <td class="perf-good">92</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>1.0 s</td>
+                <td>0</td>
+                <td class="errors">8</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/calendars/" target="_blank">/calendars/</a></td>
+                <td class="perf-ok">89</td>
+                <td class="perf-ok">71</td>
+                <td class="perf-good">96</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>1.6 s</td>
+                <td>0.029</td>
+                <td class="errors">12</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/wellness-center/" target="_blank">/wellness-center/</a></td>
+                <td class="perf-good">93</td>
+                <td class="perf-good">98</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>0.5 s</td>
+                <td>0.002</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/villa-tau-gallery/" target="_blank">/villa-tau-gallery/</a></td>
+                <td class="perf-ok">69</td>
+                <td class="perf-ok">60</td>
+                <td class="perf-good">97</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>0.8 s</td>
+                <td>0.689</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/villa-sagitta-gallery/" target="_blank">/villa-sagitta-gallery/</a></td>
+                <td class="perf-ok">72</td>
+                <td class="perf-ok">62</td>
+                <td class="perf-good">97</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>0.7 s</td>
+                <td>0.476</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/villa-cocoa-maya-gallery/" target="_blank">/villa-cocoa-maya-gallery/</a></td>
+                <td class="perf-ok">72</td>
+                <td class="perf-ok">61</td>
+                <td class="perf-good">97</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>0.8 s</td>
+                <td>0.476</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/category/blog/" target="_blank">/category/blog/</a></td>
+                <td class="perf-good">97</td>
+                <td class="perf-good">94</td>
+                <td class="perf-good">94</td>
+                <td class="perf-good">92</td>
+                <td class="perf-good">100</td>
+                <td>0.8 s</td>
+                <td>0.017</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/contact/" target="_blank">/contact/</a></td>
+                <td class="perf-ok">78</td>
+                <td class="perf-good">93</td>
+                <td class="perf-ok">88</td>
+                <td class="perf-good">100</td>
+                <td class="perf-ok">78</td>
+                <td>2.0 s</td>
+                <td>0.002</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/book" target="_blank">/book</a></td>
+                <td class="perf-ok">84</td>
+                <td class="perf-ok">72</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>1.9 s</td>
+                <td>0.002</td>
+                <td class="errors">8</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/book/" target="_blank">/book/</a></td>
+                <td class="perf-good">91</td>
+                <td class="perf-ok">72</td>
+                <td class="perf-good">95</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>1.8 s</td>
+                <td>0.002</td>
+                <td class="errors">4</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/" target="_blank">/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/</a></td>
+                <td class="perf-ok">84</td>
+                <td class="perf-ok">55</td>
+                <td class="perf-good">96</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">96</td>
+                <td>1.7 s</td>
+                <td>0.07</td>
+                <td class="errors">3</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/" target="_blank">/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/</a></td>
+                <td class="perf-good">98</td>
+                <td class="perf-good">98</td>
+                <td class="perf-good">96</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>0.4 s</td>
+                <td>0</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/3-really-good-reasons-to-pack-light-for-bali/" target="_blank">/3-really-good-reasons-to-pack-light-for-bali/</a></td>
+                <td class="perf-good">98</td>
+                <td class="perf-good">98</td>
+                <td class="perf-good">96</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>0.5 s</td>
+                <td>0</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/our-10-favourite-things-to-do-in-ubud/" target="_blank">/our-10-favourite-things-to-do-in-ubud/</a></td>
+                <td class="perf-good">97</td>
+                <td class="perf-ok">79</td>
+                <td class="perf-good">92</td>
+                <td class="perf-good">92</td>
+                <td class="perf-good">100</td>
+                <td>0.8 s</td>
+                <td>0</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
+            </tr>
+            <tr>
+                <td><a href="https://balihideawayvillas.com/12-things-you-need-to-know-about-driving-in-bali/" target="_blank">/12-things-you-need-to-know-about-driving-in-bali/</a></td>
+                <td class="perf-good">97</td>
+                <td class="perf-ok">82</td>
+                <td class="perf-good">94</td>
+                <td class="perf-good">100</td>
+                <td class="perf-good">100</td>
+                <td>0.7 s</td>
+                <td>0</td>
+                <td class="no-errors">0</td>
+                <td class="no-errors">0</td>
             </tr></table></div></div></div>
         </div>
         <script>
