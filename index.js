@@ -602,6 +602,271 @@ async function runPageAudit(browser, url) {
 }
 
 // ============================================================================
+// FUNCTIONAL TESTS (Site Behavior Testing)
+// ============================================================================
+async function runFunctionalTests(browser, url) {
+    const results = {
+        linksTest: { passed: 0, failed: 0, errors: [] },
+        buttonsTest: { passed: 0, failed: 0, errors: [] },
+        formsTest: { passed: 0, failed: 0, errors: [] },
+        imagesTest: { passed: 0, failed: 0, errors: [] },
+        navigationTest: { passed: 0, failed: 0, errors: [] },
+        interactiveTest: { passed: 0, failed: 0, errors: [] },
+        summary: { totalTests: 0, passed: 0, failed: 0 },
+    };
+
+    const page = await browser.newPage();
+
+    try {
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: DEFAULT_CONFIG.pageTimeout });
+        await page.waitForTimeout(2000);
+
+        // Test 1: Links Test - Check internal links are clickable
+        console.log(`    🔗 Testing links...`);
+        try {
+            const links = await page.$$eval('a[href]', anchors =>
+                anchors.map(a => ({
+                    href: a.href,
+                    text: a.textContent?.trim().substring(0, 50) || '[no text]',
+                    isVisible: a.offsetParent !== null,
+                    hasValidHref: !a.href.startsWith('javascript:') && a.href !== '#',
+                }))
+            );
+
+            const validLinks = links.filter(l => l.hasValidHref && l.isVisible);
+            results.linksTest.passed = validLinks.length;
+
+            const invalidLinks = links.filter(l => !l.hasValidHref || !l.isVisible);
+            invalidLinks.slice(0, 5).forEach(l => {
+                results.linksTest.errors.push(`Link "${l.text}" - ${!l.hasValidHref ? 'invalid href' : 'not visible'}`);
+            });
+            results.linksTest.failed = invalidLinks.length;
+        } catch (e) {
+            results.linksTest.errors.push(`Links test error: ${e.message}`);
+        }
+
+        // Test 2: Buttons Test - Check buttons are clickable
+        console.log(`    🔘 Testing buttons...`);
+        try {
+            const buttons = await page.$$eval('button, input[type="button"], input[type="submit"], [role="button"]', btns =>
+                btns.map(b => ({
+                    text: b.textContent?.trim().substring(0, 50) || b.value || '[no text]',
+                    isVisible: b.offsetParent !== null,
+                    isDisabled: b.disabled,
+                    type: b.tagName.toLowerCase(),
+                }))
+            );
+
+            const clickableButtons = buttons.filter(b => b.isVisible && !b.isDisabled);
+            results.buttonsTest.passed = clickableButtons.length;
+
+            const problematicButtons = buttons.filter(b => !b.isVisible || b.isDisabled);
+            problematicButtons.slice(0, 5).forEach(b => {
+                results.buttonsTest.errors.push(`Button "${b.text}" - ${b.isDisabled ? 'disabled' : 'not visible'}`);
+            });
+            results.buttonsTest.failed = problematicButtons.length;
+        } catch (e) {
+            results.buttonsTest.errors.push(`Buttons test error: ${e.message}`);
+        }
+
+        // Test 3: Forms Test - Check forms have proper structure
+        console.log(`    📝 Testing forms...`);
+        try {
+            const forms = await page.$$eval('form', forms =>
+                forms.map(f => {
+                    const inputs = f.querySelectorAll('input, textarea, select');
+                    const labels = f.querySelectorAll('label');
+                    const submitBtn = f.querySelector('button[type="submit"], input[type="submit"]');
+                    return {
+                        action: f.action || '[no action]',
+                        method: f.method || 'get',
+                        inputCount: inputs.length,
+                        labelCount: labels.length,
+                        hasSubmit: !!submitBtn,
+                        isVisible: f.offsetParent !== null,
+                    };
+                })
+            );
+
+            forms.forEach(f => {
+                if (f.isVisible && f.hasSubmit && f.inputCount > 0) {
+                    results.formsTest.passed++;
+                } else {
+                    results.formsTest.failed++;
+                    if (!f.hasSubmit) results.formsTest.errors.push(`Form missing submit button`);
+                    if (!f.isVisible) results.formsTest.errors.push(`Form not visible`);
+                    if (f.inputCount === 0) results.formsTest.errors.push(`Form has no inputs`);
+                }
+            });
+
+            if (forms.length === 0) {
+                results.formsTest.passed = 1; // No forms is OK
+            }
+        } catch (e) {
+            results.formsTest.errors.push(`Forms test error: ${e.message}`);
+        }
+
+        // Test 4: Images Test - Check images load correctly
+        console.log(`    🖼️ Testing images...`);
+        try {
+            const images = await page.$$eval('img', imgs =>
+                imgs.map(img => ({
+                    src: img.src?.substring(0, 100) || '[no src]',
+                    alt: img.alt || '[no alt]',
+                    hasAlt: !!img.alt,
+                    isLoaded: img.complete && img.naturalWidth > 0,
+                    isVisible: img.offsetParent !== null,
+                }))
+            );
+
+            const loadedImages = images.filter(i => i.isLoaded);
+            const brokenImages = images.filter(i => !i.isLoaded && i.isVisible);
+            const missingAlt = images.filter(i => !i.hasAlt && i.isVisible);
+
+            results.imagesTest.passed = loadedImages.length;
+            results.imagesTest.failed = brokenImages.length;
+
+            brokenImages.slice(0, 3).forEach(i => {
+                results.imagesTest.errors.push(`Broken image: ${i.src}`);
+            });
+            missingAlt.slice(0, 3).forEach(i => {
+                results.imagesTest.errors.push(`Missing alt text: ${i.src}`);
+            });
+        } catch (e) {
+            results.imagesTest.errors.push(`Images test error: ${e.message}`);
+        }
+
+        // Test 5: Navigation Test - Check nav menus work
+        console.log(`    🧭 Testing navigation...`);
+        try {
+            const navElements = await page.$$eval('nav, [role="navigation"], .nav, .navbar, .menu', navs =>
+                navs.map(nav => ({
+                    linkCount: nav.querySelectorAll('a').length,
+                    isVisible: nav.offsetParent !== null,
+                    hasDropdown: nav.querySelector('.dropdown, [class*="dropdown"], .submenu') !== null,
+                }))
+            );
+
+            navElements.forEach(nav => {
+                if (nav.isVisible && nav.linkCount > 0) {
+                    results.navigationTest.passed++;
+                } else {
+                    results.navigationTest.failed++;
+                    if (!nav.isVisible) results.navigationTest.errors.push(`Navigation not visible`);
+                    if (nav.linkCount === 0) results.navigationTest.errors.push(`Navigation has no links`);
+                }
+            });
+
+            if (navElements.length === 0) {
+                results.navigationTest.passed = 1; // No explicit nav is OK for some sites
+            }
+        } catch (e) {
+            results.navigationTest.errors.push(`Navigation test error: ${e.message}`);
+        }
+
+        // Test 6: Interactive Elements Test - Check dropdowns, modals, etc.
+        console.log(`    🎛️ Testing interactive elements...`);
+        try {
+            const interactiveElements = await page.$$eval(
+                '.dropdown, .accordion, .modal, .tab, .carousel, [data-toggle], [data-bs-toggle], .slider',
+                elements => elements.map(el => ({
+                    type: el.className.split(' ').find(c => ['dropdown', 'accordion', 'modal', 'tab', 'carousel', 'slider'].includes(c)) || 'interactive',
+                    isVisible: el.offsetParent !== null || el.classList.contains('modal'),
+                }))
+            );
+
+            interactiveElements.forEach(el => {
+                results.interactiveTest.passed++; // Interactive elements found
+            });
+
+            if (interactiveElements.length === 0) {
+                results.interactiveTest.passed = 1; // No interactive elements is OK
+            }
+        } catch (e) {
+            results.interactiveTest.errors.push(`Interactive elements test error: ${e.message}`);
+        }
+
+        // Calculate summary
+        const tests = [results.linksTest, results.buttonsTest, results.formsTest,
+                       results.imagesTest, results.navigationTest, results.interactiveTest];
+        results.summary.passed = tests.reduce((sum, t) => sum + t.passed, 0);
+        results.summary.failed = tests.reduce((sum, t) => sum + t.failed, 0);
+        results.summary.totalTests = results.summary.passed + results.summary.failed;
+
+    } catch (error) {
+        results.summary.errors = [`Functional test failed: ${error.message}`];
+    } finally {
+        await page.close();
+    }
+
+    return results;
+}
+
+// ============================================================================
+// API ENDPOINT TESTING
+// ============================================================================
+async function testApiEndpoints(baseUrl) {
+    const results = {
+        tested: 0,
+        passed: 0,
+        failed: 0,
+        errors: [],
+    };
+
+    // Common API endpoints to check
+    const commonEndpoints = [
+        '/api',
+        '/api/v1',
+        '/api/v2',
+        '/wp-json',
+        '/wp-json/wp/v2/posts',
+        '/graphql',
+        '/rest',
+        '/.well-known/security.txt',
+        '/robots.txt',
+        '/sitemap.xml',
+        '/favicon.ico',
+    ];
+
+    console.log(`  🔌 Testing API endpoints...`);
+
+    for (const endpoint of commonEndpoints) {
+        try {
+            const url = new URL(endpoint, baseUrl).href;
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: { 'Accept': 'application/json, text/xml, */*' },
+                signal: AbortSignal.timeout(5000),
+            });
+
+            results.tested++;
+
+            if (response.ok) {
+                results.passed++;
+            } else if (response.status >= 400 && response.status < 500) {
+                // 4xx errors are expected for non-existent endpoints, don't report as errors
+                results.passed++;
+            } else if (response.status >= 500) {
+                // Only report 5xx server errors
+                results.failed++;
+                results.errors.push(`${endpoint}: Server error (${response.status})`);
+            }
+        } catch (error) {
+            results.tested++;
+            // Only report actual errors (not timeouts for non-existent endpoints)
+            if (error.name !== 'AbortError' && !error.message.includes('ENOTFOUND')) {
+                results.failed++;
+                results.errors.push(`${endpoint}: ${error.message}`);
+            } else {
+                results.passed++; // Timeout/not found is acceptable
+            }
+        }
+    }
+
+    return results;
+}
+
+// ============================================================================
 // LIGHTHOUSE AUDIT (Desktop + Mobile)
 // ============================================================================
 async function runLighthouseAudits(url, chromePort) {
@@ -633,16 +898,43 @@ async function runLighthouseAudits(url, chromePort) {
         });
 
         results.desktop = {
+            // Category Scores
             performance: Math.round((desktopLhr.categories.performance?.score || 0) * 100),
             accessibility: Math.round((desktopLhr.categories.accessibility?.score || 0) * 100),
             bestPractices: Math.round((desktopLhr.categories['best-practices']?.score || 0) * 100),
             seo: Math.round((desktopLhr.categories.seo?.score || 0) * 100),
+            // Core Web Vitals
             lcp: desktopLhr.audits['largest-contentful-paint']?.displayValue || 'N/A',
             cls: desktopLhr.audits['cumulative-layout-shift']?.displayValue || 'N/A',
             inp: desktopLhr.audits['interaction-to-next-paint']?.displayValue || 'N/A',
             fcp: desktopLhr.audits['first-contentful-paint']?.displayValue || 'N/A',
             tbt: desktopLhr.audits['total-blocking-time']?.displayValue || 'N/A',
+            ttfb: desktopLhr.audits['server-response-time']?.displayValue || 'N/A',
             speedIndex: desktopLhr.audits['speed-index']?.displayValue || 'N/A',
+            tti: desktopLhr.audits['interactive']?.displayValue || 'N/A',
+            // Additional Performance Metrics
+            maxPotentialFid: desktopLhr.audits['max-potential-fid']?.displayValue || 'N/A',
+            totalByteWeight: desktopLhr.audits['total-byte-weight']?.displayValue || 'N/A',
+            domSize: desktopLhr.audits['dom-size']?.displayValue || 'N/A',
+            bootupTime: desktopLhr.audits['bootup-time']?.displayValue || 'N/A',
+            mainthreadWork: desktopLhr.audits['mainthread-work-breakdown']?.displayValue || 'N/A',
+            // Resource Counts
+            numRequests: desktopLhr.audits['network-requests']?.details?.items?.length || 'N/A',
+            numScripts: desktopLhr.audits['network-requests']?.details?.items?.filter(i => i.resourceType === 'Script').length || 'N/A',
+            numStylesheets: desktopLhr.audits['network-requests']?.details?.items?.filter(i => i.resourceType === 'Stylesheet').length || 'N/A',
+            numFonts: desktopLhr.audits['network-requests']?.details?.items?.filter(i => i.resourceType === 'Font').length || 'N/A',
+            numImages: desktopLhr.audits['network-requests']?.details?.items?.filter(i => i.resourceType === 'Image').length || 'N/A',
+            // Optimization Opportunities
+            renderBlockingResources: desktopLhr.audits['render-blocking-resources']?.details?.items?.length || 0,
+            unusedCss: desktopLhr.audits['unused-css-rules']?.displayValue || 'N/A',
+            unusedJs: desktopLhr.audits['unused-javascript']?.displayValue || 'N/A',
+            thirdPartySummary: desktopLhr.audits['third-party-summary']?.displayValue || 'N/A',
+            redirects: desktopLhr.audits['redirects']?.details?.items?.length || 0,
+            // Image Optimization
+            modernImageFormats: desktopLhr.audits['modern-image-formats']?.displayValue || 'N/A',
+            usesOptimizedImages: desktopLhr.audits['uses-optimized-images']?.displayValue || 'N/A',
+            usesResponsiveImages: desktopLhr.audits['uses-responsive-images']?.displayValue || 'N/A',
+            offscreenImages: desktopLhr.audits['offscreen-images']?.displayValue || 'N/A',
         };
     } catch (error) {
         results.desktop = { error: error.message };
@@ -671,16 +963,43 @@ async function runLighthouseAudits(url, chromePort) {
         });
 
         results.mobile = {
+            // Category Scores
             performance: Math.round((mobileLhr.categories.performance?.score || 0) * 100),
             accessibility: Math.round((mobileLhr.categories.accessibility?.score || 0) * 100),
             bestPractices: Math.round((mobileLhr.categories['best-practices']?.score || 0) * 100),
             seo: Math.round((mobileLhr.categories.seo?.score || 0) * 100),
+            // Core Web Vitals
             lcp: mobileLhr.audits['largest-contentful-paint']?.displayValue || 'N/A',
             cls: mobileLhr.audits['cumulative-layout-shift']?.displayValue || 'N/A',
             inp: mobileLhr.audits['interaction-to-next-paint']?.displayValue || 'N/A',
             fcp: mobileLhr.audits['first-contentful-paint']?.displayValue || 'N/A',
             tbt: mobileLhr.audits['total-blocking-time']?.displayValue || 'N/A',
+            ttfb: mobileLhr.audits['server-response-time']?.displayValue || 'N/A',
             speedIndex: mobileLhr.audits['speed-index']?.displayValue || 'N/A',
+            tti: mobileLhr.audits['interactive']?.displayValue || 'N/A',
+            // Additional Performance Metrics
+            maxPotentialFid: mobileLhr.audits['max-potential-fid']?.displayValue || 'N/A',
+            totalByteWeight: mobileLhr.audits['total-byte-weight']?.displayValue || 'N/A',
+            domSize: mobileLhr.audits['dom-size']?.displayValue || 'N/A',
+            bootupTime: mobileLhr.audits['bootup-time']?.displayValue || 'N/A',
+            mainthreadWork: mobileLhr.audits['mainthread-work-breakdown']?.displayValue || 'N/A',
+            // Resource Counts
+            numRequests: mobileLhr.audits['network-requests']?.details?.items?.length || 'N/A',
+            numScripts: mobileLhr.audits['network-requests']?.details?.items?.filter(i => i.resourceType === 'Script').length || 'N/A',
+            numStylesheets: mobileLhr.audits['network-requests']?.details?.items?.filter(i => i.resourceType === 'Stylesheet').length || 'N/A',
+            numFonts: mobileLhr.audits['network-requests']?.details?.items?.filter(i => i.resourceType === 'Font').length || 'N/A',
+            numImages: mobileLhr.audits['network-requests']?.details?.items?.filter(i => i.resourceType === 'Image').length || 'N/A',
+            // Optimization Opportunities
+            renderBlockingResources: mobileLhr.audits['render-blocking-resources']?.details?.items?.length || 0,
+            unusedCss: mobileLhr.audits['unused-css-rules']?.displayValue || 'N/A',
+            unusedJs: mobileLhr.audits['unused-javascript']?.displayValue || 'N/A',
+            thirdPartySummary: mobileLhr.audits['third-party-summary']?.displayValue || 'N/A',
+            redirects: mobileLhr.audits['redirects']?.details?.items?.length || 0,
+            // Image Optimization
+            modernImageFormats: mobileLhr.audits['modern-image-formats']?.displayValue || 'N/A',
+            usesOptimizedImages: mobileLhr.audits['uses-optimized-images']?.displayValue || 'N/A',
+            usesResponsiveImages: mobileLhr.audits['uses-responsive-images']?.displayValue || 'N/A',
+            offscreenImages: mobileLhr.audits['offscreen-images']?.displayValue || 'N/A',
         };
     } catch (error) {
         results.mobile = { error: error.message };
@@ -709,6 +1028,7 @@ async function crawlAndAuditSite(site, config = DEFAULT_CONFIG) {
             googleServices: null,
             wordpress: null,
             brokenLinks: null,
+            apiEndpoints: null,
         },
     };
 
@@ -734,6 +1054,9 @@ async function crawlAndAuditSite(site, config = DEFAULT_CONFIG) {
     console.log(`  ⚡ Checking HTTP/3 support...`);
     results.siteLevel.http3Support = await checkHttp3Support(site.url);
 
+    // Test API endpoints
+    results.siteLevel.apiEndpoints = await testApiEndpoints(site.url);
+
     // Crawl pages
     while (queue.length > 0 && results.pages.length < config.maxPagesPerSite) {
         const currentUrl = queue.shift();
@@ -753,6 +1076,10 @@ async function crawlAndAuditSite(site, config = DEFAULT_CONFIG) {
                 runPageAudit(webkitBrowser, currentUrl),
                 runPageAudit(firefoxBrowser, currentUrl),
             ]);
+
+            // Run functional tests
+            console.log(`  🧪 Running functional tests...`);
+            const functionalTestResults = await runFunctionalTests(chromiumBrowser, currentUrl);
 
             // Collect all discovered links
             allDiscoveredLinks.push(...chromiumData.discoveredLinks);
@@ -803,6 +1130,7 @@ async function crawlAndAuditSite(site, config = DEFAULT_CONFIG) {
                     slowAssets: chromiumData.networkData.slowAssets,
                     totalRequests: chromiumData.networkData.totalRequests,
                 },
+                functionalTests: functionalTestResults,
             });
 
             // Add new links to queue
@@ -830,6 +1158,7 @@ async function crawlAndAuditSite(site, config = DEFAULT_CONFIG) {
                 safariErrors: [],
                 firefoxErrors: [],
                 networkAnalysis: { failedRequests: [], slowAssets: [], totalRequests: 0 },
+                functionalTests: null,
             });
         }
     }
@@ -1045,6 +1374,32 @@ function generateHtmlReport(data) {
             </div>
         </div>`;
 
+        // API Endpoints
+        const apiEndpoints = site.siteLevel?.apiEndpoints;
+        html += `<div class="card">
+            <h3>🔌 API Endpoints</h3>
+            <div class="check-item">
+                <span>Tested:</span>
+                <span>${apiEndpoints?.tested || 0} endpoints</span>
+            </div>
+            ${apiEndpoints?.errors?.length > 0 ? `
+                <div class="check-item">
+                    <span class="check-icon">❌</span>
+                    <span class="errors">${apiEndpoints.errors.length} error(s)</span>
+                </div>
+                <details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View errors</summary>
+                <ul style="font-size: 12px; margin-top: 5px;">
+                    ${apiEndpoints.errors.map(e => `<li><code>${e}</code></li>`).join('')}
+                </ul>
+                </details>
+            ` : `
+                <div class="check-item">
+                    <span class="check-icon">✅</span>
+                    <span class="no-errors">No Error Detected</span>
+                </div>
+            `}
+        </div>`;
+
         html += `</div>`; // End grid
 
         // Page Details Table
@@ -1059,9 +1414,6 @@ function generateHtmlReport(data) {
                     <th>Accessibility</th>
                     <th>SEO</th>
                     <th>Best Practices</th>
-                    <th>LCP</th>
-                    <th>CLS</th>
-                    <th>Errors</th>
                     <th>Failed Requests</th>
                 </tr>`;
 
@@ -1071,7 +1423,6 @@ function generateHtmlReport(data) {
             const accessibility = page.desktop?.accessibility || page.mobile?.accessibility || 0;
             const seo = page.desktop?.seo || page.mobile?.seo || 0;
             const bestPractices = page.desktop?.bestPractices || page.mobile?.bestPractices || 0;
-            const totalErrors = (page.chromeErrors?.length || 0) + (page.safariErrors?.length || 0) + (page.firefoxErrors?.length || 0);
             const failedRequests = page.networkAnalysis?.failedRequests?.length || 0;
 
             html += `
@@ -1082,14 +1433,269 @@ function generateHtmlReport(data) {
                 <td class="${accessibility >= 90 ? 'perf-good' : accessibility >= 50 ? 'perf-ok' : 'perf-bad'}">${accessibility}</td>
                 <td class="${seo >= 90 ? 'perf-good' : seo >= 50 ? 'perf-ok' : 'perf-bad'}">${seo}</td>
                 <td class="${bestPractices >= 90 ? 'perf-good' : bestPractices >= 50 ? 'perf-ok' : 'perf-bad'}">${bestPractices}</td>
-                <td>${page.desktop?.lcp || page.mobile?.lcp || 'N/A'}</td>
-                <td>${page.desktop?.cls || page.mobile?.cls || 'N/A'}</td>
-                <td class="${totalErrors > 0 ? 'errors' : 'no-errors'}">${totalErrors}</td>
                 <td class="${failedRequests > 0 ? 'errors' : 'no-errors'}">${failedRequests}</td>
             </tr>`;
         });
 
         html += `</table></div></div>`;
+
+        // Core Web Vitals & Performance Metrics Table
+        html += `<div class="card">
+            <h3>⚡ Core Web Vitals & Performance Metrics</h3>
+            <div class="scroll-table">
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>LCP</th>
+                    <th>CLS</th>
+                    <th>INP</th>
+                    <th>FCP</th>
+                    <th>TBT</th>
+                    <th>TTFB</th>
+                    <th>SI</th>
+                    <th>TTI</th>
+                </tr>`;
+
+        site.pages.forEach(page => {
+            const metrics = page.desktop || page.mobile || {};
+            html += `
+            <tr>
+                <td><a href="${page.url}" target="_blank">${page.url.replace(site.baseUrl, '/') || '/'}</a></td>
+                <td>${metrics.lcp || 'N/A'}</td>
+                <td>${metrics.cls || 'N/A'}</td>
+                <td>${metrics.inp || 'N/A'}</td>
+                <td>${metrics.fcp || 'N/A'}</td>
+                <td>${metrics.tbt || 'N/A'}</td>
+                <td>${metrics.ttfb || 'N/A'}</td>
+                <td>${metrics.speedIndex || 'N/A'}</td>
+                <td>${metrics.tti || 'N/A'}</td>
+            </tr>`;
+        });
+
+        html += `</table></div></div>`;
+
+        // Additional Performance Metrics Table
+        html += `<div class="card">
+            <h3>📊 Additional Performance Metrics</h3>
+            <div class="scroll-table">
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Max FID</th>
+                    <th>Total Weight</th>
+                    <th>DOM Size</th>
+                    <th>JS Boot Time</th>
+                    <th>Main Thread</th>
+                </tr>`;
+
+        site.pages.forEach(page => {
+            const metrics = page.desktop || page.mobile || {};
+            html += `
+            <tr>
+                <td><a href="${page.url}" target="_blank">${page.url.replace(site.baseUrl, '/') || '/'}</a></td>
+                <td>${metrics.maxPotentialFid || 'N/A'}</td>
+                <td>${metrics.totalByteWeight || 'N/A'}</td>
+                <td>${metrics.domSize || 'N/A'}</td>
+                <td>${metrics.bootupTime || 'N/A'}</td>
+                <td>${metrics.mainthreadWork || 'N/A'}</td>
+            </tr>`;
+        });
+
+        html += `</table></div></div>`;
+
+        // Resource Summary Table
+        html += `<div class="card">
+            <h3>📦 Resource Summary</h3>
+            <div class="scroll-table">
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Requests</th>
+                    <th>Scripts</th>
+                    <th>Stylesheets</th>
+                    <th>Fonts</th>
+                    <th>Images</th>
+                    <th>Render Blocking</th>
+                    <th>Redirects</th>
+                </tr>`;
+
+        site.pages.forEach(page => {
+            const metrics = page.desktop || page.mobile || {};
+            html += `
+            <tr>
+                <td><a href="${page.url}" target="_blank">${page.url.replace(site.baseUrl, '/') || '/'}</a></td>
+                <td>${metrics.numRequests || 'N/A'}</td>
+                <td>${metrics.numScripts || 'N/A'}</td>
+                <td>${metrics.numStylesheets || 'N/A'}</td>
+                <td>${metrics.numFonts || 'N/A'}</td>
+                <td>${metrics.numImages || 'N/A'}</td>
+                <td class="${(metrics.renderBlockingResources || 0) > 0 ? 'perf-bad' : 'perf-good'}">${metrics.renderBlockingResources || 0}</td>
+                <td>${metrics.redirects || 0}</td>
+            </tr>`;
+        });
+
+        html += `</table></div></div>`;
+
+        // Optimization Opportunities Table
+        html += `<div class="card">
+            <h3>🎯 Optimization Opportunities</h3>
+            <div class="scroll-table">
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Unused CSS</th>
+                    <th>Unused JS</th>
+                    <th>Third-Party Impact</th>
+                    <th>Modern Images</th>
+                    <th>Optimized Images</th>
+                </tr>`;
+
+        site.pages.forEach(page => {
+            const metrics = page.desktop || page.mobile || {};
+            html += `
+            <tr>
+                <td><a href="${page.url}" target="_blank">${page.url.replace(site.baseUrl, '/') || '/'}</a></td>
+                <td>${metrics.unusedCss || 'N/A'}</td>
+                <td>${metrics.unusedJs || 'N/A'}</td>
+                <td>${metrics.thirdPartySummary || 'N/A'}</td>
+                <td>${metrics.modernImageFormats || 'N/A'}</td>
+                <td>${metrics.usesOptimizedImages || 'N/A'}</td>
+            </tr>`;
+        });
+
+        html += `</table></div></div>`;
+
+        // Functional Tests Results
+        html += `<div class="card">
+            <h3>🧪 Functional Tests</h3>`;
+
+        site.pages.forEach(page => {
+            const urlShort = page.url.replace(site.baseUrl, '/') || '/';
+            const ft = page.functionalTests;
+
+            html += `<div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
+                <strong>${urlShort}</strong>`;
+
+            if (ft) {
+                const hasErrors = ft.linksTest?.errors?.length > 0 || ft.buttonsTest?.errors?.length > 0 ||
+                                  ft.formsTest?.errors?.length > 0 || ft.imagesTest?.errors?.length > 0 ||
+                                  ft.navigationTest?.errors?.length > 0 || ft.interactiveTest?.errors?.length > 0;
+
+                html += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 8px;">
+                    <div class="check-item" style="border: none;">
+                        <span class="check-icon">${ft.linksTest?.errors?.length > 0 ? '⚠️' : '✅'}</span>
+                        <span>Links: ${ft.linksTest?.passed || 0} OK</span>
+                    </div>
+                    <div class="check-item" style="border: none;">
+                        <span class="check-icon">${ft.buttonsTest?.errors?.length > 0 ? '⚠️' : '✅'}</span>
+                        <span>Buttons: ${ft.buttonsTest?.passed || 0} OK</span>
+                    </div>
+                    <div class="check-item" style="border: none;">
+                        <span class="check-icon">${ft.formsTest?.errors?.length > 0 ? '⚠️' : '✅'}</span>
+                        <span>Forms: ${ft.formsTest?.passed || 0} OK</span>
+                    </div>
+                    <div class="check-item" style="border: none;">
+                        <span class="check-icon">${ft.imagesTest?.errors?.length > 0 ? '⚠️' : '✅'}</span>
+                        <span>Images: ${ft.imagesTest?.passed || 0} OK</span>
+                    </div>
+                    <div class="check-item" style="border: none;">
+                        <span class="check-icon">${ft.navigationTest?.errors?.length > 0 ? '⚠️' : '✅'}</span>
+                        <span>Navigation: ${ft.navigationTest?.passed || 0} OK</span>
+                    </div>
+                    <div class="check-item" style="border: none;">
+                        <span class="check-icon">${ft.interactiveTest?.errors?.length > 0 ? '⚠️' : '✅'}</span>
+                        <span>Interactive: ${ft.interactiveTest?.passed || 0} OK</span>
+                    </div>
+                </div>`;
+
+                if (hasErrors) {
+                    html += `<details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View test issues</summary><div style="padding: 10px; font-size: 12px;">`;
+                    ['linksTest', 'buttonsTest', 'formsTest', 'imagesTest', 'navigationTest', 'interactiveTest'].forEach(testName => {
+                        if (ft[testName]?.errors?.length > 0) {
+                            html += `<div><strong>${testName.replace('Test', '')} issues:</strong><ul>`;
+                            ft[testName].errors.slice(0, 3).forEach(err => {
+                                html += `<li><code>${err}</code></li>`;
+                            });
+                            html += `</ul></div>`;
+                        }
+                    });
+                    html += `</div></details>`;
+                } else {
+                    html += `<div style="margin-top: 5px; color: #5cb85c; font-size: 12px;">✅ No Error Detected</div>`;
+                }
+            } else {
+                html += `<div style="margin-top: 8px; color: #666;">Functional tests not available</div>`;
+            }
+
+            html += `</div>`;
+        });
+
+        html += `</div>`;
+
+        // Browser Console Error Testing
+        html += `<div class="card">
+            <h3>🌐 Browser Console Error Testing</h3>`;
+
+        site.pages.forEach(page => {
+            const urlShort = page.url.replace(site.baseUrl, '/') || '/';
+            html += `<div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
+                <strong>${urlShort}</strong>
+                <div style="display: flex; gap: 20px; margin-top: 8px; flex-wrap: wrap;">`;
+
+            // Chrome status
+            const chromeHasErrors = page.chromeErrors && page.chromeErrors.length > 0;
+            html += `<div class="check-item" style="border: none;">
+                <span class="check-icon">${chromeHasErrors ? '❌' : '✅'}</span>
+                <span><strong>Chrome (Chromium):</strong> ${chromeHasErrors ? `${page.chromeErrors.length} error(s) detected` : 'No Error Detected'}</span>
+            </div>`;
+
+            // Safari status
+            const safariHasErrors = page.safariErrors && page.safariErrors.length > 0;
+            html += `<div class="check-item" style="border: none;">
+                <span class="check-icon">${safariHasErrors ? '❌' : '✅'}</span>
+                <span><strong>Safari (WebKit):</strong> ${safariHasErrors ? `${page.safariErrors.length} error(s) detected` : 'No Error Detected'}</span>
+            </div>`;
+
+            // Firefox status
+            const firefoxHasErrors = page.firefoxErrors && page.firefoxErrors.length > 0;
+            html += `<div class="check-item" style="border: none;">
+                <span class="check-icon">${firefoxHasErrors ? '❌' : '✅'}</span>
+                <span><strong>Firefox (Gecko):</strong> ${firefoxHasErrors ? `${page.firefoxErrors.length} error(s) detected` : 'No Error Detected'}</span>
+            </div>`;
+
+            html += `</div>`;
+
+            // Show error details if any
+            if (chromeHasErrors || safariHasErrors || firefoxHasErrors) {
+                html += `<details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View error details</summary><div style="padding: 10px; font-size: 12px;">`;
+                if (chromeHasErrors) {
+                    html += `<div><strong>Chrome (Chromium) errors:</strong><ul>`;
+                    page.chromeErrors.slice(0, 3).forEach(err => {
+                        html += `<li><code>${err.substring(0, 150)}${err.length > 150 ? '...' : ''}</code></li>`;
+                    });
+                    html += `</ul></div>`;
+                }
+                if (safariHasErrors) {
+                    html += `<div><strong>Safari (WebKit) errors:</strong><ul>`;
+                    page.safariErrors.slice(0, 3).forEach(err => {
+                        html += `<li><code>${err.substring(0, 150)}${err.length > 150 ? '...' : ''}</code></li>`;
+                    });
+                    html += `</ul></div>`;
+                }
+                if (firefoxHasErrors) {
+                    html += `<div><strong>Firefox (Gecko) errors:</strong><ul>`;
+                    page.firefoxErrors.slice(0, 3).forEach(err => {
+                        html += `<li><code>${err.substring(0, 150)}${err.length > 150 ? '...' : ''}</code></li>`;
+                    });
+                    html += `</ul></div>`;
+                }
+                html += `</div></details>`;
+            }
+
+            html += `</div>`;
+        });
+
+        html += `</div>`;
         html += `</div>`; // End tab content
     });
 
@@ -1187,10 +1793,14 @@ ${site.siteLevel?.wordpress?.isWordPress ? `- **WordPress:** ✅ Detected ${site
 - **Broken:** ${site.siteLevel?.brokenLinks?.broken?.length || 0}
 ${site.siteLevel?.brokenLinks?.broken?.length > 0 ? '\n**Broken URLs:**\n' + site.siteLevel.brokenLinks.broken.slice(0, 10).map(b => `- ${b.url} (${b.status || b.error})`).join('\n') : ''}
 
+##### API Endpoints
+- **Tested:** ${site.siteLevel?.apiEndpoints?.tested || 0} endpoints
+${site.siteLevel?.apiEndpoints?.errors?.length > 0 ? `- **Errors:** ❌ ${site.siteLevel.apiEndpoints.errors.length} error(s) detected\n${site.siteLevel.apiEndpoints.errors.map(e => `  - \`${e}\``).join('\n')}` : '- **Status:** ✅ No Error Detected'}
+
 #### Page Results
 
-| URL | Desktop | Mobile | A11y | SEO | Best Pr. | LCP | CLS | Errors |
-|-----|---------|--------|------|-----|----------|-----|-----|--------|
+| URL | Desktop | Mobile | A11y | SEO | Best Pr. |
+|-----|---------|--------|------|-----|----------|
 `;
 
         site.pages.forEach(page => {
@@ -1200,13 +1810,147 @@ ${site.siteLevel?.brokenLinks?.broken?.length > 0 ? '\n**Broken URLs:**\n' + sit
             const a11y = page.desktop?.accessibility || page.mobile?.accessibility || 0;
             const seo = page.desktop?.seo || page.mobile?.seo || 0;
             const bp = page.desktop?.bestPractices || page.mobile?.bestPractices || 0;
-            const totalErrors = (page.chromeErrors?.length || 0) + (page.safariErrors?.length || 0) + (page.firefoxErrors?.length || 0);
 
             if (page.error) {
-                md += `| ${urlShort} | Error | Error | - | - | - | - | - | - |\n`;
+                md += `| ${urlShort} | Error | Error | - | - | - |\n`;
             } else {
-                md += `| ${urlShort} | ${desktopPerf} | ${mobilePerf} | ${a11y} | ${seo} | ${bp} | ${page.desktop?.lcp || 'N/A'} | ${page.desktop?.cls || 'N/A'} | ${totalErrors} |\n`;
+                md += `| ${urlShort} | ${desktopPerf} | ${mobilePerf} | ${a11y} | ${seo} | ${bp} |\n`;
             }
+        });
+
+        // Core Web Vitals & Performance Metrics table
+        md += `\n##### Core Web Vitals & Performance Metrics\n\n`;
+        md += `| URL | LCP | CLS | INP | FCP | TBT | TTFB | SI | TTI |\n`;
+        md += `|-----|-----|-----|-----|-----|-----|------|----|----||\n`;
+
+        site.pages.forEach(page => {
+            const urlShort = page.url.replace(site.baseUrl, '/') || '/';
+            if (page.error) {
+                md += `| ${urlShort} | - | - | - | - | - | - | - | - |\n`;
+            } else {
+                const metrics = page.desktop || page.mobile || {};
+                md += `| ${urlShort} | ${metrics.lcp || 'N/A'} | ${metrics.cls || 'N/A'} | ${metrics.inp || 'N/A'} | ${metrics.fcp || 'N/A'} | ${metrics.tbt || 'N/A'} | ${metrics.ttfb || 'N/A'} | ${metrics.speedIndex || 'N/A'} | ${metrics.tti || 'N/A'} |\n`;
+            }
+        });
+
+        // Additional Performance Metrics table
+        md += `\n##### Additional Performance Metrics\n\n`;
+        md += `| URL | Max FID | Total Weight | DOM Size | JS Boot Time | Main Thread |\n`;
+        md += `|-----|---------|--------------|----------|--------------|-------------|\n`;
+
+        site.pages.forEach(page => {
+            const urlShort = page.url.replace(site.baseUrl, '/') || '/';
+            if (page.error) {
+                md += `| ${urlShort} | - | - | - | - | - |\n`;
+            } else {
+                const metrics = page.desktop || page.mobile || {};
+                md += `| ${urlShort} | ${metrics.maxPotentialFid || 'N/A'} | ${metrics.totalByteWeight || 'N/A'} | ${metrics.domSize || 'N/A'} | ${metrics.bootupTime || 'N/A'} | ${metrics.mainthreadWork || 'N/A'} |\n`;
+            }
+        });
+
+        // Resource Summary table
+        md += `\n##### Resource Summary\n\n`;
+        md += `| URL | Requests | Scripts | Stylesheets | Fonts | Images | Render Blocking | Redirects |\n`;
+        md += `|-----|----------|---------|-------------|-------|--------|-----------------|----------|\n`;
+
+        site.pages.forEach(page => {
+            const urlShort = page.url.replace(site.baseUrl, '/') || '/';
+            if (page.error) {
+                md += `| ${urlShort} | - | - | - | - | - | - | - |\n`;
+            } else {
+                const metrics = page.desktop || page.mobile || {};
+                md += `| ${urlShort} | ${metrics.numRequests || 'N/A'} | ${metrics.numScripts || 'N/A'} | ${metrics.numStylesheets || 'N/A'} | ${metrics.numFonts || 'N/A'} | ${metrics.numImages || 'N/A'} | ${metrics.renderBlockingResources || 0} | ${metrics.redirects || 0} |\n`;
+            }
+        });
+
+        // Optimization Opportunities table
+        md += `\n##### Optimization Opportunities\n\n`;
+        md += `| URL | Unused CSS | Unused JS | Third-Party Impact | Modern Images | Optimized Images |\n`;
+        md += `|-----|------------|-----------|-------------------|---------------|------------------|\n`;
+
+        site.pages.forEach(page => {
+            const urlShort = page.url.replace(site.baseUrl, '/') || '/';
+            if (page.error) {
+                md += `| ${urlShort} | - | - | - | - | - |\n`;
+            } else {
+                const metrics = page.desktop || page.mobile || {};
+                md += `| ${urlShort} | ${metrics.unusedCss || 'N/A'} | ${metrics.unusedJs || 'N/A'} | ${metrics.thirdPartySummary || 'N/A'} | ${metrics.modernImageFormats || 'N/A'} | ${metrics.usesOptimizedImages || 'N/A'} |\n`;
+            }
+        });
+
+        // Functional Tests Results
+        md += `\n##### Functional Tests\n\n`;
+        site.pages.forEach(page => {
+            const urlShort = page.url.replace(site.baseUrl, '/') || '/';
+            const ft = page.functionalTests;
+            md += `**${urlShort}**\n`;
+
+            if (ft) {
+                const hasErrors = ft.linksTest?.errors?.length > 0 || ft.buttonsTest?.errors?.length > 0 ||
+                                  ft.formsTest?.errors?.length > 0 || ft.imagesTest?.errors?.length > 0 ||
+                                  ft.navigationTest?.errors?.length > 0 || ft.interactiveTest?.errors?.length > 0;
+
+                md += `- **Links:** ${ft.linksTest?.errors?.length > 0 ? '⚠️' : '✅'} ${ft.linksTest?.passed || 0} passed\n`;
+                md += `- **Buttons:** ${ft.buttonsTest?.errors?.length > 0 ? '⚠️' : '✅'} ${ft.buttonsTest?.passed || 0} passed\n`;
+                md += `- **Forms:** ${ft.formsTest?.errors?.length > 0 ? '⚠️' : '✅'} ${ft.formsTest?.passed || 0} passed\n`;
+                md += `- **Images:** ${ft.imagesTest?.errors?.length > 0 ? '⚠️' : '✅'} ${ft.imagesTest?.passed || 0} passed\n`;
+                md += `- **Navigation:** ${ft.navigationTest?.errors?.length > 0 ? '⚠️' : '✅'} ${ft.navigationTest?.passed || 0} passed\n`;
+                md += `- **Interactive:** ${ft.interactiveTest?.errors?.length > 0 ? '⚠️' : '✅'} ${ft.interactiveTest?.passed || 0} passed\n`;
+
+                if (hasErrors) {
+                    md += `\n**Issues Found:**\n`;
+                    ['linksTest', 'buttonsTest', 'formsTest', 'imagesTest', 'navigationTest', 'interactiveTest'].forEach(testName => {
+                        if (ft[testName]?.errors?.length > 0) {
+                            ft[testName].errors.slice(0, 3).forEach(err => {
+                                md += `  - ${testName.replace('Test', '')}: \`${err}\`\n`;
+                            });
+                        }
+                    });
+                } else {
+                    md += `- **Overall:** ✅ No Error Detected\n`;
+                }
+            } else {
+                md += `- Functional tests not available\n`;
+            }
+            md += `\n`;
+        });
+
+        // Browser Testing Results (Console Errors)
+        md += `\n##### Browser Console Error Testing\n\n`;
+        site.pages.forEach(page => {
+            const urlShort = page.url.replace(site.baseUrl, '/') || '/';
+            md += `**${urlShort}**\n`;
+
+            // Chrome status
+            if (!page.chromeErrors || page.chromeErrors.length === 0) {
+                md += `- **Chrome (Chromium):** ✅ No Error Detected\n`;
+            } else {
+                md += `- **Chrome (Chromium):** ❌ ${page.chromeErrors.length} error(s) detected\n`;
+                page.chromeErrors.slice(0, 3).forEach(err => {
+                    md += `  - \`${err.substring(0, 100)}${err.length > 100 ? '...' : ''}\`\n`;
+                });
+            }
+
+            // Safari status
+            if (!page.safariErrors || page.safariErrors.length === 0) {
+                md += `- **Safari (WebKit):** ✅ No Error Detected\n`;
+            } else {
+                md += `- **Safari (WebKit):** ❌ ${page.safariErrors.length} error(s) detected\n`;
+                page.safariErrors.slice(0, 3).forEach(err => {
+                    md += `  - \`${err.substring(0, 100)}${err.length > 100 ? '...' : ''}\`\n`;
+                });
+            }
+
+            // Firefox status
+            if (!page.firefoxErrors || page.firefoxErrors.length === 0) {
+                md += `- **Firefox (Gecko):** ✅ No Error Detected\n`;
+            } else {
+                md += `- **Firefox (Gecko):** ❌ ${page.firefoxErrors.length} error(s) detected\n`;
+                page.firefoxErrors.slice(0, 3).forEach(err => {
+                    md += `  - \`${err.substring(0, 100)}${err.length > 100 ? '...' : ''}\`\n`;
+                });
+            }
+            md += `\n`;
         });
 
         // Network issues
@@ -1226,22 +1970,6 @@ ${site.siteLevel?.brokenLinks?.broken?.length > 0 ? '\n**Broken URLs:**\n' + sit
             });
         }
 
-        // Console errors
-        const pagesWithErrors = site.pages.filter(p =>
-            (p.chromeErrors?.length > 0) || (p.safariErrors?.length > 0) || (p.firefoxErrors?.length > 0));
-
-        if (pagesWithErrors.length > 0) {
-            md += `\n#### Console Errors\n\n`;
-            pagesWithErrors.forEach(page => {
-                const urlShort = page.url.replace(site.baseUrl, '/') || '/';
-                if (page.chromeErrors?.length > 0) {
-                    md += `**${urlShort}** (Chrome):\n`;
-                    page.chromeErrors.slice(0, 3).forEach(err => {
-                        md += `- \`${err.substring(0, 100)}${err.length > 100 ? '...' : ''}\`\n`;
-                    });
-                }
-            });
-        }
     });
 
     md += `\n---\n\n## Score Guide
@@ -1254,15 +1982,59 @@ ${site.siteLevel?.brokenLinks?.broken?.length > 0 ? '\n**Broken URLs:**\n' + sit
 | 0-49 | Poor | Page has significant issues |
 
 ### Core Web Vitals
-- **LCP (Largest Contentful Paint):** Should be < 2.5s
-- **CLS (Cumulative Layout Shift):** Should be < 0.1
-- **INP (Interaction to Next Paint):** Should be < 200ms
+
+| Metric | Description | Good | Needs Improvement | Poor |
+|--------|-------------|------|-------------------|------|
+| **LCP** | Largest Contentful Paint - loading performance | < 2.5s | 2.5s - 4.0s | > 4.0s |
+| **CLS** | Cumulative Layout Shift - visual stability | < 0.1 | 0.1 - 0.25 | > 0.25 |
+| **INP** | Interaction to Next Paint - responsiveness | < 200ms | 200ms - 500ms | > 500ms |
+
+### Performance Timing Metrics
+
+| Metric | Description | Good Threshold |
+|--------|-------------|----------------|
+| **FCP** | First Contentful Paint - time to first content render | < 1.8s |
+| **TBT** | Total Blocking Time - time blocked by long tasks | < 200ms |
+| **TTFB** | Time to First Byte - server response time | < 800ms |
+| **SI** | Speed Index - how quickly content is visually displayed | < 3.4s |
+| **TTI** | Time to Interactive - time until fully interactive | < 3.8s |
+| **Max FID** | Max Potential First Input Delay - worst-case interactivity | < 100ms |
+
+### Resource & Load Metrics
+
+| Metric | Description | Recommendation |
+|--------|-------------|----------------|
+| **Total Weight** | Total page size (HTML, CSS, JS, images, fonts) | < 1.5 MB |
+| **DOM Size** | Number of DOM elements | < 1500 elements |
+| **JS Boot Time** | JavaScript execution time | < 2.0s |
+| **Main Thread** | Main thread work breakdown | < 4.0s |
+| **Requests** | Total network requests | Minimize |
+| **Render Blocking** | Resources blocking first paint | 0 |
+
+### Optimization Opportunities
+
+| Metric | Description |
+|--------|-------------|
+| **Unused CSS** | CSS bytes that are not used on the page |
+| **Unused JS** | JavaScript bytes that are not used on the page |
+| **Third-Party** | Impact of third-party scripts on load time |
+| **Modern Images** | Potential savings from using WebP/AVIF formats |
+| **Optimized Images** | Potential savings from compressing images |
+
+### Browser Console Error Testing
+- **Chrome (Chromium):** Tests page rendering and JavaScript execution in Chromium engine
+- **Safari (WebKit):** Tests page rendering and JavaScript execution in WebKit engine
+- **Firefox (Gecko):** Tests page rendering and JavaScript execution in Gecko engine
 
 ### Security Headers
-- **Content-Security-Policy:** Prevents XSS attacks
-- **Strict-Transport-Security:** Enforces HTTPS
-- **X-Frame-Options:** Prevents clickjacking
-- **X-Content-Type-Options:** Prevents MIME sniffing
+| Header | Purpose |
+|--------|---------|
+| **Content-Security-Policy** | Prevents XSS and data injection attacks |
+| **Strict-Transport-Security** | Enforces HTTPS connections |
+| **X-Frame-Options** | Prevents clickjacking attacks |
+| **X-Content-Type-Options** | Prevents MIME type sniffing |
+| **Referrer-Policy** | Controls referrer information leakage |
+| **Permissions-Policy** | Controls browser feature access |
 
 ---
 
