@@ -49,31 +49,31 @@
     <body>
         <div class="container">
             <h1>🔍 Development Readiness Report v2.0</h1>
-            <p class="header-info">Generated: 2/2/2026, 8:06:34 AM</p>
+            <p class="header-info">Generated: 2/3/2026, 7:04:07 AM</p>
 
             <div class="stats">
                 <div class="stat-card"><h3>1</h3><p>Sites Audited</p></div>
-                <div class="stat-card"><h3>20</h3><p>Pages Scanned</p></div>
-                <div class="stat-card"><h3 class="errors">164</h3><p>Console Errors</p></div>
-            </div><div class="tabs"><button class="tab active" onclick="showTab('site-0')">Staging</button></div><div id="site-0" class="tab-content active"><div class="grid-2"><div class="card">
+                <div class="stat-card"><h3>1</h3><p>Pages Scanned</p></div>
+                <div class="stat-card"><h3 class="errors">2</h3><p>Console Errors</p></div>
+            </div><div class="tabs"><button class="tab active" onclick="showTab('site-0')">Manual Audit</button></div><div id="site-0" class="tab-content active"><div class="grid-2"><div class="card">
             <h3>📈 Performance Overview</h3>
             <div class="check-item">
                 <span>Desktop Avg:</span>
-                <span class="perf-good">91</span>
+                <span class="perf-bad">0</span>
             </div>
             <div class="check-item">
                 <span>Mobile Avg:</span>
-                <span class="perf-ok">77</span>
+                <span class="perf-bad">0</span>
             </div>
         </div><div class="card">
             <h3>🔒 Security Headers</h3>
             <div class="check-item">
                 <span>Score:</span>
-                <span class="perf-good">86%</span>
+                <span class="perf-bad">43%</span>
             </div>
             <div class="check-item">
                 <span>Missing:</span>
-                <span>strict-transport-security</span>
+                <span>strict-transport-security, x-content-type-options, x-frame-options, x-xss-protection</span>
             </div>
         </div><div class="card">
             <h3>🔗 URL Canonicalization</h3>
@@ -88,10 +88,10 @@
         </div><div class="card">
             <h3>⚡ HTTP/3 Support</h3>
             <div class="check-item">
-                <span class="check-icon">❌</span>
-                <span>QUIC/HTTP3 Not Detected</span>
+                <span class="check-icon">✅</span>
+                <span>QUIC/HTTP3 Supported</span>
             </div>
-            
+            <small>Alt-Svc: h3=":443"; ma=86400...</small>
         </div><div class="card">
             <h3>📊 Google Services</h3>
             <div class="check-item">
@@ -110,7 +110,7 @@
             <h3>📝 CMS Detection</h3>
             
                 <div class="check-item">
-                    <span class="badge badge-info">WordPress 6.9</span>
+                    <span class="badge badge-info">WordPress </span>
                 </div>
                 <div class="check-item">
                     <span class="check-icon">✅</span>
@@ -121,11 +121,11 @@
             <h3>🔗 Broken Links</h3>
             <div class="check-item">
                 <span>Checked:</span>
-                <span>48 links</span>
+                <span>0 links</span>
             </div>
             <div class="check-item">
                 <span>Broken:</span>
-                <span class="errors">2</span>
+                <span class="no-errors">0</span>
             </div>
         </div></div><div class="card">
             <h3>📄 Page Details</h3>
@@ -144,244 +144,16 @@
                     <th>Failed Requests</th>
                 </tr>
             <tr>
-                <td><a href="http://34.142.200.251/" target="_blank">/</a></td>
-                <td class="perf-ok">88</td>
-                <td class="perf-ok">86</td>
-                <td class="perf-good">96</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">71</td>
-                <td>1.6 s</td>
-                <td>0</td>
-                <td class="errors">6</td>
-                <td class="errors">3</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/" target="_blank">/en/</a></td>
-                <td class="perf-good">98</td>
-                <td class="perf-ok">84</td>
-                <td class="perf-good">96</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">71</td>
-                <td>0.9 s</td>
-                <td>0</td>
-                <td class="errors">6</td>
-                <td class="errors">3</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/bali-villa/" target="_blank">/en/bali-villa/</a></td>
-                <td class="perf-good">97</td>
-                <td class="perf-ok">71</td>
-                <td class="perf-good">98</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>1.3 s</td>
-                <td>0.001</td>
-                <td class="errors">6</td>
-                <td class="errors">3</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/room/pool-suite/" target="_blank">/en/room/pool-suite/</a></td>
-                <td class="perf-ok">89</td>
-                <td class="perf-ok">74</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">71</td>
-                <td>2.2 s</td>
-                <td>0</td>
-                <td class="errors">10</td>
-                <td class="errors">5</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/room/terrace-villas/" target="_blank">/en/room/terrace-villas/</a></td>
-                <td class="perf-good">96</td>
-                <td class="perf-ok">75</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">71</td>
-                <td>1.3 s</td>
-                <td>0</td>
-                <td class="errors">10</td>
-                <td class="errors">5</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/room/deluxe-terrace-villa/" target="_blank">/en/room/deluxe-terrace-villa/</a></td>
-                <td class="perf-ok">85</td>
-                <td class="perf-ok">73</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">71</td>
-                <td>2.6 s</td>
-                <td>0</td>
-                <td class="errors">10</td>
-                <td class="errors">5</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/premium-club-pool/" target="_blank">/en/premium-club-pool/</a></td>
-                <td class="perf-ok">58</td>
-                <td class="perf-ok">69</td>
-                <td class="perf-ok">85</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>2.9 s</td>
-                <td>1.403</td>
-                <td class="errors">10</td>
-                <td class="errors">5</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/room/elephant-villa/" target="_blank">/en/room/elephant-villa/</a></td>
-                <td class="perf-good">95</td>
-                <td class="perf-ok">73</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">71</td>
-                <td>1.5 s</td>
-                <td>0</td>
-                <td class="errors">10</td>
-                <td class="errors">5</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/room/vice-regal-villa/" target="_blank">/en/room/vice-regal-villa/</a></td>
-                <td class="perf-ok">84</td>
-                <td class="perf-ok">73</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">71</td>
-                <td>2.8 s</td>
-                <td>0</td>
-                <td class="errors">10</td>
-                <td class="errors">5</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/room/viceroy-bali/" target="_blank">/en/room/viceroy-bali/</a></td>
-                <td class="perf-ok">84</td>
-                <td class="perf-ok">73</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">71</td>
-                <td>2.8 s</td>
-                <td>0</td>
-                <td class="errors">10</td>
-                <td class="errors">5</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/hotel-offers/" target="_blank">/en/hotel-offers/</a></td>
-                <td class="perf-good">98</td>
-                <td class="perf-ok">83</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>1.0 s</td>
-                <td>0</td>
-                <td class="errors">6</td>
-                <td class="errors">3</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/packages/" target="_blank">/en/packages/</a></td>
-                <td class="perf-good">98</td>
-                <td class="perf-ok">80</td>
-                <td class="perf-good">96</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>1.0 s</td>
-                <td>0</td>
-                <td class="errors">6</td>
-                <td class="errors">3</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/bali-restaurants/" target="_blank">/en/bali-restaurants/</a></td>
-                <td class="perf-ok">84</td>
-                <td class="perf-ok">71</td>
-                <td class="perf-good">96</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>2.8 s</td>
-                <td>0.001</td>
-                <td class="errors">8</td>
-                <td class="errors">4</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/wellness-experiences/" target="_blank">/en/wellness-experiences/</a></td>
-                <td class="perf-good">94</td>
-                <td class="perf-ok">80</td>
-                <td class="perf-good">98</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">71</td>
-                <td>1.6 s</td>
-                <td>0</td>
-                <td class="errors">12</td>
-                <td class="errors">3</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/bali-activities/" target="_blank">/en/bali-activities/</a></td>
-                <td class="perf-good">98</td>
-                <td class="perf-ok">84</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>1.1 s</td>
-                <td>0</td>
-                <td class="errors">8</td>
-                <td class="errors">4</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/bali-destinations/" target="_blank">/en/bali-destinations/</a></td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">89</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>0.6 s</td>
-                <td>0</td>
-                <td class="errors">8</td>
-                <td class="errors">4</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/gallery/" target="_blank">/en/gallery/</a></td>
-                <td class="perf-good">95</td>
-                <td class="perf-ok">75</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>1.5 s</td>
-                <td>0</td>
-                <td class="errors">8</td>
-                <td class="errors">4</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/blog/" target="_blank">/en/blog/</a></td>
-                <td class="perf-good">95</td>
-                <td class="perf-ok">86</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>1.5 s</td>
-                <td>0</td>
-                <td class="errors">6</td>
-                <td class="errors">3</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/about/" target="_blank">/en/about/</a></td>
-                <td class="perf-good">97</td>
-                <td class="perf-ok">75</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>1.1 s</td>
-                <td>0.001</td>
-                <td class="errors">6</td>
-                <td class="errors">3</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.142.200.251/en/facilities/" target="_blank">/en/facilities/</a></td>
-                <td class="perf-good">96</td>
-                <td class="perf-ok">71</td>
-                <td class="perf-good">96</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">75</td>
-                <td>1.3 s</td>
-                <td>0.001</td>
-                <td class="errors">8</td>
-                <td class="errors">4</td>
+                <td><a href="https://balihideawayvillas.com/" target="_blank">/</a></td>
+                <td class="perf-bad">0</td>
+                <td class="perf-bad">0</td>
+                <td class="perf-bad">0</td>
+                <td class="perf-bad">0</td>
+                <td class="perf-bad">0</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td class="errors">2</td>
+                <td class="errors">1</td>
             </tr></table></div></div></div>
         </div>
         <script>
