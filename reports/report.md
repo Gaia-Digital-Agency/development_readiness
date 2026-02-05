@@ -1,6 +1,6 @@
 # Development Readiness Report v2.0
 
-**Generated:** 2/4/2026, 8:16:43 AM
+**Generated:** 2/5/2026, 2:30:53 AM
 
 ---
 
@@ -10,7 +10,7 @@
 |--------|-------|
 | Sites Audited | 1 |
 | Pages Scanned | 20 |
-| Console Errors | 0 |
+| Console Errors | 43 |
 
 ---
 
@@ -18,7 +18,7 @@
 
 | Site | Desktop Perf | Mobile Perf | Security | SEO | Accessibility |
 |------|-------------|-------------|----------|-----|---------------|
-| Manual Audit | 89 | 76 | 14% | 92 | 91 |
+| Manual Audit | 87 | 79 | 14% | 99 | 94 |
 
 ---
 
@@ -26,7 +26,7 @@
 
 ### Manual Audit
 
-**Base URL:** https://mintcream-flamingo-191587.hostingersite.com/
+**Base URL:** https://balihideawayvillas.com/contact/
 
 #### Site-Level Checks
 
@@ -36,10 +36,10 @@
 
 ##### URL Canonicalization
 - **HTTPS Redirect:** ✅ Yes
-- **WWW Consistency:** ⚠️ Check manually
+- **WWW Consistency:** ✅ Yes
 
 ##### HTTP/3 Support
-- **QUIC/HTTP3:** ❌ Not detected
+- **QUIC/HTTP3:** ✅ Supported
 
 ##### Google Services
 - **Google Analytics:** ❌ Not detected
@@ -51,11 +51,12 @@
 - **Login Protected:** ⚠️ No
 
 ##### Broken Links
-- **Checked:** 50 links
-- **Broken:** 1
+- **Checked:** 48 links
+- **Broken:** 2
 
 **Broken URLs:**
-- https://www.instagram.com/ypi_asia/ (429)
+- https://www.instagram.com/globalvillasltd/ (429)
+- https://www.instagram.com/balihideawayvillas (429)
 
 ##### API Endpoints
 - **Tested:** 11 endpoints
@@ -65,570 +66,481 @@
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. |
 |-----|---------|--------|------|-----|----------|
-| / | 80 | 91 | 91 | 92 | 78 |
-| /destination/bali/ | 89 | 83 | 92 | 92 | 78 |
-| /destination/java/ | 83 | 70 | 92 | 92 | 78 |
-| /destination/lombok/ | 85 | 69 | 92 | 92 | 78 |
-| /gap-year-destination/lombok/ | 82 | 67 | 92 | 92 | 78 |
-| /service/ | 94 | 94 | 87 | 92 | 78 |
-| /about/ | 66 | 0 | 92 | 92 | 78 |
-| /contact-us-student/ | 92 | 69 | 91 | 92 | 78 |
-| /contact-us-for-companies/ | 92 | 89 | 91 | 92 | 78 |
-| /nl/ | 95 | 70 | 91 | 92 | 78 |
-| /apply/ | 96 | 75 | 93 | 92 | 78 |
-| /internships | 90 | 83 | 85 | 92 | 78 |
-| /destination/java | 87 | 66 | 92 | 92 | 78 |
-| /destination/lombok | 89 | 73 | 92 | 92 | 78 |
-| /blog/ | 92 | 87 | 87 | 85 | 78 |
-| /terms-condition/ | 95 | 90 | 92 | 92 | 78 |
-| /privacy-policy/ | 95 | 95 | 92 | 92 | 78 |
-| /faq | 93 | 88 | 92 | 92 | 78 |
-| /nl/destination/bali/ | 94 | 82 | 92 | 92 | 78 |
-| /location/bali/ | 94 | 85 | 85 | 92 | 78 |
+| / | 73 | 67 | 88 | 100 | 78 |
+| https://balihideawayvillas.com/ | 66 | 85 | 96 | 100 | 100 |
+| https://balihideawayvillas.com/about/ | 90 | 88 | 95 | 100 | 100 |
+| https://balihideawayvillas.com/our-villas/ | 90 | 76 | 90 | 92 | 78 |
+| https://balihideawayvillas.com/our-villas/villa-tau/ | 90 | 70 | 92 | 100 | 100 |
+| https://balihideawayvillas.com/our-villas/villa-cocoa/ | 92 | 84 | 92 | 100 | 100 |
+| https://balihideawayvillas.com/our-villas/villa-sagitta/ | 92 | 81 | 92 | 100 | 100 |
+| https://balihideawayvillas.com/calendars/ | 85 | 72 | 96 | 100 | 100 |
+| https://balihideawayvillas.com/wellness-center/ | 90 | 86 | 95 | 100 | 100 |
+| https://balihideawayvillas.com/villa-tau-gallery/ | 69 | 60 | 97 | 100 | 100 |
+| https://balihideawayvillas.com/villa-sagitta-gallery/ | 71 | 60 | 97 | 100 | 100 |
+| https://balihideawayvillas.com/villa-cocoa-maya-gallery/ | 72 | 63 | 97 | 100 | 100 |
+| https://balihideawayvillas.com/category/blog/ | 96 | 96 | 94 | 92 | 100 |
+| https://balihideawayvillas.com/book | 91 | 68 | 95 | 100 | 100 |
+| https://balihideawayvillas.com/faq/ | 98 | 98 | 94 | 100 | 100 |
+| https://balihideawayvillas.com/terms-and-conditions/ | 98 | 97 | 94 | 100 | 100 |
+| https://balihideawayvillas.com/book/ | 96 | 91 | 95 | 100 | 100 |
+| https://balihideawayvillas.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/ | 78 | 54 | 96 | 100 | 96 |
+| https://balihideawayvillas.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/ | 98 | 94 | 96 | 100 | 100 |
+| https://balihideawayvillas.com/3-really-good-reasons-to-pack-light-for-bali/ | 97 | 96 | 96 | 100 | 100 |
 
 ##### Core Web Vitals & Performance Metrics
 
 | URL | LCP | CLS | INP | FCP | TBT | TTFB | SI | TTI |
 |-----|-----|-----|-----|-----|-----|------|----|----||
-| / | 1.6 s | 0.002 | N/A | 1.6 s | 0 ms | Root document took 1,650 ms | 4.1 s | 1.6 s |
-| /destination/bali/ | 1.1 s | 0.005 | N/A | 0.8 s | 0 ms | Root document took 2,030 ms | 3.3 s | 1.1 s |
-| /destination/java/ | 1.9 s | 0.007 | N/A | 0.8 s | 0 ms | Root document took 2,020 ms | 3.4 s | 2.0 s |
-| /destination/lombok/ | 1.7 s | 0.003 | N/A | 0.8 s | 0 ms | Root document took 1,580 ms | 3.0 s | 1.7 s |
-| /gap-year-destination/lombok/ | 2.1 s | 0.005 | N/A | 0.8 s | 0 ms | Root document took 1,680 ms | 3.2 s | 2.1 s |
-| /service/ | 0.8 s | 0.002 | N/A | 0.8 s | 0 ms | Root document took 1,660 ms | 2.1 s | 0.8 s |
-| /about/ | 6.2 s | 0.002 | N/A | 0.8 s | 0 ms | Root document took 2,030 ms | 4.3 s | 6.2 s |
-| /contact-us-student/ | 1.0 s | 0.051 | N/A | 0.8 s | 10 ms | Root document took 1,580 ms | 2.5 s | 1.1 s |
-| /contact-us-for-companies/ | 1.1 s | 0.066 | N/A | 0.8 s | 0 ms | Root document took 1,580 ms | 2.2 s | 1.1 s |
-| /nl/ | 0.8 s | 0.002 | N/A | 0.8 s | 0 ms | Root document took 2,300 ms | 2.2 s | 0.8 s |
-| /apply/ | 0.8 s | 0.02 | N/A | 0.8 s | 0 ms | Root document took 1,510 ms | 1.9 s | 0.8 s |
-| /internships | 1.0 s | 0.002 | N/A | 0.8 s | 0 ms | Root document took 1,940 ms | 3.3 s | 1.0 s |
-| /destination/java | 1.8 s | 0.007 | N/A | 0.8 s | 0 ms | Root document took 1,640 ms | 2.3 s | 1.8 s |
-| /destination/lombok | 1.6 s | 0.003 | N/A | 0.8 s | 0 ms | Root document took 1,610 ms | 2.3 s | 1.6 s |
-| /blog/ | 0.9 s | 0.003 | N/A | 0.8 s | 0 ms | Root document took 1,650 ms | 2.6 s | 0.9 s |
-| /terms-condition/ | 0.8 s | 0.005 | N/A | 0.8 s | 0 ms | Root document took 1,610 ms | 2.0 s | 0.8 s |
-| /privacy-policy/ | 0.8 s | 0.005 | N/A | 0.8 s | 0 ms | Root document took 1,680 ms | 2.0 s | 0.8 s |
-| /faq | 0.8 s | 0.002 | N/A | 0.8 s | 0 ms | Root document took 1,990 ms | 2.7 s | 0.8 s |
-| /nl/destination/bali/ | 1.0 s | 0.007 | N/A | 0.8 s | 0 ms | Root document took 2,140 ms | 1.9 s | 1.0 s |
-| /location/bali/ | 1.0 s | 0.002 | N/A | 0.8 s | 0 ms | Root document took 2,460 ms | 2.1 s | 1.0 s |
+| / | 2.2 s | 0 | N/A | 2.2 s | 0 ms | Root document took 1,080 ms | 3.8 s | 2.2 s |
+| https://balihideawayvillas.com/ | 2.8 s | 0 | N/A | 2.6 s | 0 ms | Root document took 1,040 ms | 5.2 s | 2.9 s |
+| https://balihideawayvillas.com/about/ | 0.6 s | 0 | N/A | 0.5 s | 0 ms | Root document took 3,440 ms | 4.7 s | 0.6 s |
+| https://balihideawayvillas.com/our-villas/ | 1.0 s | 0 | N/A | 0.8 s | 0 ms | Root document took 970 ms | 3.2 s | 1.0 s |
+| https://balihideawayvillas.com/our-villas/villa-tau/ | 0.8 s | 0 | N/A | 0.7 s | 0 ms | Root document took 1,100 ms | 4.4 s | 0.8 s |
+| https://balihideawayvillas.com/our-villas/villa-cocoa/ | 0.7 s | 0 | N/A | 0.7 s | 0 ms | Root document took 1,280 ms | 3.2 s | 0.7 s |
+| https://balihideawayvillas.com/our-villas/villa-sagitta/ | 1.0 s | 0 | N/A | 0.7 s | 0 ms | Root document took 1,150 ms | 2.8 s | 1.0 s |
+| https://balihideawayvillas.com/calendars/ | 1.5 s | 0.011 | N/A | 0.5 s | 0 ms | Root document took 970 ms | 9.1 s | 1.5 s |
+| https://balihideawayvillas.com/wellness-center/ | 0.8 s | 0 | N/A | 0.7 s | 0 ms | Root document took 1,580 ms | 4.4 s | 0.8 s |
+| https://balihideawayvillas.com/villa-tau-gallery/ | 0.7 s | 0.689 | N/A | 0.6 s | 0 ms | Root document took 1,280 ms | 2.9 s | 0.7 s |
+| https://balihideawayvillas.com/villa-sagitta-gallery/ | 0.8 s | 0.476 | N/A | 0.6 s | 0 ms | Root document took 1,450 ms | 3.1 s | 0.8 s |
+| https://balihideawayvillas.com/villa-cocoa-maya-gallery/ | 0.8 s | 0.476 | N/A | 0.6 s | 0 ms | Root document took 1,210 ms | 2.8 s | 0.8 s |
+| https://balihideawayvillas.com/category/blog/ | 1.0 s | 0 | N/A | 0.4 s | 0 ms | Root document took 1,040 ms | 1.8 s | 1.0 s |
+| https://balihideawayvillas.com/book | 0.5 s | 0 | N/A | 0.5 s | 0 ms | Root document took 910 ms | 3.7 s | 0.5 s |
+| https://balihideawayvillas.com/faq/ | 0.4 s | 0 | N/A | 0.4 s | 0 ms | Root document took 970 ms | 1.5 s | 0.4 s |
+| https://balihideawayvillas.com/terms-and-conditions/ | 0.4 s | 0 | N/A | 0.3 s | 0 ms | Root document took 1,130 ms | 1.6 s | 0.4 s |
+| https://balihideawayvillas.com/book/ | 0.5 s | 0 | N/A | 0.5 s | 0 ms | Root document took 1,000 ms | 2.2 s | 0.5 s |
+| https://balihideawayvillas.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/ | 1.8 s | 0.07 | N/A | 1.4 s | 0 ms | Root document took 1,160 ms | 4.1 s | 1.8 s |
+| https://balihideawayvillas.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/ | 0.6 s | 0 | N/A | 0.5 s | 0 ms | Root document took 1,200 ms | 1.7 s | 0.6 s |
+| https://balihideawayvillas.com/3-really-good-reasons-to-pack-light-for-bali/ | 0.7 s | 0 | N/A | 0.4 s | 0 ms | Root document took 1,190 ms | 1.7 s | 0.7 s |
 
 ##### Additional Performance Metrics
 
 | URL | Max FID | Total Weight | DOM Size | JS Boot Time | Main Thread |
 |-----|---------|--------------|----------|--------------|-------------|
-| / | 40 ms | Total size was 1,260 KiB | 1,251 elements | 0.3 s | 1.2 s |
-| /destination/bali/ | 20 ms | Total size was 799 KiB | 584 elements | 0.1 s | 0.4 s |
-| /destination/java/ | 20 ms | Total size was 1,738 KiB | 584 elements | 0.1 s | 0.4 s |
-| /destination/lombok/ | 20 ms | Total size was 1,453 KiB | 582 elements | 0.1 s | 0.4 s |
-| /gap-year-destination/lombok/ | 20 ms | Total size was 1,880 KiB | 583 elements | 0.1 s | 0.4 s |
-| /service/ | 20 ms | Total size was 409 KiB | 745 elements | 0.1 s | 0.5 s |
-| /about/ | 20 ms | Total size was 6,879 KiB | 607 elements | 0.3 s | 2.9 s |
-| /contact-us-student/ | 80 ms | Total size was 574 KiB | 519 elements | 0.2 s | 0.6 s |
-| /contact-us-for-companies/ | 30 ms | Total size was 535 KiB | 495 elements | 0.1 s | 0.4 s |
-| /nl/ | 40 ms | Total size was 1,266 KiB | 1,253 elements | 0.2 s | 0.6 s |
-| /apply/ | 30 ms | Total size was 523 KiB | 580 elements | 0.1 s | 0.4 s |
-| /internships | 20 ms | Total size was 424 KiB | 702 elements | 0.1 s | 0.4 s |
-| /destination/java | 30 ms | Total size was 1,738 KiB | 584 elements | 0.1 s | 0.5 s |
-| /destination/lombok | 20 ms | Total size was 1,453 KiB | 582 elements | 0.1 s | 0.4 s |
-| /blog/ | 20 ms | Total size was 873 KiB | 482 elements | 0.1 s | 0.4 s |
-| /terms-condition/ | 20 ms | Total size was 315 KiB | 546 elements | 0.1 s | 0.5 s |
-| /privacy-policy/ | 20 ms | Total size was 316 KiB | 549 elements | 0.1 s | 0.4 s |
-| /faq | 20 ms | Total size was 317 KiB | 479 elements | 0.1 s | 0.3 s |
-| /nl/destination/bali/ | 20 ms | Total size was 805 KiB | 586 elements | 0.1 s | 0.5 s |
-| /location/bali/ | 20 ms | Total size was 427 KiB | 704 elements | 0.1 s | 0.4 s |
+| / | 20 ms | Total size was 982 KiB | 477 elements | 0.1 s | 0.4 s |
+| https://balihideawayvillas.com/ | 20 ms | Total size was 10,211 KiB | 805 elements | 0.0 s | 0.5 s |
+| https://balihideawayvillas.com/about/ | 20 ms | Total size was 2,355 KiB | 489 elements | 0.0 s | 0.3 s |
+| https://balihideawayvillas.com/our-villas/ | 20 ms | Total size was 2,904 KiB | 445 elements | 0.0 s | 0.3 s |
+| https://balihideawayvillas.com/our-villas/villa-tau/ | 20 ms | Total size was 4,511 KiB | 1,088 elements | 0.0 s | 0.5 s |
+| https://balihideawayvillas.com/our-villas/villa-cocoa/ | 20 ms | Total size was 4,505 KiB | 1,186 elements | 0.0 s | 0.4 s |
+| https://balihideawayvillas.com/our-villas/villa-sagitta/ | 20 ms | Total size was 3,608 KiB | 953 elements | 0.0 s | 0.4 s |
+| https://balihideawayvillas.com/calendars/ | 20 ms | Total size was 1,784 KiB | 352 elements | N/A | 0.1 s |
+| https://balihideawayvillas.com/wellness-center/ | 20 ms | Total size was 1,596 KiB | 653 elements | 0.0 s | 0.3 s |
+| https://balihideawayvillas.com/villa-tau-gallery/ | 20 ms | Total size was 628 KiB | 1,389 elements | N/A | 0.2 s |
+| https://balihideawayvillas.com/villa-sagitta-gallery/ | 20 ms | Total size was 510 KiB | 1,398 elements | N/A | 0.2 s |
+| https://balihideawayvillas.com/villa-cocoa-maya-gallery/ | 20 ms | Total size was 542 KiB | 1,313 elements | N/A | 0.2 s |
+| https://balihideawayvillas.com/category/blog/ | 20 ms | Total size was 998 KiB | 512 elements | N/A | 0.1 s |
+| https://balihideawayvillas.com/book | 20 ms | Total size was 1,372 KiB | 346 elements | N/A | 0.1 s |
+| https://balihideawayvillas.com/faq/ | 20 ms | Total size was 137 KiB | 358 elements | N/A | 0.1 s |
+| https://balihideawayvillas.com/terms-and-conditions/ | 20 ms | Total size was 138 KiB | 366 elements | N/A | 0.1 s |
+| https://balihideawayvillas.com/book/ | 20 ms | Total size was 9,746 KiB | 346 elements | 0.0 s | 0.2 s |
+| https://balihideawayvillas.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/ | 20 ms | Total size was 1,320 KiB | 398 elements | N/A | 0.1 s |
+| https://balihideawayvillas.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/ | 20 ms | Total size was 493 KiB | 449 elements | N/A | 0.1 s |
+| https://balihideawayvillas.com/3-really-good-reasons-to-pack-light-for-bali/ | 20 ms | Total size was 657 KiB | 420 elements | N/A | 0.1 s |
 
 ##### Resource Summary
 
 | URL | Requests | Scripts | Stylesheets | Fonts | Images | Render Blocking | Redirects |
 |-----|----------|---------|-------------|-------|--------|-----------------|----------|
-| / | 80 | 25 | 22 | 2 | 29 | 4 | 0 |
-| /destination/bali/ | 69 | 23 | 20 | 2 | 22 | 1 | 0 |
-| /destination/java/ | 69 | 23 | 20 | 2 | 22 | 1 | 0 |
-| /destination/lombok/ | 69 | 23 | 20 | 2 | 22 | 1 | 0 |
-| /gap-year-destination/lombok/ | 68 | 23 | 20 | 2 | 21 | 1 | 0 |
-| /service/ | 72 | 26 | 21 | 2 | 21 | 1 | 0 |
-| /about/ | 60 | 23 | 20 | 2 | 13 | 1 | 0 |
-| /contact-us-student/ | 71 | 26 | 26 | 3 | 13 | 1 | 0 |
-| /contact-us-for-companies/ | 67 | 26 | 26 | 3 | 9 | 1 | 0 |
-| /nl/ | 83 | 26 | 22 | 2 | 29 | 1 | 0 |
-| /apply/ | 67 | 26 | 27 | 4 | 7 | 1 | 0 |
-| /internships | 67 | 25 | 20 | 2 | 17 | 1 | 2 |
-| /destination/java | 70 | 23 | 20 | 2 | 22 | 1 | 2 |
-| /destination/lombok | 70 | 23 | 20 | 2 | 22 | 1 | 2 |
-| /blog/ | 65 | 25 | 19 | 2 | 17 | 1 | 0 |
-| /terms-condition/ | 57 | 21 | 17 | 2 | 15 | 1 | 0 |
-| /privacy-policy/ | 57 | 21 | 17 | 2 | 15 | 1 | 0 |
-| /faq | 55 | 22 | 18 | 2 | 10 | 1 | 2 |
-| /nl/destination/bali/ | 70 | 24 | 20 | 2 | 22 | 1 | 0 |
-| /location/bali/ | 67 | 25 | 20 | 2 | 18 | 1 | 0 |
+| / | 46 | 25 | 11 | 1 | 4 | 9 | 0 |
+| https://balihideawayvillas.com/ | 61 | 15 | 7 | 2 | 34 | 8 | 0 |
+| https://balihideawayvillas.com/about/ | 35 | 16 | 7 | 1 | 9 | 4 | 0 |
+| https://balihideawayvillas.com/our-villas/ | 35 | 15 | 7 | 1 | 8 | 1 | 0 |
+| https://balihideawayvillas.com/our-villas/villa-tau/ | 74 | 23 | 9 | 3 | 35 | 8 | 0 |
+| https://balihideawayvillas.com/our-villas/villa-cocoa/ | 73 | 23 | 9 | 5 | 32 | 8 | 0 |
+| https://balihideawayvillas.com/our-villas/villa-sagitta/ | 67 | 23 | 9 | 5 | 26 | 8 | 0 |
+| https://balihideawayvillas.com/calendars/ | 42 | 19 | 7 | 4 | 5 | 4 | 0 |
+| https://balihideawayvillas.com/wellness-center/ | 38 | 17 | 7 | 2 | 10 | 9 | 0 |
+| https://balihideawayvillas.com/villa-tau-gallery/ | 36 | 15 | 6 | 1 | 12 | 7 | 0 |
+| https://balihideawayvillas.com/villa-sagitta-gallery/ | 31 | 15 | 6 | 1 | 7 | 7 | 0 |
+| https://balihideawayvillas.com/villa-cocoa-maya-gallery/ | 33 | 15 | 6 | 1 | 9 | 7 | 0 |
+| https://balihideawayvillas.com/category/blog/ | 27 | 6 | 4 | 1 | 14 | 2 | 0 |
+| https://balihideawayvillas.com/book | 33 | 14 | 7 | 4 | 3 | 1 | 2 |
+| https://balihideawayvillas.com/faq/ | 18 | 8 | 5 | 1 | 2 | 2 | 0 |
+| https://balihideawayvillas.com/terms-and-conditions/ | 18 | 8 | 5 | 1 | 2 | 0 | 0 |
+| https://balihideawayvillas.com/book/ | 32 | 14 | 7 | 4 | 3 | 4 | 0 |
+| https://balihideawayvillas.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/ | 36 | 11 | 6 | 2 | 7 | 1 | 0 |
+| https://balihideawayvillas.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/ | 20 | 7 | 4 | 1 | 6 | 2 | 0 |
+| https://balihideawayvillas.com/3-really-good-reasons-to-pack-light-for-bali/ | 21 | 7 | 4 | 1 | 7 | 1 | 0 |
 
 ##### Optimization Opportunities
 
 | URL | Unused CSS | Unused JS | Third-Party Impact | Modern Images | Optimized Images |
 |-----|------------|-----------|-------------------|---------------|------------------|
-| / | Est savings of 11 KiB | Est savings of 20 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /destination/bali/ | Est savings of 12 KiB | Est savings of 22 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /destination/java/ | Est savings of 12 KiB | Est savings of 22 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /destination/lombok/ | Est savings of 12 KiB | Est savings of 22 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /gap-year-destination/lombok/ | Est savings of 12 KiB | Est savings of 22 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /service/ | Est savings of 11 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /about/ | Est savings of 12 KiB | Est savings of 20 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /contact-us-student/ | Est savings of 11 KiB | Est savings of 31 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /contact-us-for-companies/ | Est savings of 11 KiB | Est savings of 31 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /nl/ | Est savings of 11 KiB | Est savings of 21 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /apply/ | Est savings of 11 KiB | Est savings of 28 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /internships | Est savings of 26 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /destination/java | Est savings of 12 KiB | Est savings of 22 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /destination/lombok | Est savings of 12 KiB | Est savings of 22 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /blog/ | Est savings of 11 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /terms-condition/ | Est savings of 12 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /privacy-policy/ | Est savings of 12 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /faq | Est savings of 12 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /nl/destination/bali/ | Est savings of 12 KiB | Est savings of 22 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
-| /location/bali/ | Est savings of 26 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| / | Est savings of 13 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| https://balihideawayvillas.com/ | Est savings of 12 KiB | Est savings of 22 KiB | N/A | N/A | N/A |
+| https://balihideawayvillas.com/about/ | Est savings of 13 KiB | Est savings of 36 KiB | N/A | N/A | N/A |
+| https://balihideawayvillas.com/our-villas/ | Est savings of 12 KiB | Est savings of 20 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| https://balihideawayvillas.com/our-villas/villa-tau/ | Est savings of 24 KiB | Est savings of 61 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| https://balihideawayvillas.com/our-villas/villa-cocoa/ | Est savings of 24 KiB | Est savings of 61 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| https://balihideawayvillas.com/our-villas/villa-sagitta/ | Est savings of 24 KiB | Est savings of 61 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| https://balihideawayvillas.com/calendars/ | Est savings of 13 KiB | Est savings of 51 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| https://balihideawayvillas.com/wellness-center/ | Est savings of 23 KiB | Est savings of 22 KiB | N/A | N/A | N/A |
+| https://balihideawayvillas.com/villa-tau-gallery/ | Est savings of 24 KiB | Est savings of 43 KiB | N/A | N/A | N/A |
+| https://balihideawayvillas.com/villa-sagitta-gallery/ | Est savings of 25 KiB | Est savings of 43 KiB | N/A | N/A | N/A |
+| https://balihideawayvillas.com/villa-cocoa-maya-gallery/ | Est savings of 24 KiB | Est savings of 43 KiB | N/A | N/A | N/A |
+| https://balihideawayvillas.com/category/blog/ | Est savings of 10 KiB | N/A | N/A | N/A | N/A |
+| https://balihideawayvillas.com/book | Est savings of 13 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| https://balihideawayvillas.com/faq/ | Est savings of 13 KiB | N/A | N/A | N/A | N/A |
+| https://balihideawayvillas.com/terms-and-conditions/ | Est savings of 13 KiB | N/A | N/A | N/A | N/A |
+| https://balihideawayvillas.com/book/ | Est savings of 13 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| https://balihideawayvillas.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/ | Est savings of 14 KiB | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| https://balihideawayvillas.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/ | Est savings of 14 KiB | N/A | N/A | N/A | N/A |
+| https://balihideawayvillas.com/3-really-good-reasons-to-pack-light-for-bali/ | Est savings of 14 KiB | N/A | N/A | N/A | N/A |
 
 ##### Functional Tests
 
 **/**
-- **Links:** ⚠️ 36 passed
-- **Buttons:** ⚠️ 6 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 28 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/destination/bali/**
-- **Links:** ⚠️ 29 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 20 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/destination/java/**
-- **Links:** ⚠️ 29 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 20 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/destination/lombok/**
-- **Links:** ⚠️ 29 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 20 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/gap-year-destination/lombok/**
-- **Links:** ⚠️ 29 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 19 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/service/**
-- **Links:** ⚠️ 36 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 21 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Broken image: https://mintcream-flamingo-191587.hostingersite.com/wp-content/uploads/elementor/thumbs/rabbit-rguoe`
-  - images: `Broken image: https://mintcream-flamingo-191587.hostingersite.com/wp-content/uploads/elementor/thumbs/bear-rguoe40`
-  - images: `Broken image: https://mintcream-flamingo-191587.hostingersite.com/wp-content/uploads/elementor/thumbs/panda-rguoe4`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/about/**
-- **Links:** ⚠️ 27 passed
-- **Buttons:** ⚠️ 3 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 29 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/contact-us-student/**
-- **Links:** ⚠️ 32 passed
-- **Buttons:** ⚠️ 3 passed
-- **Forms:** ⚠️ 0 passed
-- **Images:** ⚠️ 15 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - forms: `Form missing submit button`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/contact-us-for-companies/**
-- **Links:** ⚠️ 31 passed
-- **Buttons:** ⚠️ 3 passed
-- **Forms:** ⚠️ 0 passed
-- **Images:** ⚠️ 11 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - forms: `Form missing submit button`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/nl/**
-- **Links:** ⚠️ 36 passed
-- **Buttons:** ⚠️ 6 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 28 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "NL" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/apply/**
-- **Links:** ⚠️ 26 passed
-- **Buttons:** ⚠️ 3 passed
-- **Forms:** ⚠️ 0 passed
-- **Images:** ⚠️ 10 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - forms: `Form missing submit button`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/internships**
-- **Links:** ⚠️ 52 passed
-- **Buttons:** ⚠️ 2 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 16 passed
-- **Navigation:** ⚠️ 3 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/destination/java**
-- **Links:** ⚠️ 29 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 20 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/destination/lombok**
-- **Links:** ⚠️ 29 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 20 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/blog/**
 - **Links:** ⚠️ 44 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 15 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Broken image: https://mintcream-flamingo-191587.hostingersite.com/wp-content/uploads/2025/12/aerial-view-sandy-bea`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/terms-condition/**
-- **Links:** ⚠️ 29 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 19 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/privacy-policy/**
-- **Links:** ⚠️ 29 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 19 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/faq**
-- **Links:** ⚠️ 27 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 15 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/nl/destination/bali/**
-- **Links:** ⚠️ 29 passed
-- **Buttons:** ⚠️ 1 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 20 passed
-- **Navigation:** ⚠️ 2 passed
-- **Interactive:** ✅ 1 passed
-
-**Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "NL" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-  - navigation: `Navigation not visible`
-
-**/location/bali/**
-- **Links:** ⚠️ 54 passed
-- **Buttons:** ⚠️ 2 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ⚠️ 16 passed
+- **Buttons:** ⚠️ 4 passed
+- **Forms:** ⚠️ 0 passed
+- **Images:** ✅ 3 passed
 - **Navigation:** ⚠️ 3 passed
 - **Interactive:** ✅ 1 passed
 
 **Issues Found:**
-  - links: `Link "Bali" - not visible`
-  - links: `Link "Java" - not visible`
-  - links: `Link "Lombok" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - buttons: `Button "EN" - not visible`
-  - buttons: `Button "[no text]" - not visible`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
-  - images: `Missing alt text: https://mintcream-flamingo-191587.hostingersite.com/wp-content/plugins/translatepress-multilingual/a`
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - forms: `Form missing submit button`
   - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/**
+- **Links:** ⚠️ 96 passed
+- **Buttons:** ⚠️ 5 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ⚠️ 11 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/12/nasi-goreng-300x259.jpeg`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/12/airport-timetable-300x200.webp`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/12/bali-shopping-01-300x276.webp`
   - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/about/**
+- **Links:** ⚠️ 41 passed
+- **Buttons:** ⚠️ 5 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 16 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/our-villas/**
+- **Links:** ⚠️ 41 passed
+- **Buttons:** ⚠️ 4 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 6 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/our-villas/villa-tau/**
+- **Links:** ⚠️ 77 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ⚠️ 10 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/11/bali-spas-1024x629.webp`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/11/manuaba-waterfall-villa-tau-1024x683.webp`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/11/rice-field-trekking-villa-tau-1024x684.web`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/our-villas/villa-cocoa/**
+- **Links:** ⚠️ 125 passed
+- **Buttons:** ⚠️ 3 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ⚠️ 46 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/10/hideaway-logo.png`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/our-villas/villa-sagitta/**
+- **Links:** ⚠️ 97 passed
+- **Buttons:** ⚠️ 3 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ⚠️ 32 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/10/hideaway-logo.png`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/calendars/**
+- **Links:** ⚠️ 38 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 3 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/wellness-center/**
+- **Links:** ⚠️ 43 passed
+- **Buttons:** ⚠️ 10 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 19 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/villa-tau-gallery/**
+- **Links:** ⚠️ 45 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 13 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/villa-sagitta-gallery/**
+- **Links:** ⚠️ 46 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 8 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/villa-cocoa-maya-gallery/**
+- **Links:** ⚠️ 45 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 10 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/category/blog/**
+- **Links:** ⚠️ 74 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ⚠️ 13 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/12/wellness-retreat-01.jpg`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/12/villa-sagitta-blog-01.jpg`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/book**
+- **Links:** ⚠️ 38 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 3 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/faq/**
+- **Links:** ⚠️ 39 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 3 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/terms-and-conditions/**
+- **Links:** ⚠️ 38 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 3 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/book/**
+- **Links:** ⚠️ 38 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 3 passed
+- **Navigation:** ⚠️ 3 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/**
+- **Links:** ⚠️ 48 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 5 passed
+- **Navigation:** ⚠️ 5 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/**
+- **Links:** ⚠️ 52 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ⚠️ 6 passed
+- **Navigation:** ⚠️ 5 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/12/fire-forest-1024x683.webp`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/10/hideaway-logo.png`
+  - navigation: `Navigation not visible`
+
+**https://balihideawayvillas.com/3-really-good-reasons-to-pack-light-for-bali/**
+- **Links:** ⚠️ 48 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ⚠️ 8 passed
+- **Navigation:** ⚠️ 5 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - links: `Link "Bali Hideaway Villas" - not visible`
+  - links: `Link "Book" - not visible`
+  - links: `Link "[no text]" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Menu Toggle" - not visible`
+  - buttons: `Button "Book" - not visible`
+  - images: `Broken image: https://balihideawayvillas.com/wp-content/uploads/2025/10/hideaway-logo.png`
   - navigation: `Navigation not visible`
 
 
@@ -639,100 +551,122 @@
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/destination/bali/**
+**https://balihideawayvillas.com/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/destination/java/**
+**https://balihideawayvillas.com/about/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/destination/lombok/**
+**https://balihideawayvillas.com/our-villas/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/gap-year-destination/lombok/**
+**https://balihideawayvillas.com/our-villas/villa-tau/**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ❌ 8 error(s) detected
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+
+**https://balihideawayvillas.com/our-villas/villa-cocoa/**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ❌ 8 error(s) detected
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+
+**https://balihideawayvillas.com/our-villas/villa-sagitta/**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ❌ 8 error(s) detected
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+
+**https://balihideawayvillas.com/calendars/**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ❌ 10 error(s) detected
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+
+**https://balihideawayvillas.com/wellness-center/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/service/**
+**https://balihideawayvillas.com/villa-tau-gallery/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/about/**
+**https://balihideawayvillas.com/villa-sagitta-gallery/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/contact-us-student/**
+**https://balihideawayvillas.com/villa-cocoa-maya-gallery/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/contact-us-for-companies/**
+**https://balihideawayvillas.com/category/blog/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/nl/**
+**https://balihideawayvillas.com/book**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ❌ 4 error(s) detected
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+
+**https://balihideawayvillas.com/faq/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/apply/**
+**https://balihideawayvillas.com/terms-and-conditions/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/internships**
+**https://balihideawayvillas.com/book/**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ❌ 4 error(s) detected
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+  - `[JavaScript Error: "Cookie “LandingPage” has been rejected because it is in a cross-site context and...`
+  - `[JavaScript Error: "Cookie “FirstReferrer” has been rejected because it is in a cross-site context a...`
+
+**https://balihideawayvillas.com/how-to-cook-balinese-nasi-goreng-in-under-15-minutes/**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ❌ 1 error(s) detected
+  - `[JavaScript Error: "Cookie “__Secure-YEC” has been rejected because it is in a cross-site context an...`
+
+**https://balihideawayvillas.com/why-it-pays-to-buy-travel-insurance-in-an-unpredictable-world/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/destination/java**
+**https://balihideawayvillas.com/3-really-good-reasons-to-pack-light-for-bali/**
 - **Chrome (Chromium):** ✅ No Error Detected
 - **Safari (WebKit):** ✅ No Error Detected
 - **Firefox (Gecko):** ✅ No Error Detected
 
-**/destination/lombok**
-- **Chrome (Chromium):** ✅ No Error Detected
-- **Safari (WebKit):** ✅ No Error Detected
-- **Firefox (Gecko):** ✅ No Error Detected
 
-**/blog/**
-- **Chrome (Chromium):** ✅ No Error Detected
-- **Safari (WebKit):** ✅ No Error Detected
-- **Firefox (Gecko):** ✅ No Error Detected
-
-**/terms-condition/**
-- **Chrome (Chromium):** ✅ No Error Detected
-- **Safari (WebKit):** ✅ No Error Detected
-- **Firefox (Gecko):** ✅ No Error Detected
-
-**/privacy-policy/**
-- **Chrome (Chromium):** ✅ No Error Detected
-- **Safari (WebKit):** ✅ No Error Detected
-- **Firefox (Gecko):** ✅ No Error Detected
-
-**/faq**
-- **Chrome (Chromium):** ✅ No Error Detected
-- **Safari (WebKit):** ✅ No Error Detected
-- **Firefox (Gecko):** ✅ No Error Detected
-
-**/nl/destination/bali/**
-- **Chrome (Chromium):** ✅ No Error Detected
-- **Safari (WebKit):** ✅ No Error Detected
-- **Firefox (Gecko):** ✅ No Error Detected
-
-**/location/bali/**
-- **Chrome (Chromium):** ✅ No Error Detected
-- **Safari (WebKit):** ✅ No Error Detected
-- **Firefox (Gecko):** ✅ No Error Detected
+#### Network Issues
 
 
 ---
