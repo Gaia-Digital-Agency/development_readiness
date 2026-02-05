@@ -1,6 +1,6 @@
 # Development Readiness Report v2.0
 
-**Generated:** 2/5/2026, 7:42:08 AM
+**Generated:** 2/5/2026, 3:24:15 PM
 
 ---
 
@@ -10,7 +10,7 @@
 |--------|-------|
 | Sites Audited | 1 |
 | Pages Scanned | 1 |
-| Console Errors | 8 |
+| Console Errors | 3 |
 
 ---
 
@@ -18,24 +18,24 @@
 
 | Site | Desktop Perf | Mobile Perf | Security | SEO | Accessibility |
 |------|-------------|-------------|----------|-----|---------------|
-| Manual Audit | 71 | 72 | 71% | 92 | 77 |
+| Staging | 0 | 0 | 0% | 0 | 0 |
 
 ---
 
 ## Detailed Results
 
-### Manual Audit
+### Staging
 
-**Base URL:** https://www.eurogirlsescort.com/   
+**Base URL:** http://34.142.200.251/
 
 #### Site-Level Checks
 
 ##### Security Headers
-- **Score:** 71%
-- **Missing Headers:** content-security-policy, x-xss-protection
+- **Score:** 0%
+- **Missing Headers:** None
 
 ##### URL Canonicalization
-- **HTTPS Redirect:** ✅ Yes
+- **HTTPS Redirect:** ❌ No
 - **WWW Consistency:** ⚠️ Check manually
 
 ##### HTTP/3 Support
@@ -47,79 +47,86 @@
 - **reCAPTCHA:** ❌ Not detected
 
 ##### CMS Detection
-- **WordPress:** ✅ Detected 
-- **Login Protected:** ✅ Yes
+- No CMS detected
 
 ##### Broken Links
-- **Checked:** 1 links
+- **Checked:** 0 links
 - **Broken:** 0
 
 
 ##### API Endpoints
 - **Tested:** 11 endpoints
-- **Status:** ✅ No Error Detected
+- **Errors:** ❌ 11 error(s) detected
+  - `/api: The operation was aborted due to timeout`
+  - `/api/v1: The operation was aborted due to timeout`
+  - `/api/v2: The operation was aborted due to timeout`
+  - `/wp-json: The operation was aborted due to timeout`
+  - `/wp-json/wp/v2/posts: The operation was aborted due to timeout`
+  - `/graphql: The operation was aborted due to timeout`
+  - `/rest: The operation was aborted due to timeout`
+  - `/.well-known/security.txt: The operation was aborted due to timeout`
+  - `/robots.txt: The operation was aborted due to timeout`
+  - `/sitemap.xml: The operation was aborted due to timeout`
+  - `/favicon.ico: The operation was aborted due to timeout`
 
 #### Page Results
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. |
 |-----|---------|--------|------|-----|----------|
-| / | 71 | 72 | 77 | 92 | 63 |
+| / | 0 | 0 | 0 | 0 | 0 |
 
 ##### Core Web Vitals & Performance Metrics
 
 | URL | LCP | CLS | INP | FCP | TBT | TTFB | SI | TTI |
 |-----|-----|-----|-----|-----|-----|------|----|----||
-| / | 1.6 s | 0.312 | N/A | 0.9 s | 0 ms | Root document took 1,930 ms | 2.7 s | 1.6 s |
+| / | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 
 ##### Additional Performance Metrics
 
 | URL | Max FID | Total Weight | DOM Size | JS Boot Time | Main Thread |
 |-----|---------|--------------|----------|--------------|-------------|
-| / | 50 ms | Total size was 1,250 KiB | 7,030 elements | 0.2 s | 0.9 s |
+| / | N/A | N/A | N/A | N/A | N/A |
 
 ##### Resource Summary
 
 | URL | Requests | Scripts | Stylesheets | Fonts | Images | Render Blocking | Redirects |
 |-----|----------|---------|-------------|-------|--------|-----------------|----------|
-| / | 87 | 4 | 2 | 3 | 71 | 1 | 0 |
+| / | N/A | N/A | N/A | N/A | N/A | 0 | 0 |
 
 ##### Optimization Opportunities
 
 | URL | Unused CSS | Unused JS | Third-Party Impact | Modern Images | Optimized Images |
 |-----|------------|-----------|-------------------|---------------|------------------|
-| / | Est savings of 31 KiB | Est savings of 131 KiB | Third-party code blocked the main thread for 0 ms | Est savings of 222 KiB | N/A |
+| / | N/A | N/A | N/A | N/A | N/A |
 
 ##### Functional Tests
 
 **/**
-- **Links:** ✅ 1 passed
+- **Links:** ✅ 0 passed
 - **Buttons:** ✅ 0 passed
-- **Forms:** ✅ 1 passed
-- **Images:** ✅ 1 passed
-- **Navigation:** ✅ 1 passed
-- **Interactive:** ✅ 1 passed
+- **Forms:** ✅ 0 passed
+- **Images:** ✅ 0 passed
+- **Navigation:** ✅ 0 passed
+- **Interactive:** ✅ 0 passed
 - **Overall:** ✅ No Error Detected
 
 
 ##### Browser Console Error Testing
 
 **/**
-- **Chrome (Chromium):** ❌ 5 error(s) detected
-  - `Failed to load resource: the server responded with a status of 403 ()`
-  - `Failed to load resource: the server responded with a status of 401 ()`
-  - ` Note that 'script-src' was not explicitly set, so 'default-src' is used as a fallback.`
-- **Safari (WebKit):** ❌ 3 error(s) detected
-  - `%c%d font-size:0;color:transparent rjke: Rjps`
-  - `%c%d font-size:0;color:transparent rjke: Rjps`
-  - `Failed to load resource: the server responded with a status of 401 (Unauthorized)`
-- **Firefox (Gecko):** ✅ No Error Detected
+- **Chrome (Chromium):** ❌ 1 error(s) detected
+  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "http://34.142.2...`
+- **Safari (WebKit):** ❌ 1 error(s) detected
+  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "http://34.142.2...`
+- **Firefox (Gecko):** ❌ 1 error(s) detected
+  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "http://34.142.2...`
 
-
-#### Network Issues
-
-**/** - Failed Requests:
-- 403: https://www.eurogirlsescort.com/...
-- 401: https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/9c90c4b2af6...
 
 ---
 
