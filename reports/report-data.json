@@ -1,42 +1,42 @@
 [
   {
     "siteName": "Manual Audit",
-    "baseUrl": "http://34.124.244.233/baligirls",
-    "auditTimestamp": "2026-02-24T05:04:19.825Z",
+    "baseUrl": "http://34.124.244.233/baligirls/",
+    "auditTimestamp": "2026-02-24T06:33:52.148Z",
     "pages": [
       {
-        "url": "http://34.124.244.233/baligirls",
+        "url": "http://34.124.244.233/baligirls/",
         "desktop": {
-          "performance": 72,
+          "performance": 70,
           "accessibility": 95,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "4.0 s",
+          "lcp": "4.2 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
-          "tbt": "80 ms",
-          "ttfb": "Root document took 250 ms",
-          "speedIndex": "2.1 s",
-          "tti": "4.1 s",
-          "maxPotentialFid": "140 ms",
-          "totalByteWeight": "Total size was 10,931 KiB",
-          "domSize": "323 elements",
-          "bootupTime": "0.4 s",
+          "fcp": "1.4 s",
+          "tbt": "120 ms",
+          "ttfb": "Root document took 210 ms",
+          "speedIndex": "1.8 s",
+          "tti": "4.3 s",
+          "maxPotentialFid": "130 ms",
+          "totalByteWeight": "Total size was 10,547 KiB",
+          "domSize": "322 elements",
+          "bootupTime": "0.3 s",
           "mainthreadWork": "1.0 s",
-          "numRequests": 86,
+          "numRequests": 85,
           "numScripts": 9,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 57,
+          "numImages": 55,
           "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
-          "redirects": 3,
-          "modernImageFormats": "Est savings of 3,660 KiB",
+          "redirects": 4,
+          "modernImageFormats": "Est savings of 7,387 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 3,034 KiB",
+          "usesResponsiveImages": "Est savings of 8,900 KiB",
           "offscreenImages": "N/A"
         },
         "mobile": {
@@ -44,33 +44,33 @@
           "accessibility": 95,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "41.2 s",
+          "lcp": "43.5 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.3 s",
-          "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "4.7 s",
-          "tti": "41.4 s",
-          "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 10,930 KiB",
-          "domSize": "323 elements",
-          "bootupTime": "0.2 s",
-          "mainthreadWork": "2.0 s",
-          "numRequests": 79,
+          "fcp": "1.6 s",
+          "tbt": "10 ms",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "4.3 s",
+          "tti": "43.9 s",
+          "maxPotentialFid": "60 ms",
+          "totalByteWeight": "Total size was 10,549 KiB",
+          "domSize": "322 elements",
+          "bootupTime": "0.3 s",
+          "mainthreadWork": "1.5 s",
+          "numRequests": 78,
           "numScripts": 9,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 57,
+          "numImages": 55,
           "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
-          "redirects": 0,
-          "modernImageFormats": "Est savings of 3,660 KiB",
+          "redirects": 2,
+          "modernImageFormats": "Est savings of 7,387 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 929 KiB",
-          "offscreenImages": "Est savings of 50 KiB"
+          "usesResponsiveImages": "Est savings of 6,344 KiB",
+          "offscreenImages": "Est savings of 212 KiB"
         },
         "chromeErrors": [],
         "safariErrors": [],
@@ -78,7 +78,7 @@
         "networkAnalysis": {
           "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 71
+          "totalRequests": 75
         },
         "functionalTests": {
           "linksTest": {
@@ -99,12 +99,12 @@
             ]
           },
           "imagesTest": {
-            "passed": 12,
-            "failed": 42,
+            "passed": 20,
+            "failed": 34,
             "errors": [
-              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/1771908794309-1d53ac45.jpeg",
-              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/1771908800694-83322440.jpeg",
-              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/baligirls_logo.png"
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_983354_01.jpg",
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_977407_01.jpg",
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_1018018_01.jpg"
             ]
           },
           "navigationTest": {
@@ -119,8 +119,128 @@
           },
           "summary": {
             "totalTests": 122,
-            "passed": 79,
-            "failed": 43
+            "passed": 87,
+            "failed": 35
+          }
+        }
+      },
+      {
+        "url": "http://34.124.244.233/baligirls",
+        "desktop": {
+          "performance": 81,
+          "accessibility": 95,
+          "bestPractices": 79,
+          "seo": 100,
+          "lcp": "3.5 s",
+          "cls": "0",
+          "inp": "N/A",
+          "fcp": "0.7 s",
+          "tbt": "0 ms",
+          "ttfb": "Root document took 210 ms",
+          "speedIndex": "0.9 s",
+          "tti": "3.5 s",
+          "maxPotentialFid": "20 ms",
+          "totalByteWeight": "Total size was 10,551 KiB",
+          "domSize": "322 elements",
+          "bootupTime": "0.1 s",
+          "mainthreadWork": "0.4 s",
+          "numRequests": 82,
+          "numScripts": 9,
+          "numStylesheets": 1,
+          "numFonts": "N/A",
+          "numImages": 55,
+          "renderBlockingResources": 1,
+          "unusedCss": "N/A",
+          "unusedJs": "N/A",
+          "thirdPartySummary": "N/A",
+          "redirects": 0,
+          "modernImageFormats": "Est savings of 7,387 KiB",
+          "usesOptimizedImages": "N/A",
+          "usesResponsiveImages": "Est savings of 8,900 KiB",
+          "offscreenImages": "N/A"
+        },
+        "mobile": {
+          "performance": 73,
+          "accessibility": 95,
+          "bestPractices": 79,
+          "seo": 100,
+          "lcp": "41.2 s",
+          "cls": "0",
+          "inp": "N/A",
+          "fcp": "0.9 s",
+          "tbt": "0 ms",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "3.8 s",
+          "tti": "41.4 s",
+          "maxPotentialFid": "50 ms",
+          "totalByteWeight": "Total size was 10,546 KiB",
+          "domSize": "322 elements",
+          "bootupTime": "0.2 s",
+          "mainthreadWork": "1.3 s",
+          "numRequests": 77,
+          "numScripts": 9,
+          "numStylesheets": 1,
+          "numFonts": "N/A",
+          "numImages": 55,
+          "renderBlockingResources": 1,
+          "unusedCss": "N/A",
+          "unusedJs": "N/A",
+          "thirdPartySummary": "N/A",
+          "redirects": 0,
+          "modernImageFormats": "Est savings of 7,387 KiB",
+          "usesOptimizedImages": "N/A",
+          "usesResponsiveImages": "Est savings of 6,344 KiB",
+          "offscreenImages": "Est savings of 387 KiB"
+        },
+        "chromeErrors": [],
+        "safariErrors": [],
+        "firefoxErrors": [],
+        "networkAnalysis": {
+          "failedRequests": [],
+          "slowAssets": [],
+          "totalRequests": 74
+        },
+        "functionalTests": {
+          "linksTest": {
+            "passed": 64,
+            "failed": 0,
+            "errors": []
+          },
+          "buttonsTest": {
+            "passed": 1,
+            "failed": 0,
+            "errors": []
+          },
+          "formsTest": {
+            "passed": 0,
+            "failed": 1,
+            "errors": [
+              "Form has no inputs"
+            ]
+          },
+          "imagesTest": {
+            "passed": 23,
+            "failed": 31,
+            "errors": [
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_646634_01.jpg",
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_1000554_01.jpg",
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_1011467_01.jpg"
+            ]
+          },
+          "navigationTest": {
+            "passed": 1,
+            "failed": 0,
+            "errors": []
+          },
+          "interactiveTest": {
+            "passed": 1,
+            "failed": 0,
+            "errors": []
+          },
+          "summary": {
+            "totalTests": 122,
+            "passed": 90,
+            "failed": 32
           }
         }
       },
@@ -128,20 +248,20 @@
         "url": "http://34.124.244.233/baligirls/user",
         "desktop": {
           "performance": 100,
-          "accessibility": 91,
+          "accessibility": 90,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "0.7 s",
-          "cls": "0.003",
+          "lcp": "0.6 s",
+          "cls": "0.002",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.5 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 210 ms",
-          "speedIndex": "0.6 s",
-          "tti": "0.7 s",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "0.5 s",
+          "tti": "0.6 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,126 KiB",
-          "domSize": "53 elements",
+          "totalByteWeight": "Total size was 1,125 KiB",
+          "domSize": "52 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
           "numRequests": 22,
@@ -164,17 +284,17 @@
           "accessibility": 90,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "8.2 s",
+          "lcp": "8.0 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "20 ms",
-          "ttfb": "Root document took 210 ms",
-          "speedIndex": "3.8 s",
-          "tti": "8.2 s",
+          "ttfb": "Root document took 170 ms",
+          "speedIndex": "3.7 s",
+          "tti": "8.0 s",
           "maxPotentialFid": "70 ms",
           "totalByteWeight": "Total size was 1,126 KiB",
-          "domSize": "53 elements",
+          "domSize": "52 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.6 s",
           "numRequests": 22,
@@ -244,20 +364,20 @@
         "url": "http://34.124.244.233/baligirls/user/register",
         "desktop": {
           "performance": 100,
-          "accessibility": 100,
+          "accessibility": 99,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "0.7 s",
-          "cls": "0.003",
+          "lcp": "0.6 s",
+          "cls": "0.002",
           "inp": "N/A",
           "fcp": "0.6 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 210 ms",
+          "ttfb": "Root document took 180 ms",
           "speedIndex": "0.6 s",
-          "tti": "0.7 s",
+          "tti": "0.6 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,126 KiB",
-          "domSize": "46 elements",
+          "totalByteWeight": "Total size was 1,125 KiB",
+          "domSize": "45 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
           "numRequests": 22,
@@ -276,21 +396,21 @@
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 74,
+          "performance": 75,
           "accessibility": 99,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "8.4 s",
+          "lcp": "6.7 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
-          "tbt": "10 ms",
-          "ttfb": "Root document took 210 ms",
-          "speedIndex": "3.8 s",
-          "tti": "8.4 s",
-          "maxPotentialFid": "60 ms",
-          "totalByteWeight": "Total size was 1,125 KiB",
-          "domSize": "46 elements",
+          "fcp": "1.1 s",
+          "tbt": "20 ms",
+          "ttfb": "Root document took 180 ms",
+          "speedIndex": "3.7 s",
+          "tti": "6.8 s",
+          "maxPotentialFid": "70 ms",
+          "totalByteWeight": "Total size was 1,126 KiB",
+          "domSize": "45 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.6 s",
           "numRequests": 22,
@@ -357,69 +477,69 @@
       {
         "url": "http://34.124.244.233/baligirls?page=1",
         "desktop": {
-          "performance": 79,
+          "performance": 81,
           "accessibility": 95,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "3.6 s",
+          "lcp": "3.5 s",
           "cls": "0",
           "inp": "N/A",
           "fcp": "0.7 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 240 ms",
-          "speedIndex": "1.4 s",
-          "tti": "3.6 s",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "0.9 s",
+          "tti": "3.5 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 10,934 KiB",
-          "domSize": "323 elements",
-          "bootupTime": "0.0 s",
+          "totalByteWeight": "Total size was 10,551 KiB",
+          "domSize": "322 elements",
+          "bootupTime": "0.1 s",
           "mainthreadWork": "0.5 s",
-          "numRequests": 84,
+          "numRequests": 82,
           "numScripts": 9,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 57,
+          "numImages": 55,
           "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
           "redirects": 0,
-          "modernImageFormats": "Est savings of 3,660 KiB",
+          "modernImageFormats": "Est savings of 7,387 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 3,034 KiB",
+          "usesResponsiveImages": "Est savings of 8,900 KiB",
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 72,
+          "performance": 73,
           "accessibility": 95,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "41.3 s",
+          "lcp": "42.1 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.3 s",
-          "tbt": "10 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "4.8 s",
-          "tti": "41.5 s",
-          "maxPotentialFid": "60 ms",
-          "totalByteWeight": "Total size was 10,934 KiB",
-          "domSize": "323 elements",
+          "fcp": "1.2 s",
+          "tbt": "0 ms",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "3.9 s",
+          "tti": "42.4 s",
+          "maxPotentialFid": "50 ms",
+          "totalByteWeight": "Total size was 10,547 KiB",
+          "domSize": "322 elements",
           "bootupTime": "0.3 s",
-          "mainthreadWork": "1.8 s",
-          "numRequests": 79,
+          "mainthreadWork": "1.3 s",
+          "numRequests": 77,
           "numScripts": 9,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 57,
+          "numImages": 55,
           "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
           "redirects": 0,
-          "modernImageFormats": "Est savings of 3,660 KiB",
+          "modernImageFormats": "Est savings of 7,387 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 929 KiB",
+          "usesResponsiveImages": "Est savings of 6,344 KiB",
           "offscreenImages": "Est savings of 387 KiB"
         },
         "chromeErrors": [],
@@ -428,7 +548,7 @@
         "networkAnalysis": {
           "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 76
+          "totalRequests": 74
         },
         "functionalTests": {
           "linksTest": {
@@ -449,12 +569,12 @@
             ]
           },
           "imagesTest": {
-            "passed": 12,
-            "failed": 42,
+            "passed": 21,
+            "failed": 33,
             "errors": [
-              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/1771908794309-1d53ac45.jpeg",
-              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/1771908800694-83322440.jpeg",
-              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/baligirls_logo.png"
+              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/baligirls_logo.png",
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_1018018_01.jpg",
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_646634_01.jpg"
             ]
           },
           "navigationTest": {
@@ -469,78 +589,78 @@
           },
           "summary": {
             "totalTests": 122,
-            "passed": 79,
-            "failed": 43
+            "passed": 88,
+            "failed": 34
           }
         }
       },
       {
         "url": "http://34.124.244.233/baligirls?page=2",
         "desktop": {
-          "performance": 79,
+          "performance": 81,
           "accessibility": 95,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "3.6 s",
+          "lcp": "3.4 s",
           "cls": "0",
           "inp": "N/A",
           "fcp": "0.7 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "1.4 s",
-          "tti": "3.6 s",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "0.9 s",
+          "tti": "3.4 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 10,871 KiB",
-          "domSize": "321 elements",
-          "bootupTime": "0.1 s",
-          "mainthreadWork": "0.5 s",
-          "numRequests": 82,
+          "totalByteWeight": "Total size was 10,487 KiB",
+          "domSize": "320 elements",
+          "bootupTime": "0.0 s",
+          "mainthreadWork": "0.4 s",
+          "numRequests": 80,
           "numScripts": 9,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 55,
+          "numImages": 53,
           "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
           "redirects": 0,
-          "modernImageFormats": "Est savings of 3,631 KiB",
+          "modernImageFormats": "Est savings of 7,358 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 2,987 KiB",
+          "usesResponsiveImages": "Est savings of 8,852 KiB",
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 72,
+          "performance": 73,
           "accessibility": 95,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "40.7 s",
+          "lcp": "41.8 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.3 s",
-          "tbt": "10 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "4.7 s",
-          "tti": "40.8 s",
-          "maxPotentialFid": "60 ms",
-          "totalByteWeight": "Total size was 10,869 KiB",
-          "domSize": "321 elements",
+          "fcp": "1.2 s",
+          "tbt": "0 ms",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "3.9 s",
+          "tti": "42.1 s",
+          "maxPotentialFid": "50 ms",
+          "totalByteWeight": "Total size was 10,485 KiB",
+          "domSize": "320 elements",
           "bootupTime": "0.3 s",
-          "mainthreadWork": "1.8 s",
-          "numRequests": 77,
+          "mainthreadWork": "1.4 s",
+          "numRequests": 75,
           "numScripts": 9,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 55,
+          "numImages": 53,
           "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
           "redirects": 0,
-          "modernImageFormats": "Est savings of 3,631 KiB",
+          "modernImageFormats": "Est savings of 7,358 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 943 KiB",
-          "offscreenImages": "Est savings of 361 KiB"
+          "usesResponsiveImages": "Est savings of 6,359 KiB",
+          "offscreenImages": "Est savings of 62 KiB"
         },
         "chromeErrors": [],
         "safariErrors": [],
@@ -548,7 +668,7 @@
         "networkAnalysis": {
           "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 74
+          "totalRequests": 72
         },
         "functionalTests": {
           "linksTest": {
@@ -569,12 +689,12 @@
             ]
           },
           "imagesTest": {
-            "passed": 12,
-            "failed": 40,
+            "passed": 24,
+            "failed": 28,
             "errors": [
-              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/1771908794309-1d53ac45.jpeg",
-              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/1771908800694-83322440.jpeg",
-              "Broken image: http://34.124.244.233/baligirls/api/uploads/baligirls/ads/baligirls_logo.png"
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_1037166_01.jpg",
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_945960_01.jpg",
+              "Broken image: http://34.124.244.233/baligirls/api/clean-image/IM_683526_02.jpg"
             ]
           },
           "navigationTest": {
@@ -589,8 +709,8 @@
           },
           "summary": {
             "totalTests": 118,
-            "passed": 77,
-            "failed": 41
+            "passed": 89,
+            "failed": 29
           }
         }
       },
@@ -598,35 +718,35 @@
         "url": "http://34.124.244.233/baligirls?page=3",
         "desktop": {
           "performance": 81,
-          "accessibility": 96,
+          "accessibility": 95,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "3.5 s",
+          "lcp": "3.4 s",
           "cls": "0",
           "inp": "N/A",
           "fcp": "0.6 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "1.1 s",
-          "tti": "3.5 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "0.8 s",
+          "tti": "3.4 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 8,592 KiB",
-          "domSize": "147 elements",
+          "totalByteWeight": "Total size was 8,210 KiB",
+          "domSize": "146 elements",
           "bootupTime": "0.1 s",
           "mainthreadWork": "0.3 s",
-          "numRequests": 29,
+          "numRequests": 27,
           "numScripts": 9,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 7,
+          "numImages": 5,
           "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
           "redirects": 0,
-          "modernImageFormats": "Est savings of 2,931 KiB",
+          "modernImageFormats": "Est savings of 6,658 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 1,199 KiB",
+          "usesResponsiveImages": "Est savings of 7,064 KiB",
           "offscreenImages": "N/A"
         },
         "mobile": {
@@ -634,32 +754,32 @@
           "accessibility": 95,
           "bestPractices": 79,
           "seo": 100,
-          "lcp": "40.2 s",
+          "lcp": "43.8 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "10 ms",
-          "ttfb": "Root document took 220 ms",
-          "speedIndex": "3.9 s",
-          "tti": "40.4 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "3.8 s",
+          "tti": "43.9 s",
           "maxPotentialFid": "60 ms",
-          "totalByteWeight": "Total size was 8,592 KiB",
-          "domSize": "147 elements",
+          "totalByteWeight": "Total size was 8,202 KiB",
+          "domSize": "146 elements",
           "bootupTime": "0.2 s",
-          "mainthreadWork": "1.1 s",
-          "numRequests": 29,
+          "mainthreadWork": "0.9 s",
+          "numRequests": 27,
           "numScripts": 9,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 7,
+          "numImages": 5,
           "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
           "redirects": 0,
-          "modernImageFormats": "Est savings of 2,931 KiB",
+          "modernImageFormats": "Est savings of 6,658 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 929 KiB",
+          "usesResponsiveImages": "Est savings of 6,344 KiB",
           "offscreenImages": "N/A"
         },
         "chromeErrors": [],
@@ -668,7 +788,7 @@
         "networkAnalysis": {
           "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 26
+          "totalRequests": 24
         },
         "functionalTests": {
           "linksTest": {
@@ -714,28 +834,28 @@
         "url": "http://34.124.244.233/baligirls/creator/preview/2c36a1a6-6462-47ca-ba0e-5da384df8c24",
         "desktop": {
           "performance": 100,
-          "accessibility": 100,
-          "bestPractices": 75,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "0.4 s",
+          "lcp": "0.7 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.2 s",
+          "fcp": "0.6 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 200 ms",
           "speedIndex": "0.7 s",
-          "tti": "0.4 s",
+          "tti": "0.7 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,524 KiB",
-          "domSize": "157 elements",
-          "bootupTime": "0.1 s",
+          "totalByteWeight": "Total size was 1,522 KiB",
+          "domSize": "156 elements",
+          "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 32,
+          "numRequests": 31,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
           "numImages": 9,
-          "renderBlockingResources": 0,
+          "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
@@ -748,22 +868,22 @@
         "mobile": {
           "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "7.8 s",
+          "lcp": "7.7 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 190 ms",
           "speedIndex": "3.8 s",
-          "tti": "8.1 s",
+          "tti": "8.0 s",
           "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 1,523 KiB",
-          "domSize": "157 elements",
+          "totalByteWeight": "Total size was 1,522 KiB",
+          "domSize": "156 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.7 s",
-          "numRequests": 32,
+          "numRequests": 31,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -778,22 +898,13 @@
           "usesResponsiveImages": "Est savings of 501 KiB",
           "offscreenImages": "Est savings of 86 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 29
+          "totalRequests": 28
         },
         "functionalTests": {
           "linksTest": {
@@ -836,29 +947,29 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/b88e1018-7c7a-479e-8f1a-e5b28baf9f38",
         "desktop": {
-          "performance": 99,
-          "accessibility": 100,
-          "bestPractices": 75,
+          "performance": 100,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "0.7 s",
+          "lcp": "0.3 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.2 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "0.7 s",
-          "tti": "0.7 s",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "0.6 s",
+          "tti": "0.3 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,464 KiB",
-          "domSize": "153 elements",
+          "totalByteWeight": "Total size was 1,462 KiB",
+          "domSize": "152 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 31,
+          "numRequests": 30,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
           "numImages": 8,
-          "renderBlockingResources": 1,
+          "renderBlockingResources": 0,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
@@ -871,22 +982,22 @@
         "mobile": {
           "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "7.7 s",
+          "lcp": "7.5 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 200 ms",
           "speedIndex": "3.8 s",
-          "tti": "7.9 s",
+          "tti": "7.8 s",
           "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 1,464 KiB",
-          "domSize": "153 elements",
+          "totalByteWeight": "Total size was 1,462 KiB",
+          "domSize": "152 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.7 s",
-          "numRequests": 31,
+          "numRequests": 30,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -901,22 +1012,13 @@
           "usesResponsiveImages": "Est savings of 501 KiB",
           "offscreenImages": "Est savings of 124 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 28
+          "totalRequests": 27
         },
         "functionalTests": {
           "linksTest": {
@@ -959,24 +1061,24 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/0be39a1c-96f5-4f27-988a-94d74c34a1b3",
         "desktop": {
-          "performance": 99,
-          "accessibility": 100,
-          "bestPractices": 75,
+          "performance": 100,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
           "lcp": "0.7 s",
           "cls": "0",
           "inp": "N/A",
           "fcp": "0.6 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 200 ms",
           "speedIndex": "0.7 s",
           "tti": "0.7 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,484 KiB",
-          "domSize": "161 elements",
+          "totalByteWeight": "Total size was 1,483 KiB",
+          "domSize": "160 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 33,
+          "numRequests": 32,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -992,24 +1094,24 @@
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 84,
+          "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "4.2 s",
+          "lcp": "7.6 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 200 ms",
           "speedIndex": "3.8 s",
-          "tti": "4.4 s",
+          "tti": "7.9 s",
           "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 1,484 KiB",
-          "domSize": "161 elements",
+          "totalByteWeight": "Total size was 1,483 KiB",
+          "domSize": "160 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.7 s",
-          "numRequests": 33,
+          "numRequests": 32,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1024,22 +1126,13 @@
           "usesResponsiveImages": "Est savings of 501 KiB",
           "offscreenImages": "Est savings of 82 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 30
+          "totalRequests": 29
         },
         "functionalTests": {
           "linksTest": {
@@ -1083,23 +1176,23 @@
         "url": "http://34.124.244.233/baligirls/creator/preview/12914f5a-54c0-4582-a6aa-8892cda97919",
         "desktop": {
           "performance": 100,
-          "accessibility": 100,
-          "bestPractices": 75,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "0.7 s",
+          "lcp": "0.6 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.5 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "0.7 s",
-          "tti": "0.7 s",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "0.6 s",
+          "tti": "0.6 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,334 KiB",
-          "domSize": "145 elements",
-          "bootupTime": "0.1 s",
+          "totalByteWeight": "Total size was 1,333 KiB",
+          "domSize": "144 elements",
+          "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 29,
+          "numRequests": 28,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1115,24 +1208,24 @@
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 73,
+          "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "8.5 s",
+          "lcp": "7.5 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "10 ms",
-          "ttfb": "Root document took 220 ms",
-          "speedIndex": "3.8 s",
-          "tti": "8.6 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "3.7 s",
+          "tti": "7.7 s",
           "maxPotentialFid": "60 ms",
           "totalByteWeight": "Total size was 1,333 KiB",
-          "domSize": "145 elements",
+          "domSize": "144 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.7 s",
-          "numRequests": 29,
+          "numRequests": 28,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1147,22 +1240,13 @@
           "usesResponsiveImages": "Est savings of 501 KiB",
           "offscreenImages": "Est savings of 137 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 26
+          "totalRequests": 25
         },
         "functionalTests": {
           "linksTest": {
@@ -1205,24 +1289,24 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/2a3461d5-b54a-46e4-8167-d0b1fb0437ba",
         "desktop": {
-          "performance": 99,
-          "accessibility": 100,
-          "bestPractices": 75,
+          "performance": 100,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "0.8 s",
+          "lcp": "0.7 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.5 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "0.7 s",
-          "tti": "0.8 s",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "0.6 s",
+          "tti": "0.7 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,175 KiB",
-          "domSize": "133 elements",
+          "totalByteWeight": "Total size was 1,174 KiB",
+          "domSize": "132 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 26,
+          "numRequests": 25,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1238,24 +1322,24 @@
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 73,
+          "performance": 75,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "8.6 s",
+          "lcp": "7.0 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "20 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 190 ms",
           "speedIndex": "3.8 s",
-          "tti": "8.6 s",
+          "tti": "7.2 s",
           "maxPotentialFid": "70 ms",
-          "totalByteWeight": "Total size was 1,175 KiB",
-          "domSize": "133 elements",
+          "totalByteWeight": "Total size was 1,174 KiB",
+          "domSize": "132 elements",
           "bootupTime": "0.2 s",
-          "mainthreadWork": "0.7 s",
-          "numRequests": 26,
+          "mainthreadWork": "0.6 s",
+          "numRequests": 25,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1270,22 +1354,13 @@
           "usesResponsiveImages": "Est savings of 501 KiB",
           "offscreenImages": "N/A"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 23
+          "totalRequests": 22
         },
         "functionalTests": {
           "linksTest": {
@@ -1328,24 +1403,24 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/5cdbbbec-97e2-4d1a-a891-9aed5f2a8d2d",
         "desktop": {
-          "performance": 99,
-          "accessibility": 100,
-          "bestPractices": 75,
+          "performance": 100,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
           "lcp": "0.7 s",
           "cls": "0",
           "inp": "N/A",
           "fcp": "0.6 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "0.8 s",
+          "ttfb": "Root document took 200 ms",
+          "speedIndex": "0.6 s",
           "tti": "0.7 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,470 KiB",
-          "domSize": "161 elements",
+          "totalByteWeight": "Total size was 1,469 KiB",
+          "domSize": "160 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 33,
+          "numRequests": 32,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1363,22 +1438,22 @@
         "mobile": {
           "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "7.7 s",
+          "lcp": "7.5 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
-          "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "fcp": "1.1 s",
+          "tbt": "20 ms",
+          "ttfb": "Root document took 190 ms",
           "speedIndex": "3.8 s",
-          "tti": "7.9 s",
-          "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 1,470 KiB",
-          "domSize": "161 elements",
+          "tti": "7.8 s",
+          "maxPotentialFid": "70 ms",
+          "totalByteWeight": "Total size was 1,469 KiB",
+          "domSize": "160 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.7 s",
-          "numRequests": 33,
+          "numRequests": 32,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1393,22 +1468,13 @@
           "usesResponsiveImages": "Est savings of 501 KiB",
           "offscreenImages": "Est savings of 254 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 30
+          "totalRequests": 29
         },
         "functionalTests": {
           "linksTest": {
@@ -1451,24 +1517,24 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/64a22440-7c98-405f-a832-4469532bf0b3",
         "desktop": {
-          "performance": 99,
-          "accessibility": 100,
-          "bestPractices": 75,
+          "performance": 100,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
           "lcp": "0.7 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.5 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "0.7 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "0.6 s",
           "tti": "0.7 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,423 KiB",
-          "domSize": "153 elements",
+          "totalByteWeight": "Total size was 1,421 KiB",
+          "domSize": "152 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 31,
+          "numRequests": 30,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1486,22 +1552,22 @@
         "mobile": {
           "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "7.5 s",
+          "lcp": "7.4 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 190 ms",
           "speedIndex": "3.8 s",
-          "tti": "7.8 s",
+          "tti": "7.6 s",
           "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 1,423 KiB",
-          "domSize": "153 elements",
+          "totalByteWeight": "Total size was 1,421 KiB",
+          "domSize": "152 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.7 s",
-          "numRequests": 31,
+          "numRequests": 30,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1516,22 +1582,13 @@
           "usesResponsiveImages": "Est savings of 501 KiB",
           "offscreenImages": "Est savings of 109 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 28
+          "totalRequests": 27
         },
         "functionalTests": {
           "linksTest": {
@@ -1574,24 +1631,24 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/d27b4b83-adcd-40dd-9497-c94ea399b616",
         "desktop": {
-          "performance": 99,
-          "accessibility": 100,
-          "bestPractices": 75,
+          "performance": 100,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
           "lcp": "0.7 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.5 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "0.7 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "0.6 s",
           "tti": "0.7 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,679 KiB",
-          "domSize": "174 elements",
+          "totalByteWeight": "Total size was 1,678 KiB",
+          "domSize": "173 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 36,
+          "numRequests": 35,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1609,22 +1666,22 @@
         "mobile": {
           "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "8.3 s",
+          "lcp": "8.2 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 190 ms",
           "speedIndex": "3.8 s",
-          "tti": "8.7 s",
+          "tti": "8.5 s",
           "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 1,679 KiB",
-          "domSize": "174 elements",
+          "totalByteWeight": "Total size was 1,678 KiB",
+          "domSize": "173 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.7 s",
-          "numRequests": 36,
+          "numRequests": 35,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1637,24 +1694,15 @@
           "modernImageFormats": "Est savings of 624 KiB",
           "usesOptimizedImages": "N/A",
           "usesResponsiveImages": "Est savings of 501 KiB",
-          "offscreenImages": "Est savings of 151 KiB"
+          "offscreenImages": "Est savings of 458 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 33
+          "totalRequests": 32
         },
         "functionalTests": {
           "linksTest": {
@@ -1697,24 +1745,24 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/8e12f6eb-57e9-4309-9075-bf678dacb87d",
         "desktop": {
-          "performance": 99,
-          "accessibility": 100,
-          "bestPractices": 75,
+          "performance": 100,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
           "lcp": "0.7 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.5 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 220 ms",
-          "speedIndex": "0.7 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "0.6 s",
           "tti": "0.7 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,590 KiB",
-          "domSize": "165 elements",
+          "totalByteWeight": "Total size was 1,589 KiB",
+          "domSize": "164 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 34,
+          "numRequests": 33,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1730,28 +1778,28 @@
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 89,
-          "accessibility": 92,
-          "bestPractices": 72,
+          "performance": 74,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "3.5 s",
+          "lcp": "7.9 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 240 ms",
+          "ttfb": "Root document took 190 ms",
           "speedIndex": "3.8 s",
-          "tti": "3.7 s",
-          "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,472 KiB",
-          "domSize": "163 elements",
-          "bootupTime": "0.0 s",
-          "mainthreadWork": "0.4 s",
-          "numRequests": 22,
-          "numScripts": 8,
+          "tti": "8.2 s",
+          "maxPotentialFid": "60 ms",
+          "totalByteWeight": "Total size was 1,589 KiB",
+          "domSize": "164 elements",
+          "bootupTime": "0.2 s",
+          "mainthreadWork": "0.7 s",
+          "numRequests": 33,
+          "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 10,
+          "numImages": 11,
           "renderBlockingResources": 1,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
@@ -1759,31 +1807,16 @@
           "redirects": 0,
           "modernImageFormats": "Est savings of 602 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "N/A",
-          "offscreenImages": "N/A"
+          "usesResponsiveImages": "Est savings of 513 KiB",
+          "offscreenImages": "Est savings of 365 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 400 (Bad Request)",
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 400 (Bad Request)",
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/_next/static/css/bcaa3203e5f79713.css",
-              "status": 400
-            },
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 23
+          "totalRequests": 30
         },
         "functionalTests": {
           "linksTest": {
@@ -1826,57 +1859,57 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/e6eff93a-9856-4168-abd8-3543900da031",
         "desktop": {
-          "performance": 70,
-          "accessibility": 95,
-          "bestPractices": 75,
+          "performance": 100,
+          "accessibility": 99,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "1.6 s",
-          "cls": "0.727",
+          "lcp": "0.3 s",
+          "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.2 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 250 ms",
-          "speedIndex": "1.1 s",
-          "tti": "1.7 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "0.6 s",
+          "tti": "0.3 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,617 KiB",
-          "domSize": "165 elements",
+          "totalByteWeight": "Total size was 1,620 KiB",
+          "domSize": "164 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
           "numRequests": 33,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
-          "numImages": 10,
-          "renderBlockingResources": 1,
+          "numImages": 11,
+          "renderBlockingResources": 0,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
           "redirects": 0,
           "modernImageFormats": "Est savings of 596 KiB",
           "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "N/A",
+          "usesResponsiveImages": "Est savings of 642 KiB",
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 100,
+          "performance": 75,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "1.9 s",
+          "lcp": "7.3 s",
           "cls": "0",
           "inp": "N/A",
           "fcp": "0.8 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 450 ms",
-          "speedIndex": "1.8 s",
-          "tti": "3.3 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "3.8 s",
+          "tti": "7.5 s",
           "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 1,621 KiB",
+          "totalByteWeight": "Total size was 1,620 KiB",
           "domSize": "164 elements",
           "bootupTime": "0.2 s",
-          "mainthreadWork": "0.8 s",
-          "numRequests": 34,
+          "mainthreadWork": "0.7 s",
+          "numRequests": 33,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -1889,24 +1922,15 @@
           "modernImageFormats": "Est savings of 596 KiB",
           "usesOptimizedImages": "N/A",
           "usesResponsiveImages": "Est savings of 501 KiB",
-          "offscreenImages": "Est savings of 349 KiB"
+          "offscreenImages": "Est savings of 98 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 31
+          "totalRequests": 30
         },
         "functionalTests": {
           "linksTest": {
@@ -1951,27 +1975,27 @@
         "desktop": {
           "performance": 100,
           "accessibility": 99,
-          "bestPractices": 75,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "0.7 s",
+          "lcp": "0.3 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.2 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 240 ms",
-          "speedIndex": "0.7 s",
-          "tti": "0.7 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "0.6 s",
+          "tti": "0.3 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,494 KiB",
+          "totalByteWeight": "Total size was 1,493 KiB",
           "domSize": "156 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 32,
+          "numRequests": 31,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
           "numImages": 9,
-          "renderBlockingResources": 1,
+          "renderBlockingResources": 0,
           "unusedCss": "N/A",
           "unusedJs": "N/A",
           "thirdPartySummary": "N/A",
@@ -1982,24 +2006,24 @@
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 73,
+          "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "9.2 s",
+          "lcp": "7.6 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 190 ms",
           "speedIndex": "3.8 s",
-          "tti": "9.3 s",
+          "tti": "7.9 s",
           "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 1,494 KiB",
+          "totalByteWeight": "Total size was 1,493 KiB",
           "domSize": "156 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.7 s",
-          "numRequests": 32,
+          "numRequests": 31,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -2012,24 +2036,15 @@
           "modernImageFormats": "Est savings of 567 KiB",
           "usesOptimizedImages": "N/A",
           "usesResponsiveImages": "Est savings of 501 KiB",
-          "offscreenImages": "Est savings of 270 KiB"
+          "offscreenImages": "Est savings of 97 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 29
+          "totalRequests": 28
         },
         "functionalTests": {
           "linksTest": {
@@ -2072,24 +2087,24 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/5f4c7f44-b3fa-4548-83fa-2b1a5321fb26",
         "desktop": {
-          "performance": 99,
+          "performance": 100,
           "accessibility": 99,
-          "bestPractices": 75,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "0.8 s",
+          "lcp": "0.7 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.5 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "0.7 s",
-          "tti": "0.8 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "0.6 s",
+          "tti": "0.7 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,746 KiB",
+          "totalByteWeight": "Total size was 1,745 KiB",
           "domSize": "185 elements",
           "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 39,
+          "numRequests": 38,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -2105,24 +2120,24 @@
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 79,
+          "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "5.1 s",
+          "lcp": "8.4 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 190 ms",
           "speedIndex": "3.8 s",
-          "tti": "5.4 s",
+          "tti": "8.7 s",
           "maxPotentialFid": "50 ms",
-          "totalByteWeight": "Total size was 1,746 KiB",
+          "totalByteWeight": "Total size was 1,745 KiB",
           "domSize": "185 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.8 s",
-          "numRequests": 39,
+          "numRequests": 38,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -2137,22 +2152,13 @@
           "usesResponsiveImages": "Est savings of 510 KiB",
           "offscreenImages": "Est savings of 87 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 36
+          "totalRequests": 35
         },
         "functionalTests": {
           "linksTest": {
@@ -2195,24 +2201,24 @@
       {
         "url": "http://34.124.244.233/baligirls/creator/preview/7f8a9c91-dd20-450e-a43e-60a84c05ce0a",
         "desktop": {
-          "performance": 99,
+          "performance": 100,
           "accessibility": 99,
-          "bestPractices": 75,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "0.7 s",
+          "lcp": "0.3 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "0.6 s",
+          "fcp": "0.2 s",
           "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "0.7 s",
-          "tti": "0.7 s",
+          "ttfb": "Root document took 190 ms",
+          "speedIndex": "0.6 s",
+          "tti": "0.3 s",
           "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 1,406 KiB",
+          "totalByteWeight": "Total size was 1,405 KiB",
           "domSize": "148 elements",
-          "bootupTime": "0.1 s",
+          "bootupTime": "0.0 s",
           "mainthreadWork": "0.2 s",
-          "numRequests": 30,
+          "numRequests": 29,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -2228,24 +2234,24 @@
           "offscreenImages": "N/A"
         },
         "mobile": {
-          "performance": 73,
+          "performance": 74,
           "accessibility": 99,
-          "bestPractices": 76,
+          "bestPractices": 79,
           "seo": 100,
-          "lcp": "8.9 s",
+          "lcp": "7.8 s",
           "cls": "0",
           "inp": "N/A",
-          "fcp": "1.2 s",
+          "fcp": "1.1 s",
           "tbt": "10 ms",
-          "ttfb": "Root document took 230 ms",
+          "ttfb": "Root document took 190 ms",
           "speedIndex": "3.8 s",
-          "tti": "9.0 s",
+          "tti": "8.0 s",
           "maxPotentialFid": "60 ms",
-          "totalByteWeight": "Total size was 1,407 KiB",
+          "totalByteWeight": "Total size was 1,405 KiB",
           "domSize": "148 elements",
           "bootupTime": "0.2 s",
           "mainthreadWork": "0.7 s",
-          "numRequests": 30,
+          "numRequests": 29,
           "numScripts": 10,
           "numStylesheets": 1,
           "numFonts": "N/A",
@@ -2260,22 +2266,13 @@
           "usesResponsiveImages": "Est savings of 501 KiB",
           "offscreenImages": "Est savings of 168 KiB"
         },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
+        "chromeErrors": [],
+        "safariErrors": [],
         "firefoxErrors": [],
         "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
+          "failedRequests": [],
           "slowAssets": [],
-          "totalRequests": 27
+          "totalRequests": 26
         },
         "functionalTests": {
           "linksTest": {
@@ -2314,134 +2311,11 @@
             "failed": 0
           }
         }
-      },
-      {
-        "url": "http://34.124.244.233/baligirls/creator/preview/865ccf79-3529-4077-9129-acfd9413c93f",
-        "desktop": {
-          "performance": 99,
-          "accessibility": 99,
-          "bestPractices": 75,
-          "seo": 100,
-          "lcp": "0.8 s",
-          "cls": "0",
-          "inp": "N/A",
-          "fcp": "0.6 s",
-          "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "0.7 s",
-          "tti": "0.8 s",
-          "maxPotentialFid": "20 ms",
-          "totalByteWeight": "Total size was 2,097 KiB",
-          "domSize": "181 elements",
-          "bootupTime": "0.0 s",
-          "mainthreadWork": "0.2 s",
-          "numRequests": 38,
-          "numScripts": 10,
-          "numStylesheets": 1,
-          "numFonts": "N/A",
-          "numImages": 15,
-          "renderBlockingResources": 1,
-          "unusedCss": "N/A",
-          "unusedJs": "N/A",
-          "thirdPartySummary": "N/A",
-          "redirects": 0,
-          "modernImageFormats": "Est savings of 689 KiB",
-          "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 880 KiB",
-          "offscreenImages": "N/A"
-        },
-        "mobile": {
-          "performance": 73,
-          "accessibility": 99,
-          "bestPractices": 76,
-          "seo": 100,
-          "lcp": "9.6 s",
-          "cls": "0",
-          "inp": "N/A",
-          "fcp": "1.2 s",
-          "tbt": "0 ms",
-          "ttfb": "Root document took 230 ms",
-          "speedIndex": "3.8 s",
-          "tti": "10.1 s",
-          "maxPotentialFid": "60 ms",
-          "totalByteWeight": "Total size was 2,097 KiB",
-          "domSize": "181 elements",
-          "bootupTime": "0.2 s",
-          "mainthreadWork": "0.8 s",
-          "numRequests": 38,
-          "numScripts": 10,
-          "numStylesheets": 1,
-          "numFonts": "N/A",
-          "numImages": 15,
-          "renderBlockingResources": 1,
-          "unusedCss": "N/A",
-          "unusedJs": "N/A",
-          "thirdPartySummary": "N/A",
-          "redirects": 0,
-          "modernImageFormats": "Est savings of 689 KiB",
-          "usesOptimizedImages": "N/A",
-          "usesResponsiveImages": "Est savings of 501 KiB",
-          "offscreenImages": "Est savings of 859 KiB"
-        },
-        "chromeErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "safariErrors": [
-          "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
-        ],
-        "firefoxErrors": [],
-        "networkAnalysis": {
-          "failedRequests": [
-            {
-              "url": "http://34.124.244.233/baligirls/api/me",
-              "status": 401
-            }
-          ],
-          "slowAssets": [],
-          "totalRequests": 35
-        },
-        "functionalTests": {
-          "linksTest": {
-            "passed": 23,
-            "failed": 0,
-            "errors": []
-          },
-          "buttonsTest": {
-            "passed": 0,
-            "failed": 0,
-            "errors": []
-          },
-          "formsTest": {
-            "passed": 1,
-            "failed": 0,
-            "errors": []
-          },
-          "imagesTest": {
-            "passed": 15,
-            "failed": 0,
-            "errors": []
-          },
-          "navigationTest": {
-            "passed": 1,
-            "failed": 0,
-            "errors": []
-          },
-          "interactiveTest": {
-            "passed": 1,
-            "failed": 0,
-            "errors": []
-          },
-          "summary": {
-            "totalTests": 41,
-            "passed": 41,
-            "failed": 0
-          }
-        }
       }
     ],
     "siteLevel": {
       "securityHeaders": {
-        "url": "http://34.124.244.233/baligirls",
+        "url": "http://34.124.244.233/baligirls/",
         "headers": {},
         "missing": [
           "content-security-policy",
@@ -2490,7 +2364,7 @@
         "cms": null
       },
       "brokenLinks": {
-        "total": 467,
+        "total": 508,
         "checked": 50,
         "broken": [
           {
