@@ -1,6 +1,6 @@
 # Development Readiness Report v2.0
 
-**Generated:** 2/26/2026, 2:16:40 PM
+**Generated:** 3/2/2026, 1:13:48 AM
 
 ---
 
@@ -9,8 +9,8 @@
 | Metric | Value |
 |--------|-------|
 | Sites Audited | 1 |
-| Pages Scanned | 1 |
-| Console Errors | 3 |
+| Pages Scanned | 8 |
+| Console Errors | 0 |
 
 ---
 
@@ -18,21 +18,21 @@
 
 | Site | Desktop Perf | Mobile Perf | Security | SEO | Accessibility |
 |------|-------------|-------------|----------|-----|---------------|
-| Staging | 0 | 0 | 0% | 0 | 0 |
+| Manual Audit | 95 | 96 | 0% | 100 | 99 |
 
 ---
 
 ## Detailed Results
 
-### Staging
+### Manual Audit
 
-**Base URL:** http://34.142.200.251/
+**Base URL:** http://34.124.244.233/schoolcatering/
 
 #### Site-Level Checks
 
 ##### Security Headers
 - **Score:** 0%
-- **Missing Headers:** None
+- **Missing Headers:** content-security-policy, strict-transport-security, x-content-type-options, x-frame-options, x-xss-protection, referrer-policy, permissions-policy
 
 ##### URL Canonicalization
 - **HTTPS Redirect:** ❌ No
@@ -50,82 +50,209 @@
 - No CMS detected
 
 ##### Broken Links
-- **Checked:** 0 links
+- **Checked:** 8 links
 - **Broken:** 0
 
 
 ##### API Endpoints
 - **Tested:** 11 endpoints
-- **Errors:** ❌ 11 error(s) detected
-  - `/api: The operation was aborted due to timeout`
-  - `/api/v1: The operation was aborted due to timeout`
-  - `/api/v2: The operation was aborted due to timeout`
-  - `/wp-json: The operation was aborted due to timeout`
-  - `/wp-json/wp/v2/posts: The operation was aborted due to timeout`
-  - `/graphql: The operation was aborted due to timeout`
-  - `/rest: The operation was aborted due to timeout`
-  - `/.well-known/security.txt: The operation was aborted due to timeout`
-  - `/robots.txt: The operation was aborted due to timeout`
-  - `/sitemap.xml: The operation was aborted due to timeout`
-  - `/favicon.ico: The operation was aborted due to timeout`
+- **Status:** ✅ No Error Detected
 
 #### Page Results
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. |
 |-----|---------|--------|------|-----|----------|
-| / | 0 | 0 | 0 | 0 | 0 |
+| / | 92 | 90 | 100 | 100 | 79 |
+| http://34.124.244.233/schoolcatering | 99 | 94 | 100 | 100 | 79 |
+| /menu | 73 | 94 | 100 | 100 | 79 |
+| /guide | 100 | 98 | 100 | 100 | 79 |
+| /privacy-and-confidentiality | 99 | 97 | 100 | 100 | 79 |
+| /login | 100 | 99 | 100 | 100 | 79 |
+| /register/youngsters | 100 | 97 | 95 | 100 | 79 |
+| /rating | 99 | 96 | 100 | 100 | 79 |
 
 ##### Core Web Vitals & Performance Metrics
 
 | URL | LCP | CLS | INP | FCP | TBT | TTFB | SI | TTI |
 |-----|-----|-----|-----|-----|-----|------|----|----||
-| / | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| / | 1.4 s | 0 | N/A | 1.2 s | 40 ms | Root document took 200 ms | 1.4 s | 1.7 s |
+| http://34.124.244.233/schoolcatering | 0.8 s | 0 | N/A | 0.7 s | 0 ms | Root document took 200 ms | 0.7 s | 0.8 s |
+| /menu | 1.6 s | 0.502 | N/A | 0.6 s | 40 ms | Root document took 200 ms | 0.7 s | 1.6 s |
+| /guide | 0.6 s | 0 | N/A | 0.6 s | 0 ms | Root document took 200 ms | 0.6 s | 0.6 s |
+| /privacy-and-confidentiality | 0.9 s | 0 | N/A | 0.8 s | 0 ms | Root document took 200 ms | 0.8 s | 0.9 s |
+| /login | 0.6 s | 0 | N/A | 0.6 s | 0 ms | Root document took 200 ms | 0.6 s | 0.6 s |
+| /register/youngsters | 0.6 s | 0.038 | N/A | 0.6 s | 0 ms | Root document took 200 ms | 0.6 s | 0.6 s |
+| /rating | 0.9 s | 0 | N/A | 0.8 s | 0 ms | Root document took 200 ms | 0.8 s | 0.9 s |
 
 ##### Additional Performance Metrics
 
 | URL | Max FID | Total Weight | DOM Size | JS Boot Time | Main Thread |
 |-----|---------|--------------|----------|--------------|-------------|
-| / | N/A | N/A | N/A | N/A | N/A |
+| / | 90 ms | Total size was 249 KiB | 41 elements | 0.2 s | 0.5 s |
+| http://34.124.244.233/schoolcatering | 20 ms | Total size was 248 KiB | 41 elements | N/A | 0.1 s |
+| /menu | 90 ms | Total size was 249 KiB | 112 elements | 0.1 s | 0.2 s |
+| /guide | 20 ms | Total size was 128 KiB | 69 elements | N/A | 0.1 s |
+| /privacy-and-confidentiality | 20 ms | Total size was 102 KiB | 34 elements | N/A | 0.1 s |
+| /login | 20 ms | Total size was 102 KiB | 34 elements | N/A | 0.1 s |
+| /register/youngsters | 20 ms | Total size was 108 KiB | 81 elements | N/A | 0.1 s |
+| /rating | 20 ms | Total size was 102 KiB | 34 elements | N/A | 0.1 s |
 
 ##### Resource Summary
 
 | URL | Requests | Scripts | Stylesheets | Fonts | Images | Render Blocking | Redirects |
 |-----|----------|---------|-------------|-------|--------|-----------------|----------|
-| / | N/A | N/A | N/A | N/A | N/A | 0 | 0 |
+| / | 28 | 14 | 1 | N/A | 2 | 1 | 4 |
+| http://34.124.244.233/schoolcatering | 25 | 14 | 1 | N/A | 2 | 1 | 0 |
+| /menu | 28 | 11 | 1 | N/A | 10 | 1 | 0 |
+| /guide | 15 | 10 | 1 | N/A | N/A | 1 | 0 |
+| /privacy-and-confidentiality | 10 | 6 | 1 | N/A | N/A | 1 | 2 |
+| /login | 9 | 6 | 1 | N/A | N/A | 1 | 0 |
+| /register/youngsters | 12 | 7 | 1 | N/A | 1 | 1 | 0 |
+| /rating | 10 | 6 | 1 | N/A | N/A | 1 | 2 |
 
 ##### Optimization Opportunities
 
 | URL | Unused CSS | Unused JS | Third-Party Impact | Modern Images | Optimized Images |
 |-----|------------|-----------|-------------------|---------------|------------------|
-| / | N/A | N/A | N/A | N/A | N/A |
+| / | N/A | Est savings of 77 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| http://34.124.244.233/schoolcatering | N/A | Est savings of 77 KiB | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| /menu | N/A | N/A | N/A | N/A | N/A |
+| /guide | N/A | N/A | N/A | N/A | N/A |
+| /privacy-and-confidentiality | N/A | Est savings of 22 KiB | N/A | N/A | N/A |
+| /login | N/A | Est savings of 22 KiB | N/A | N/A | N/A |
+| /register/youngsters | N/A | N/A | N/A | N/A | N/A |
+| /rating | N/A | Est savings of 22 KiB | N/A | N/A | N/A |
 
 ##### Functional Tests
 
 **/**
-- **Links:** ✅ 0 passed
+- **Links:** ✅ 7 passed
+- **Buttons:** ⚠️ 0 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 2 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Menu" - not visible`
+
+**http://34.124.244.233/schoolcatering**
+- **Links:** ✅ 7 passed
+- **Buttons:** ⚠️ 0 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 2 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Menu" - not visible`
+
+**/menu**
+- **Links:** ✅ 2 passed
+- **Buttons:** ⚠️ 0 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 13 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
+
+**/guide**
+- **Links:** ✅ 2 passed
 - **Buttons:** ✅ 0 passed
-- **Forms:** ✅ 0 passed
+- **Forms:** ✅ 1 passed
 - **Images:** ✅ 0 passed
-- **Navigation:** ✅ 0 passed
-- **Interactive:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
 - **Overall:** ✅ No Error Detected
+
+**/privacy-and-confidentiality**
+- **Links:** ✅ 0 passed
+- **Buttons:** ⚠️ 2 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
+
+**/login**
+- **Links:** ✅ 0 passed
+- **Buttons:** ⚠️ 2 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
+
+**/register/youngsters**
+- **Links:** ✅ 0 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
+
+**/rating**
+- **Links:** ✅ 0 passed
+- **Buttons:** ⚠️ 2 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
 
 
 ##### Browser Console Error Testing
 
 **/**
-- **Chrome (Chromium):** ❌ 1 error(s) detected
-  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://34.142.2...`
-- **Safari (WebKit):** ❌ 1 error(s) detected
-  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://34.142.2...`
-- **Firefox (Gecko):** ❌ 1 error(s) detected
-  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://34.142.2...`
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**http://34.124.244.233/schoolcatering**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**/menu**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**/guide**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**/privacy-and-confidentiality**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**/login**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**/register/youngsters**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**/rating**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
 
 
 ---
