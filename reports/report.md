@@ -1,6 +1,6 @@
 # Development Readiness Report v2.0
 
-**Generated:** 3/19/2026, 2:14:01 PM
+**Generated:** 3/20/2026, 11:23:30 AM
 
 ---
 
@@ -9,8 +9,8 @@
 | Metric | Value |
 |--------|-------|
 | Sites Audited | 1 |
-| Pages Scanned | 1 |
-| Console Errors | 3 |
+| Pages Scanned | 7 |
+| Console Errors | 0 |
 
 ---
 
@@ -18,21 +18,21 @@
 
 | Site | Desktop Perf | Mobile Perf | Security | SEO | Accessibility |
 |------|-------------|-------------|----------|-----|---------------|
-| Staging | 0 | 0 | 0% | 0 | 0 |
+| Manual Audit | 92 | 96 | 43% | 100 | 100 |
 
 ---
 
 ## Detailed Results
 
-### Staging
+### Manual Audit
 
-**Base URL:** http://34.142.200.251/
+**Base URL:** http://34.158.47.112/schoolcatering
 
 #### Site-Level Checks
 
 ##### Security Headers
-- **Score:** 0%
-- **Missing Headers:** None
+- **Score:** 43%
+- **Missing Headers:** content-security-policy, strict-transport-security, referrer-policy, permissions-policy
 
 ##### URL Canonicalization
 - **HTTPS Redirect:** ❌ No
@@ -50,82 +50,191 @@
 - No CMS detected
 
 ##### Broken Links
-- **Checked:** 0 links
+- **Checked:** 9 links
 - **Broken:** 0
 
 
 ##### API Endpoints
 - **Tested:** 11 endpoints
-- **Errors:** ❌ 11 error(s) detected
-  - `/api: The operation was aborted due to timeout`
-  - `/api/v1: The operation was aborted due to timeout`
-  - `/api/v2: The operation was aborted due to timeout`
-  - `/wp-json: The operation was aborted due to timeout`
-  - `/wp-json/wp/v2/posts: The operation was aborted due to timeout`
-  - `/graphql: The operation was aborted due to timeout`
-  - `/rest: The operation was aborted due to timeout`
-  - `/.well-known/security.txt: The operation was aborted due to timeout`
-  - `/robots.txt: The operation was aborted due to timeout`
-  - `/sitemap.xml: The operation was aborted due to timeout`
-  - `/favicon.ico: The operation was aborted due to timeout`
+- **Status:** ✅ No Error Detected
 
 #### Page Results
 
 | URL | Desktop | Mobile | A11y | SEO | Best Pr. |
 |-----|---------|--------|------|-----|----------|
-| / | 0 | 0 | 0 | 0 | 0 |
+| / | 79 | 88 | 100 | 100 | 79 |
+| //menu | 64 | 94 | 100 | 100 | 79 |
+| //guide | 100 | 98 | 100 | 100 | 79 |
+| //login | 100 | 98 | 100 | 100 | 79 |
+| //register | 100 | 95 | 100 | 100 | 79 |
+| //userguide | 100 | 98 | 100 | 100 | 79 |
+| //rating | 98 | 99 | 100 | 100 | 79 |
 
 ##### Core Web Vitals & Performance Metrics
 
 | URL | LCP | CLS | INP | FCP | TBT | TTFB | SI | TTI |
 |-----|-----|-----|-----|-----|-----|------|----|----||
-| / | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| / | 3.2 s | 0.018 | N/A | 1.1 s | 0 ms | Root document took 230 ms | 1.3 s | 3.2 s |
+| //menu | 2.7 s | 0.509 | N/A | 0.7 s | 0 ms | Root document took 230 ms | 1.1 s | 2.7 s |
+| //guide | 0.7 s | 0 | N/A | 0.7 s | 0 ms | Root document took 260 ms | 0.7 s | 0.7 s |
+| //login | 0.7 s | 0 | N/A | 0.7 s | 0 ms | Root document took 230 ms | 0.7 s | 0.7 s |
+| //register | 0.7 s | 0.013 | N/A | 0.7 s | 0 ms | Root document took 230 ms | 0.7 s | 0.7 s |
+| //userguide | 0.7 s | 0 | N/A | 0.7 s | 0 ms | Root document took 240 ms | 0.7 s | 0.7 s |
+| //rating | 1.0 s | 0 | N/A | 0.9 s | 0 ms | Root document took 230 ms | 0.9 s | 1.0 s |
 
 ##### Additional Performance Metrics
 
 | URL | Max FID | Total Weight | DOM Size | JS Boot Time | Main Thread |
 |-----|---------|--------------|----------|--------------|-------------|
-| / | N/A | N/A | N/A | N/A | N/A |
+| / | 20 ms | Total size was 249 KiB | 39 elements | 0.1 s | 0.2 s |
+| //menu | 40 ms | Total size was 3,759 KiB | 387 elements | 0.1 s | 0.3 s |
+| //guide | 20 ms | Total size was 130 KiB | 554 elements | N/A | 0.1 s |
+| //login | 20 ms | Total size was 107 KiB | 42 elements | N/A | 0.1 s |
+| //register | 20 ms | Total size was 116 KiB | 87 elements | N/A | 0.1 s |
+| //userguide | 20 ms | Total size was 141 KiB | 131 elements | N/A | 0.1 s |
+| //rating | 20 ms | Total size was 107 KiB | 42 elements | N/A | 0.1 s |
 
 ##### Resource Summary
 
 | URL | Requests | Scripts | Stylesheets | Fonts | Images | Render Blocking | Redirects |
 |-----|----------|---------|-------------|-------|--------|-----------------|----------|
-| / | N/A | N/A | N/A | N/A | N/A | 0 | 0 |
+| / | 28 | 14 | 1 | N/A | 2 | 1 | 3 |
+| //menu | 56 | 9 | 1 | N/A | 40 | 1 | 0 |
+| //guide | 14 | 9 | 1 | N/A | N/A | 1 | 0 |
+| //login | 9 | 6 | 1 | N/A | N/A | 1 | 0 |
+| //register | 13 | 8 | 1 | N/A | 1 | 1 | 0 |
+| //userguide | 17 | 11 | 1 | N/A | N/A | 1 | 0 |
+| //rating | 10 | 6 | 1 | N/A | N/A | 1 | 2 |
 
 ##### Optimization Opportunities
 
 | URL | Unused CSS | Unused JS | Third-Party Impact | Modern Images | Optimized Images |
 |-----|------------|-----------|-------------------|---------------|------------------|
-| / | N/A | N/A | N/A | N/A | N/A |
+| / | N/A | N/A | Third-party code blocked the main thread for 0 ms | Est savings of 30 KiB | N/A |
+| //menu | N/A | N/A | Third-party code blocked the main thread for 0 ms | N/A | N/A |
+| //guide | N/A | N/A | N/A | N/A | N/A |
+| //login | N/A | Est savings of 22 KiB | N/A | N/A | N/A |
+| //register | N/A | N/A | N/A | N/A | N/A |
+| //userguide | N/A | N/A | N/A | N/A | N/A |
+| //rating | N/A | Est savings of 22 KiB | N/A | N/A | N/A |
 
 ##### Functional Tests
 
 **/**
-- **Links:** ✅ 0 passed
+- **Links:** ✅ 8 passed
+- **Buttons:** ⚠️ 0 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 2 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Menu" - not visible`
+
+**//menu**
+- **Links:** ✅ 2 passed
+- **Buttons:** ⚠️ 0 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ⚠️ 1 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
+  - images: `Broken image: https://storage.googleapis.com/gda-ce01-bucket/blossom-schoolcatering/menu-images/upload-17724232536`
+  - images: `Broken image: https://storage.googleapis.com/gda-ce01-bucket/blossom-schoolcatering/menu-images/upload-17724232807`
+  - images: `Broken image: https://storage.googleapis.com/gda-ce01-bucket/blossom-schoolcatering/menu-images/upload-17725064116`
+
+**//guide**
+- **Links:** ✅ 2 passed
 - **Buttons:** ✅ 0 passed
-- **Forms:** ✅ 0 passed
+- **Forms:** ✅ 1 passed
 - **Images:** ✅ 0 passed
-- **Navigation:** ✅ 0 passed
-- **Interactive:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
 - **Overall:** ✅ No Error Detected
+
+**//login**
+- **Links:** ✅ 0 passed
+- **Buttons:** ⚠️ 2 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
+
+**//register**
+- **Links:** ✅ 0 passed
+- **Buttons:** ⚠️ 1 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
+
+**//userguide**
+- **Links:** ✅ 3 passed
+- **Buttons:** ⚠️ 0 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
+
+**//rating**
+- **Links:** ✅ 0 passed
+- **Buttons:** ⚠️ 2 passed
+- **Forms:** ✅ 1 passed
+- **Images:** ✅ 0 passed
+- **Navigation:** ✅ 1 passed
+- **Interactive:** ✅ 1 passed
+
+**Issues Found:**
+  - buttons: `Button "Top" - not visible`
 
 
 ##### Browser Console Error Testing
 
 **/**
-- **Chrome (Chromium):** ❌ 1 error(s) detected
-  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://34.142.2...`
-- **Safari (WebKit):** ❌ 1 error(s) detected
-  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://34.142.2...`
-- **Firefox (Gecko):** ❌ 1 error(s) detected
-  - `Navigation failed: page.goto: Timeout 30000ms exceeded.
-Call log:
-  - navigating to "http://34.142.2...`
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**//menu**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**//guide**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**//login**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**//register**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**//userguide**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
+
+**//rating**
+- **Chrome (Chromium):** ✅ No Error Detected
+- **Safari (WebKit):** ✅ No Error Detected
+- **Firefox (Gecko):** ✅ No Error Detected
 
 
 ---
