@@ -49,31 +49,31 @@
     <body>
         <div class="container">
             <h1>🔍 Development Readiness Report v2.0</h1>
-            <p class="header-info">Generated: 3/20/2026, 11:23:30 AM</p>
+            <p class="header-info">Generated: 3/26/2026, 2:31:29 PM</p>
 
             <div class="stats">
                 <div class="stat-card"><h3>1</h3><p>Sites Audited</p></div>
-                <div class="stat-card"><h3>7</h3><p>Pages Scanned</p></div>
-                <div class="stat-card"><h3 class="no-errors">0</h3><p>Console Errors</p></div>
-            </div><div class="tabs"><button class="tab active" onclick="showTab('site-0')">Manual Audit</button></div><div id="site-0" class="tab-content active"><div class="grid-2"><div class="card">
+                <div class="stat-card"><h3>1</h3><p>Pages Scanned</p></div>
+                <div class="stat-card"><h3 class="errors">3</h3><p>Console Errors</p></div>
+            </div><div class="tabs"><button class="tab active" onclick="showTab('site-0')">Staging</button></div><div id="site-0" class="tab-content active"><div class="grid-2"><div class="card">
             <h3>📈 Performance Overview</h3>
             <div class="check-item">
                 <span>Desktop Avg:</span>
-                <span class="perf-good">92</span>
+                <span class="perf-bad">0</span>
             </div>
             <div class="check-item">
                 <span>Mobile Avg:</span>
-                <span class="perf-good">96</span>
+                <span class="perf-bad">0</span>
             </div>
         </div><div class="card">
             <h3>🔒 Security Headers</h3>
             <div class="check-item">
                 <span>Score:</span>
-                <span class="perf-bad">43%</span>
+                <span class="perf-bad">0%</span>
             </div>
             <div class="check-item">
                 <span>Missing:</span>
-                <span>content-security-policy, strict-transport-security, referrer-policy, permissions-policy</span>
+                <span>None</span>
             </div>
         </div><div class="card">
             <h3>🔗 URL Canonicalization</h3>
@@ -117,7 +117,7 @@
             <h3>🔗 Broken Links</h3>
             <div class="check-item">
                 <span>Checked:</span>
-                <span>9 links</span>
+                <span>0 links</span>
             </div>
             <div class="check-item">
                 <span>Broken:</span>
@@ -131,9 +131,14 @@
             </div>
             
                 <div class="check-item">
-                    <span class="check-icon">✅</span>
-                    <span class="no-errors">No Error Detected</span>
+                    <span class="check-icon">❌</span>
+                    <span class="errors">11 error(s)</span>
                 </div>
+                <details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View errors</summary>
+                <ul style="font-size: 12px; margin-top: 5px;">
+                    <li><code>/api: The operation was aborted due to timeout</code></li><li><code>/api/v1: The operation was aborted due to timeout</code></li><li><code>/api/v2: The operation was aborted due to timeout</code></li><li><code>/wp-json: The operation was aborted due to timeout</code></li><li><code>/wp-json/wp/v2/posts: The operation was aborted due to timeout</code></li><li><code>/graphql: The operation was aborted due to timeout</code></li><li><code>/rest: The operation was aborted due to timeout</code></li><li><code>/.well-known/security.txt: The operation was aborted due to timeout</code></li><li><code>/robots.txt: The operation was aborted due to timeout</code></li><li><code>/sitemap.xml: The operation was aborted due to timeout</code></li><li><code>/favicon.ico: The operation was aborted due to timeout</code></li>
+                </ul>
+                </details>
             
         </div></div><div class="card">
             <h3>📄 Page Details</h3>
@@ -149,66 +154,12 @@
                     <th>Failed Requests</th>
                 </tr>
             <tr>
-                <td><a href="http://34.158.47.112/schoolcatering" target="_blank">/</a></td>
-                <td class="perf-ok">79</td>
-                <td class="perf-ok">88</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">79</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/menu" target="_blank">//menu</a></td>
-                <td class="perf-ok">64</td>
-                <td class="perf-good">94</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">79</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/guide" target="_blank">//guide</a></td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">98</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">79</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/login" target="_blank">//login</a></td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">98</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">79</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/register" target="_blank">//register</a></td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">95</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">79</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/userguide" target="_blank">//userguide</a></td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">98</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">79</td>
-                <td class="no-errors">0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/rating" target="_blank">//rating</a></td>
-                <td class="perf-good">98</td>
-                <td class="perf-good">99</td>
-                <td class="perf-good">100</td>
-                <td class="perf-good">100</td>
-                <td class="perf-ok">79</td>
+                <td><a href="http://34.142.200.251/" target="_blank">/</a></td>
+                <td class="perf-bad">0</td>
+                <td class="perf-bad">0</td>
+                <td class="perf-bad">0</td>
+                <td class="perf-bad">0</td>
+                <td class="perf-bad">0</td>
                 <td class="no-errors">0</td>
             </tr></table></div></div><div class="card">
             <h3>⚡ Core Web Vitals & Performance Metrics</h3>
@@ -226,81 +177,15 @@
                     <th>TTI</th>
                 </tr>
             <tr>
-                <td><a href="http://34.158.47.112/schoolcatering" target="_blank">/</a></td>
-                <td>3.2 s</td>
-                <td>0.018</td>
+                <td><a href="http://34.142.200.251/" target="_blank">/</a></td>
                 <td>N/A</td>
-                <td>1.1 s</td>
-                <td>0 ms</td>
-                <td>Root document took 230 ms</td>
-                <td>1.3 s</td>
-                <td>3.2 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/menu" target="_blank">//menu</a></td>
-                <td>2.7 s</td>
-                <td>0.509</td>
                 <td>N/A</td>
-                <td>0.7 s</td>
-                <td>0 ms</td>
-                <td>Root document took 230 ms</td>
-                <td>1.1 s</td>
-                <td>2.7 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/guide" target="_blank">//guide</a></td>
-                <td>0.7 s</td>
-                <td>0</td>
                 <td>N/A</td>
-                <td>0.7 s</td>
-                <td>0 ms</td>
-                <td>Root document took 260 ms</td>
-                <td>0.7 s</td>
-                <td>0.7 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/login" target="_blank">//login</a></td>
-                <td>0.7 s</td>
-                <td>0</td>
                 <td>N/A</td>
-                <td>0.7 s</td>
-                <td>0 ms</td>
-                <td>Root document took 230 ms</td>
-                <td>0.7 s</td>
-                <td>0.7 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/register" target="_blank">//register</a></td>
-                <td>0.7 s</td>
-                <td>0.013</td>
                 <td>N/A</td>
-                <td>0.7 s</td>
-                <td>0 ms</td>
-                <td>Root document took 230 ms</td>
-                <td>0.7 s</td>
-                <td>0.7 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/userguide" target="_blank">//userguide</a></td>
-                <td>0.7 s</td>
-                <td>0</td>
                 <td>N/A</td>
-                <td>0.7 s</td>
-                <td>0 ms</td>
-                <td>Root document took 240 ms</td>
-                <td>0.7 s</td>
-                <td>0.7 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/rating" target="_blank">//rating</a></td>
-                <td>1.0 s</td>
-                <td>0</td>
                 <td>N/A</td>
-                <td>0.9 s</td>
-                <td>0 ms</td>
-                <td>Root document took 230 ms</td>
-                <td>0.9 s</td>
-                <td>1.0 s</td>
+                <td>N/A</td>
             </tr></table></div></div><div class="card">
             <h3>📊 Additional Performance Metrics</h3>
             <div class="scroll-table">
@@ -314,60 +199,12 @@
                     <th>Main Thread</th>
                 </tr>
             <tr>
-                <td><a href="http://34.158.47.112/schoolcatering" target="_blank">/</a></td>
-                <td>20 ms</td>
-                <td>Total size was 249 KiB</td>
-                <td>39 elements</td>
-                <td>0.1 s</td>
-                <td>0.2 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/menu" target="_blank">//menu</a></td>
-                <td>40 ms</td>
-                <td>Total size was 3,759 KiB</td>
-                <td>387 elements</td>
-                <td>0.1 s</td>
-                <td>0.3 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/guide" target="_blank">//guide</a></td>
-                <td>20 ms</td>
-                <td>Total size was 130 KiB</td>
-                <td>554 elements</td>
+                <td><a href="http://34.142.200.251/" target="_blank">/</a></td>
                 <td>N/A</td>
-                <td>0.1 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/login" target="_blank">//login</a></td>
-                <td>20 ms</td>
-                <td>Total size was 107 KiB</td>
-                <td>42 elements</td>
                 <td>N/A</td>
-                <td>0.1 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/register" target="_blank">//register</a></td>
-                <td>20 ms</td>
-                <td>Total size was 116 KiB</td>
-                <td>87 elements</td>
                 <td>N/A</td>
-                <td>0.1 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/userguide" target="_blank">//userguide</a></td>
-                <td>20 ms</td>
-                <td>Total size was 141 KiB</td>
-                <td>131 elements</td>
                 <td>N/A</td>
-                <td>0.1 s</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/rating" target="_blank">//rating</a></td>
-                <td>20 ms</td>
-                <td>Total size was 107 KiB</td>
-                <td>42 elements</td>
                 <td>N/A</td>
-                <td>0.1 s</td>
             </tr></table></div></div><div class="card">
             <h3>📦 Resource Summary</h3>
             <div class="scroll-table">
@@ -383,74 +220,14 @@
                     <th>Redirects</th>
                 </tr>
             <tr>
-                <td><a href="http://34.158.47.112/schoolcatering" target="_blank">/</a></td>
-                <td>28</td>
-                <td>14</td>
-                <td>1</td>
+                <td><a href="http://34.142.200.251/" target="_blank">/</a></td>
                 <td>N/A</td>
-                <td>2</td>
-                <td class="perf-bad">1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/menu" target="_blank">//menu</a></td>
-                <td>56</td>
-                <td>9</td>
-                <td>1</td>
                 <td>N/A</td>
-                <td>40</td>
-                <td class="perf-bad">1</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td class="perf-good">0</td>
                 <td>0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/guide" target="_blank">//guide</a></td>
-                <td>14</td>
-                <td>9</td>
-                <td>1</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td class="perf-bad">1</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/login" target="_blank">//login</a></td>
-                <td>9</td>
-                <td>6</td>
-                <td>1</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td class="perf-bad">1</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/register" target="_blank">//register</a></td>
-                <td>13</td>
-                <td>8</td>
-                <td>1</td>
-                <td>N/A</td>
-                <td>1</td>
-                <td class="perf-bad">1</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/userguide" target="_blank">//userguide</a></td>
-                <td>17</td>
-                <td>11</td>
-                <td>1</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td class="perf-bad">1</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/rating" target="_blank">//rating</a></td>
-                <td>10</td>
-                <td>6</td>
-                <td>1</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td class="perf-bad">1</td>
-                <td>2</td>
             </tr></table></div></div><div class="card">
             <h3>🎯 Optimization Opportunities</h3>
             <div class="scroll-table">
@@ -464,57 +241,9 @@
                     <th>Optimized Images</th>
                 </tr>
             <tr>
-                <td><a href="http://34.158.47.112/schoolcatering" target="_blank">/</a></td>
+                <td><a href="http://34.142.200.251/" target="_blank">/</a></td>
                 <td>N/A</td>
                 <td>N/A</td>
-                <td>Third-party code blocked the main thread for 0 ms</td>
-                <td>Est savings of 30 KiB</td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/menu" target="_blank">//menu</a></td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>Third-party code blocked the main thread for 0 ms</td>
-                <td>N/A</td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/guide" target="_blank">//guide</a></td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/login" target="_blank">//login</a></td>
-                <td>N/A</td>
-                <td>Est savings of 22 KiB</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/register" target="_blank">//register</a></td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/userguide" target="_blank">//userguide</a></td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td><a href="http://34.158.47.112/schoolcatering/rating" target="_blank">//rating</a></td>
-                <td>N/A</td>
-                <td>Est savings of 22 KiB</td>
                 <td>N/A</td>
                 <td>N/A</td>
                 <td>N/A</td>
@@ -523,145 +252,15 @@
                 <strong>/</strong><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 8px;">
                     <div class="check-item" style="border: none;">
                         <span class="check-icon">✅</span>
-                        <span>Links: 8 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">⚠️</span>
-                        <span>Buttons: 0 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Forms: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Images: 2 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Navigation: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Interactive: 1 OK</span>
-                    </div>
-                </div><details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View test issues</summary><div style="padding: 10px; font-size: 12px;"><div><strong>buttons issues:</strong><ul><li><code>Button "Menu" - not visible</code></li></ul></div></div></details></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//menu</strong><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 8px;">
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Links: 2 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">⚠️</span>
-                        <span>Buttons: 0 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Forms: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">⚠️</span>
-                        <span>Images: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Navigation: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Interactive: 1 OK</span>
-                    </div>
-                </div><details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View test issues</summary><div style="padding: 10px; font-size: 12px;"><div><strong>buttons issues:</strong><ul><li><code>Button "Top" - not visible</code></li></ul></div><div><strong>images issues:</strong><ul><li><code>Broken image: https://storage.googleapis.com/gda-ce01-bucket/blossom-schoolcatering/menu-images/upload-17724232536</code></li><li><code>Broken image: https://storage.googleapis.com/gda-ce01-bucket/blossom-schoolcatering/menu-images/upload-17724232807</code></li><li><code>Broken image: https://storage.googleapis.com/gda-ce01-bucket/blossom-schoolcatering/menu-images/upload-17725064116</code></li></ul></div></div></details></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//guide</strong><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 8px;">
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Links: 2 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Buttons: 0 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Forms: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Images: 0 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Navigation: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Interactive: 1 OK</span>
-                    </div>
-                </div><div style="margin-top: 5px; color: #5cb85c; font-size: 12px;">✅ No Error Detected</div></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//login</strong><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 8px;">
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
                         <span>Links: 0 OK</span>
                     </div>
                     <div class="check-item" style="border: none;">
-                        <span class="check-icon">⚠️</span>
-                        <span>Buttons: 2 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
                         <span class="check-icon">✅</span>
-                        <span>Forms: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Images: 0 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Navigation: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Interactive: 1 OK</span>
-                    </div>
-                </div><details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View test issues</summary><div style="padding: 10px; font-size: 12px;"><div><strong>buttons issues:</strong><ul><li><code>Button "Top" - not visible</code></li></ul></div></div></details></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//register</strong><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 8px;">
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Links: 0 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">⚠️</span>
-                        <span>Buttons: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Forms: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Images: 0 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Navigation: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Interactive: 1 OK</span>
-                    </div>
-                </div><details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View test issues</summary><div style="padding: 10px; font-size: 12px;"><div><strong>buttons issues:</strong><ul><li><code>Button "Top" - not visible</code></li></ul></div></div></details></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//userguide</strong><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 8px;">
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Links: 3 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">⚠️</span>
                         <span>Buttons: 0 OK</span>
                     </div>
                     <div class="check-item" style="border: none;">
                         <span class="check-icon">✅</span>
-                        <span>Forms: 1 OK</span>
+                        <span>Forms: 0 OK</span>
                     </div>
                     <div class="check-item" style="border: none;">
                         <span class="check-icon">✅</span>
@@ -669,117 +268,34 @@
                     </div>
                     <div class="check-item" style="border: none;">
                         <span class="check-icon">✅</span>
-                        <span>Navigation: 1 OK</span>
+                        <span>Navigation: 0 OK</span>
                     </div>
                     <div class="check-item" style="border: none;">
                         <span class="check-icon">✅</span>
-                        <span>Interactive: 1 OK</span>
+                        <span>Interactive: 0 OK</span>
                     </div>
-                </div><details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View test issues</summary><div style="padding: 10px; font-size: 12px;"><div><strong>buttons issues:</strong><ul><li><code>Button "Top" - not visible</code></li></ul></div></div></details></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//rating</strong><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 8px;">
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Links: 0 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">⚠️</span>
-                        <span>Buttons: 2 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Forms: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Images: 0 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Navigation: 1 OK</span>
-                    </div>
-                    <div class="check-item" style="border: none;">
-                        <span class="check-icon">✅</span>
-                        <span>Interactive: 1 OK</span>
-                    </div>
-                </div><details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View test issues</summary><div style="padding: 10px; font-size: 12px;"><div><strong>buttons issues:</strong><ul><li><code>Button "Top" - not visible</code></li></ul></div></div></details></div></div><div class="card">
+                </div><div style="margin-top: 5px; color: #5cb85c; font-size: 12px;">✅ No Error Detected</div></div></div><div class="card">
             <h3>🌐 Browser Console Error Testing</h3><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
                 <strong>/</strong>
                 <div style="display: flex; gap: 20px; margin-top: 8px; flex-wrap: wrap;"><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Chrome (Chromium):</strong> No Error Detected</span>
+                <span class="check-icon">❌</span>
+                <span><strong>Chrome (Chromium):</strong> 1 error(s) detected</span>
             </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Safari (WebKit):</strong> No Error Detected</span>
+                <span class="check-icon">❌</span>
+                <span><strong>Safari (WebKit):</strong> 1 error(s) detected</span>
             </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Firefox (Gecko):</strong> No Error Detected</span>
-            </div></div></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//menu</strong>
-                <div style="display: flex; gap: 20px; margin-top: 8px; flex-wrap: wrap;"><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Chrome (Chromium):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Safari (WebKit):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Firefox (Gecko):</strong> No Error Detected</span>
-            </div></div></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//guide</strong>
-                <div style="display: flex; gap: 20px; margin-top: 8px; flex-wrap: wrap;"><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Chrome (Chromium):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Safari (WebKit):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Firefox (Gecko):</strong> No Error Detected</span>
-            </div></div></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//login</strong>
-                <div style="display: flex; gap: 20px; margin-top: 8px; flex-wrap: wrap;"><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Chrome (Chromium):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Safari (WebKit):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Firefox (Gecko):</strong> No Error Detected</span>
-            </div></div></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//register</strong>
-                <div style="display: flex; gap: 20px; margin-top: 8px; flex-wrap: wrap;"><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Chrome (Chromium):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Safari (WebKit):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Firefox (Gecko):</strong> No Error Detected</span>
-            </div></div></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//userguide</strong>
-                <div style="display: flex; gap: 20px; margin-top: 8px; flex-wrap: wrap;"><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Chrome (Chromium):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Safari (WebKit):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Firefox (Gecko):</strong> No Error Detected</span>
-            </div></div></div><div style="margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px;">
-                <strong>//rating</strong>
-                <div style="display: flex; gap: 20px; margin-top: 8px; flex-wrap: wrap;"><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Chrome (Chromium):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Safari (WebKit):</strong> No Error Detected</span>
-            </div><div class="check-item" style="border: none;">
-                <span class="check-icon">✅</span>
-                <span><strong>Firefox (Gecko):</strong> No Error Detected</span>
-            </div></div></div></div></div>
+                <span class="check-icon">❌</span>
+                <span><strong>Firefox (Gecko):</strong> 1 error(s) detected</span>
+            </div></div><details style="margin-top: 8px;"><summary style="cursor: pointer; color: #666;">View error details</summary><div style="padding: 10px; font-size: 12px;"><div><strong>Chrome (Chromium) errors:</strong><ul><li><code>Navigation failed: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "http://34.142.200.251/", waiting until "domcontentloaded"
+</code></li></ul></div><div><strong>Safari (WebKit) errors:</strong><ul><li><code>Navigation failed: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "http://34.142.200.251/", waiting until "domcontentloaded"
+</code></li></ul></div><div><strong>Firefox (Gecko) errors:</strong><ul><li><code>Navigation failed: page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "http://34.142.200.251/", waiting until "domcontentloaded"
+</code></li></ul></div></div></details></div></div></div>
         </div>
         <script>
             function showTab(tabId) {
